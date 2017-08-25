@@ -18,18 +18,21 @@ body{
 	margin:4em;
 }
 
-#logo {
-	background: url("../../Imagenes/logo.jpg");
-	width:200px;
-	height:150px;
-	-webkit-background-size: cover;
+
+
+#Cubanitos {
+    background: url("../Imagenes/Cubanitos.jpg");
+    width:200px;
+    height:150px;
+    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-	background-repeat:no-repeat;
-	background-size:100% 100%;
-	margin: 4em;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    margin: 4em;
 }
+
 
 
 a:link { 

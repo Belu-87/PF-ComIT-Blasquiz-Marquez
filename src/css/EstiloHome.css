@@ -1,45 +1,12 @@
-
-html { 
-    background: url("../../Imagenes/fondo.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+html,body{
+	margin: 0 auto;
 	color: white;
 	font-family: "Forte Normal", "Comic Sans MS", Arial;
 }
 
 body{
-	/*margin:0 auto;*/
+	display: grid;
 }
-
-#menuPrincipal{
-	float: right;
-	margin:4em;
-}
-
-#logo {
-    background: url("../../Imagenes/logo.jpg");
-    width:200px;
-    height:150px;
-    -webkit-background-size: cover;
-    margin: 4em;
-    background-size:100% 100%; 
-}
-
-#Cubanitos {
-    background: url("../Imagenes/Cubanitos.jpg");
-    width:200px;
-    height:150px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-size:100% 100%;
-    margin: 4em;
-}
-
 
 
 a:link { 
@@ -118,3 +85,38 @@ a:hover::before, a:focus::before {
     transform: scale(1, 1);
 }
 
+
+
+#menuPrincipal{
+	float: right;
+}
+
+#container1,#container2,
+#container3,#container4,
+#container5{
+   	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 700px;
+}
+
+#container1{
+    background-image: url("../../Imagenes/containerAlfajores.jpg");
+}
+
+#container2{
+    background-image: url("../../Imagenes/containerCubanitos.jpg");
+}
+
+#container3{
+    background-image: url("../../Imagenes/containerMuffins.jpg");
+}
+
+#container4{
+    background-image: url("../../Imagenes/containerCubanitorta.jpg");
+}
+
+#container5{
+    background-image: url("../../Imagenes/containerColores.jpg");
+}

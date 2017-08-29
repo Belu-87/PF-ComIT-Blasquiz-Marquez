@@ -120,3 +120,18 @@ a:hover::before, a:focus::before {
 #container5{
     background-image: url("../../Imagenes/containerColores.jpg");
 }
+
+
+.parrafo{
+	font-size: 2em;
+	text-align: center;
+	color:#F22562;
+	margin-top: 30%;
+	animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    from {margin-top: 100%}
+    to {margin-top: 30%}
+}

@@ -127,11 +127,41 @@ a:hover::before, a:focus::before {
 	text-align: center;
 	color:#F22562;
 	margin-top: 30%;
-	animation-name: example;
-    animation-duration: 4s;
+	animation-name: parrafo;
+    animation-duration: 2s;
 }
 
-@keyframes example {
+@keyframes parrafo {
     from {margin-top: 100%}
     to {margin-top: 30%}
 }
+
+input{
+	border-radius: 1em;
+	background-color: transparent;
+	border-color: #F22562;
+	text-align: center;
+	color: white;
+  	transition-property: background;
+  	transition-duration: 1s;
+  	transition-timing-function: linear;
+  	font-size: 1em;
+  	width: 40%;
+}
+
+input:focus ,input:hover{
+  background: #f293c1;
+  outline: none;
+}
+
+button{
+	border-radius: 1em;
+	background-color: #f293c1;
+	border-color: #F22562;
+	text-align: center;
+	color: white;
+  	font-size: 1em;  	
+  	width: 10%;
+  	outline: none;
+}
+

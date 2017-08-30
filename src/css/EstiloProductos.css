@@ -1,15 +1,14 @@
-
-html { 
-    background: url("../../Imagenes/fondo.jpg");
+  body{  
+  background: url("../../Imagenes/fondo.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-	color: white;
+	color: white !important;
 	font-family: "Forte Normal", "Comic Sans MS", Arial;
-}
-
-
+  }
+  
+  
 #menuPrincipal{
 	float: right;
 	margin:4em;
@@ -22,21 +21,8 @@ html {
     -webkit-background-size: cover;
     margin: 4em;
     background-size:100% 100%; 
+
 }
-
-/* #Cubanitos { */
-    /* background: url("../Imagenes/Cubanitos.jpg"); */
-    /* width:200px; */
-    /* height:150px; */
-    /* -webkit-background-size: cover; */
-    /* -moz-background-size: cover; */
-    /* -o-background-size: cover; */
-    /* background-size: cover; */
-    /* background-repeat:no-repeat; */
-    /* background-size:100% 100%; */
-    /* margin: 4em; */
-/* } */
-
 
 
 a:link { 
@@ -114,4 +100,19 @@ a:hover::before, a:focus::before {
     transform-origin: left top;
     transform: scale(1, 1);
 }
+
+.jumbotron{
+background-color:transparent !important;	
+}
+
+img{
+	width: 20em;
+	height: 10em;
+}
+
+p{
+	max-width:20em;
+	margin:0 auto !important;
+}
+
 

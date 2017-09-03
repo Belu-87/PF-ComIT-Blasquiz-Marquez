@@ -10,7 +10,7 @@ html {
 }
 
 
-#menuPricncipal{
+#menuPrincipal{
 	float: right;
 	margin:4em;
 }
@@ -238,10 +238,22 @@ li a:focus {
 
 @media only screen and (max-width: 1599px)
 {
+	#menu
+	{
+		visibility: hidden;
+		width:0;
+		height: 0; 
+	}	
 	
 }
 
 @media only screen and (min-width: 1600px)
 {
-	
+
+	#menu
+	{
+		visibility: hidden;
+		width:0;
+		height: 0; 
+	}	
 }

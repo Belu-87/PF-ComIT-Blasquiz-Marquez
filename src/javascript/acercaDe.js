@@ -1,42 +1,35 @@
-var theToggle = document.getElementById('toggle');
 
-// based on Todd Motto functions
-// https://toddmotto.com/labs/reusable-js/
+$(document).ready(main);
 
-// hasClass
-function hasClass(elem, className) {
-	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-}
-// addClass
-function addClass(elem, className) {
-    if (!hasClass(elem, className)) {
-    	elem.className += ' ' + className;
-    }
-}
-// removeClass
-function removeClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
-	if (hasClass(elem, className)) {
-        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-            newClass = newClass.replace(' ' + className + ' ', ' ');
+var contador = 1;
+
+function main(){
+    $('.menu_bar').click(function(){
+        // $('nav').toggle(); 
+
+        if(contador == 1){
+            $('nav').animate({
+                left: '0'
+            });
+
+            $('#logo').animate({
+                right: '-100%'
+            });         
+
+
+            contador = 0;
+        } else {
+            contador = 1;
+            $('nav').animate({
+                left: '-100%'
+            });
+
+            $('#logo').animate({
+                right: '0%'
+            });
+       
         }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    }
-}
-// toggleClass
-function toggleClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
-    if (hasClass(elem, className)) {
-        while (newClass.indexOf(" " + className + " ") >= 0 ) {
-            newClass = newClass.replace( " " + className + " " , " " );
-        }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    } else {
-        elem.className += ' ' + className;
-    }
-}
 
-theToggle.onclick = function() {
-   toggleClass(this, 'on');
-   return false;
-}
+    });
+
+};

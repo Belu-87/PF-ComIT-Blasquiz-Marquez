@@ -1,12 +1,13 @@
 
 html { 
-    background: url("../../Imagenes/fondo.jpg");
+    background-image: url("../../Imagenes/fondo.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 	color: white;
 	font-family: "Forte Normal", "Comic Sans MS", Arial;
+    background-attachment: fixed;    
 }
 
 
@@ -130,12 +131,18 @@ a:hover::before, a:focus::before {
 	}
 
 	#logo{
-		margin: 2em auto;
+	margin: auto;
     display: block;
     position: relative;
+    width: 50%;
 	}
 
+
 /*cuando es chico*/
+    header{
+        width: 100%;
+    }
+
   header nav {
     width:80%;
     height:100%;
@@ -154,13 +161,14 @@ a:hover::before, a:focus::before {
   .menu_bar {
     display:block;
     width:100%;
-    background:#ccc;
+    background:transparent;
+    text-align: center;
   }
 
   .menu_bar .bt-menu {
     display:block;
     padding:20px;
-    background:#024959;
+    background:transparent;
     color:#fff;
     text-decoration:none;
     font-weight: bold;
@@ -178,8 +186,17 @@ a:hover::before, a:focus::before {
 	
 
 #texto{
-	margin-top: 3em;
+	margin: 3em;
 }
+
+
+#Nosotros {
+    position: absolute;
+    left: 0;
+    margin-left:2em auto;
+    display: block;
+}
+
 
 	
 }

@@ -202,8 +202,40 @@ a:hover::before, a:focus::before {
 }
 
 @media only screen and (max-width: 1599px)
-{
+{   
+  .menu_bar {
+    visibility: hidden;
+    /*display:block;*/
+    width:100%;
+    background:transparent;
+    text-align: center;
+  }
 
+    header
+    {
+        visibility: hidden;
+
+    }
+
+  .menu_bar span {
+    float:right;
+    font-size:40px;
+  }
+
+/*
+#menuPrincipal{
+    float: right;
+    margin:4em;
+}
+
+#logo {
+    background: url("../../Imagenes/logo.jpg");
+    width:200px;
+    height:150px;
+    -webkit-background-size: cover;
+    margin: 4em;
+    background-size:100% 100%; 
+*/
 
 }
 

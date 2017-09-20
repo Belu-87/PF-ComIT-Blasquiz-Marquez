@@ -98,7 +98,7 @@ a:hover::before, a:focus::before {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 700px;
+    min-height: 700px;    
 }
 
 #container1{
@@ -126,9 +126,10 @@ a:hover::before, a:focus::before {
 	font-size: 2em;
 	text-align: center;
 	color:#F22562;
-	margin-top: 30%;
-	animation-name: parrafo;
-    animation-duration: 2s;
+  display: none;	
+  margin-top: 100%;  
+  /*animation-name: parrafo;
+  animation-duration: 2s;*/
 }
 
 @keyframes parrafo {
@@ -160,9 +161,9 @@ button{
 	border-color: #F22562;
 	text-align: center;
 	color: white;
-  	font-size: 1em;  	
-  	width: 10%;
-  	outline: none;
-  	cursor:pointer; cursor: hand;	
+  font-size: 1em;  	
+  width: 5em;
+  outline: none;
+  cursor:pointer; cursor: hand;	
   }
 

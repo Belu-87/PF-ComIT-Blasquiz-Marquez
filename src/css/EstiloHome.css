@@ -167,3 +167,20 @@ button{
   cursor:pointer; cursor: hand;	
   }
 
+
+.scrollup {
+    width: 2em;
+    height: 2em;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    display: none;
+}
+
+.scrollup:hover,.scrollup:focus,.scrollup::before {
+  content: none;
+  transform-origin: none;
+  transform: none;
+}
+
+

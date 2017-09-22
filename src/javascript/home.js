@@ -8,4 +8,9 @@ $(function(){
 		$(this).find(".parrafo").show();
 		$(this).find(".parrafo").animate({"margin-top":"30%"},1500);		
 		});
+
+	$("div").mousemove(function(){		
+		$(this).find(".parrafo").show();
+		$(this).find(".parrafo").animate({"margin-top":"30%"},1500);		
+	});
 })

@@ -15,14 +15,17 @@
 }
 
 #logo {
-    background: url("../../Imagenes/logo.jpg");
+    background: url("../../Imagenes/Logo.png");
     width:200px;
     height:150px;
     -webkit-background-size: cover;
     margin: 4em;
     background-size:100% 100%; 
+    border-right-style: hidden;
+    /*border-style: none;*/
+    opacity: 0.6;
 
-}
+}   
 
 
 a:link { 

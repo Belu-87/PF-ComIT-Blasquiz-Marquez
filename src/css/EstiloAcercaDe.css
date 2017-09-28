@@ -102,7 +102,11 @@ a:hover::before, a:focus::before {
 @media only screen and (min-width: 200px)
 {
 	#logo {
-	    margin:3em;
+        width:50%;
+        margin-left: 25%;
+        margin-right: 25%;      
+        margin-bottom: 0;
+        margin-top: 0; 
 	}
 
     #menuPrincipal
@@ -169,7 +173,16 @@ a:hover::before, a:focus::before {
 
 @media only screen and (min-width: 500px)
 {
-     #menuPrincipal
+
+    #logo {
+        width:30%;
+        margin-left: 35%;
+        margin-right: 35%;      
+        margin-bottom: 0;
+        margin-top: 0; 
+    }
+
+    #menuPrincipal
     {
         display: none;        
     }
@@ -178,10 +191,9 @@ a:hover::before, a:focus::before {
         display: block;
     }
 
-    #logo {
-        margin:4em;
+    header nav {
+        position: absolute;
     }
-	
 }
 
 @media only screen and (min-width: 800px)
@@ -191,11 +203,14 @@ a:hover::before, a:focus::before {
         float: right;
     }
 
+    #logo{
+        margin: 4em;
+        width: 200px;
+    }
 
     header{
         display: none;
-    }
-	
+    }	
 }
 
 

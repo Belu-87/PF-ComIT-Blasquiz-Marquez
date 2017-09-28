@@ -99,65 +99,37 @@ a:hover::before, a:focus::before {
     transform: scale(1, 1);
 }
 
-@media only screen and (max-width: 200px)
+@media only screen and (min-width: 200px)
 {
 	#logo {
-	    width:200px;
-	    height:150px;
-	    -webkit-background-size: cover;
-	    margin:2em auto;
-	    background-size: 100% 100%;
-	    display: block;
+	    margin:3em;
 	}
 
-
-
-
-}
-
-@media only screen and (max-width: 500px)
-{
-	
-}
-
-@media only screen and (max-width: 800px)
-{
     #menuPrincipal
-	{
-		visibility: hidden;
-		width:0;
-		height: 0; 
-	}
-
-	#logo{
-	margin: auto;
-    display: block;
-    position: relative;
-    width: 50%;
-	}
-
-
-/*cuando es chico*/
-    header{
-        width: 100%;
+    {
+        display: none;        
     }
 
-  header nav {
-    width:80%;
-    height:100%;
-    left:-100%;
-    margin:0;
-    position: fixed;
-  }
+    header{
+        display: block;
+    }
 
-  header nav ul li {
-    display:block;
-    float:none;
-    border-bottom:1px solid rgba(255,255,255, .3);
-    width: 35%;
-  }
+    header nav {
+        width:80%;
+        height:100%;
+        left:-100%;
+        margin:0;
+        position: fixed;
+    }
 
-  .menu_bar {
+    header nav ul li {
+        display:block;
+        float:none;
+        border-bottom:1px solid rgba(255,255,255, .3);
+        width: 35%;
+    }
+
+    .menu_bar {
     display:block;
     width:100%;
     background:transparent;
@@ -182,68 +154,49 @@ a:hover::before, a:focus::before {
     font-size:40px;
   }
 
-	
+  #texto{
+        margin: 3em;
+  }
 
-#texto{
-	margin: 3em;
-}
-
-
-#Nosotros {
+  #Nosotros {
     position: absolute;
     left: 0;
     margin-left:2em auto;
     display: block;
+  }
+
 }
 
+@media only screen and (min-width: 500px)
+{
+     #menuPrincipal
+    {
+        display: none;        
+    }
 
+    header{
+        display: block;
+    }
+
+    #logo {
+        margin:4em;
+    }
 	
 }
 
-@media only screen and (max-width: 1599px)
-{   
-  .menu_bar {
-    visibility: hidden;
-    /*display:block;*/
-    width:100%;
-    background:transparent;
-    text-align: center;
-  }
-
-    header
-
-    {
-     /*   visibility: hidden;
-        height: 0px;*/
-
+@media only screen and (min-width: 800px)
+{
+    #menuPrincipal{
+        display: block;
+        float: right;
     }
 
-  .menu_bar span {
-    float:right;
-    font-size:40px;
-  }
 
-/*
-#menuPrincipal{
-    float: right;
-    margin:4em;
-}
-
-#logo {
-    background: url("../../Imagenes/logo.jpg");
-    width:200px;
-    height:150px;
-    -webkit-background-size: cover;
-    margin: 4em;
-    background-size:100% 100%; 
-*/
-
-}
-
-@media only screen and (min-width: 1600px)
-{
-
+    header{
+        display: none;
+    }
+	
 }
 
 
-}
+

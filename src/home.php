@@ -8,35 +8,21 @@
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	<!-- <link  rel="stylesheet" type="text/css" href="css/EstiloBase.css" /> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
-	<script src="javascript/home.js"></script>
+	<script src="javascript/home.js"></script>	
 	<link  rel="stylesheet" type="text/css" href="css/EstiloHome.css" />
 	<title>Dulzuras Artesanales</title>
-	<img class="img-circle" id="logo"> </img>
-
-
-
+	
+	<?php include("head.php");?>
 
 </head>
 
 <body>
 	<div id="container1">
-		<nav id="menuPrincipal"> 
-			<ul>
-			<li><a href="Home">Inicio</a> </li>
-			<li><a href="Login">Registrate</a></li>
-			<li><a href="Comprar"><img style="width:50px;height:50px;" src="../Imagenes/carrito.svg"></img> </a> </li>
-			<li><a href="AcercaDe">Nosotros</a> </li>
-			<li><a href="Productos">Productos</a> </li>
-			<li><a href="https://www.facebook.com/people/Belu-Blas/100011323612501" target="_blank"><img style="width:50px;height:50px;" src="https://image.flaticon.com/icons/svg/145/145802.svg"></img> </a> </li>
-			</ul>
-		</nav>
-
 		<div class="parrafo">
 			<h1>Calidad</h1>
 			<p>Nuestros productos son elaborados bajo una estricta
 			selección de la materia prima.</p>
-		</div>
-		
+		</div>		
 	</div>
 	<div id="container2">
 		<div class="parrafo">

@@ -1,33 +1,30 @@
-html { 
-    background: url("../../Imagenes/fondo.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-	color: white;
-	font-family: "Forte Normal", "Comic Sans MS", Arial;
+html,body{
+    font-family: "Forte Normal", "Comic Sans MS", Arial;    
+}
+
+body{
+    width: 100%;
+    height:10em;
+    vertical-align: middle;        
 }
 
 
+#menuPrincipal{
+float: right;
+position: absolute;
+margin: 2em;
+margin-left: 40em;
+height:10em;
+}
 
-
-
-    #menuPrincipal {
-
-    float: right;
-    margin:4em;
-
-    }
-
-
-#logo {
-    background: url("../../Imagenes/Logo.png");
-    width:200px;
-    height:150px;
-    -webkit-background-size: cover;
-    margin: 4em;
-    background-size:100% 100%; 
-    border: none;
+#logo{
+float: left;
+position: absolute;
+margin: 2em;
+width:200px;
+height:150px;
+-webkit-background-size: cover;  
+background-size:100% 100%;    
 }
 
 
@@ -47,6 +44,10 @@ a:hover {
 
 ol, ul {
    list-style: none;
+   height:10em;
+   vertical-align: middle;
+   margin-bottom: 2em;
+   margin-top: 2em;
 }
 li {
     display: inline-block;
@@ -70,7 +71,6 @@ a:hover {
 
 
 a {
-    /*font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;*/
     text-decoration: none;
     transition: color 0.1s, background-color 0.1s;
 }
@@ -106,4 +106,9 @@ a:active::before {
 a:hover::before, a:focus::before {
     transform-origin: left top;
     transform: scale(1, 1);
+}
+
+.icono{
+width: 50px;
+height: 50px;   
 }

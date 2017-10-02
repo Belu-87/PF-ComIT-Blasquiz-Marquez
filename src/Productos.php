@@ -8,32 +8,21 @@
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	
 	
-	    <script data-require="jquery@*" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script data-require="jquery@*" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link data-require="bootstrap@*" data-semver="4.0.5" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     <script data-require="bootstrap@*" data-semver="4.0.5" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
 	
 	<title>Productos</title>
-	<img class="img-circle" id="logo" src="../Imagenes/Logo.png"> </img>
-
-<nav id="menuPrincipal"> 
-	<ul>
-	<li><a href="Home">Inicio</a> </li>
-	<li><a href="Login">Registrate</a></li>
-	<li><a href="Comprar"><img style="width:50px;height:50px;" src="../Imagenes/carrito.svg"></img> </a> </li>
-	<li><a href="AcercaDe">Nosotros</a> </li>
-	<li><a href="Productos">Productos</a> </li>
-	<li><a href="https://www.facebook.com/people/Belu-Blas/100011323612501" target="_blank"><img style="width:50px;height:50px;" src="https://image.flaticon.com/icons/svg/145/145802.svg"></img> </a> </li>
-	</ul>
-</nav>
-
+	
+    <?php include("head.php");?>
 
 </head>
-
-<body>
 	
-	<div class="jumbotron text-center">
-	  <h1>Productos</h1>
-	</div>
+<body>
+  <br><br><br><br><br><br><br><br>
+  <div class="jumbotron text-center">
+  	<h1>Productos</h1>
+  </div>
   
   <div class="row">
     <div class="col-sm-4 text-center">

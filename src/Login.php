@@ -6,19 +6,8 @@
 	<meta charset="UTF-8">
 	<link  rel="stylesheet" type="text/css" href="css/EstiloLogin.css" />
 	<title>Ingresar</title>
-	<img class="img-circle" id="logo" src="../Imagenes/Logo.png"> </img>
-
-<nav id="menuPrincipal"> 
-	<ul>
-	<li><a href="Home">Inicio</a> </li>
-	<li><a href="Login">Registrate</a></li>
-	<li><a href="Comprar"><img style="width:50px;height:50px;" src="../Imagenes/carrito.svg"></img> </a> </li>
-	<li><a href="AcercaDe">Nosotros</a> </li>
-	<li><a href="Productos">Productos</a> </li>
-	<li><a href="https://www.facebook.com/people/Belu-Blas/100011323612501" target="_blank"><img style="width:50px;height:50px;" src="https://image.flaticon.com/icons/svg/145/145802.svg"></img> </a> </li>
-	</ul>
-</nav>
-
+	
+	<?php include("head.php");?>
 
 </head>
 

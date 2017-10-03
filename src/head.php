@@ -25,6 +25,8 @@
 			</li>
 		</ul>
 	</nav>	
+
+	<div class="separador"></div>
 </head>
 
 </html>

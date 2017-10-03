@@ -59,11 +59,11 @@ input{
 	border-color: #F22562;
 	text-align: center;
 	color: white;
-  	transition-property: background;
-  	transition-duration: 1s;
-  	transition-timing-function: linear;
-  	font-size: 1em;
-  	width: 40%;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  font-size: 1em;
+  width: 40%;
 }
 
 input:focus ,input:hover{

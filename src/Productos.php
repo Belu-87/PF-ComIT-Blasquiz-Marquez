@@ -19,7 +19,6 @@
 </head>
 	
 <body>
-  <br><br><br><br><br><br><br><br>
   <div class="jumbotron text-center">
   	<h1>Productos</h1>
   </div>

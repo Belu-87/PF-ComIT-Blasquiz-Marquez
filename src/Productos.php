@@ -13,12 +13,11 @@
     <script data-require="bootstrap@*" data-semver="4.0.5" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
 	
 	<title>Productos</title>
-	
-    <?php include("head.php");?>
 
 </head>
 	
 <body>
+   <?php include("head.php");?>
   <div class="jumbotron text-center">
   	<h1>Productos</h1>
   </div>

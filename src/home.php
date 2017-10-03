@@ -11,12 +11,12 @@
 	<script src="javascript/home.js"></script>	
 	<link  rel="stylesheet" type="text/css" href="css/EstiloHome.css" />
 	<title>Dulzuras Artesanales</title>
-	
-	<?php include("head.php");?>
 
 </head>
 
 <body>
+	<?php include("head.php");?>
+	
 	<div id="container1">
 		<div class="parrafo">
 			<h1>Calidad</h1>

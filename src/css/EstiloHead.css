@@ -29,52 +29,47 @@ background-size:100% 100%;
 
 
 
-a:link { 
+.a-ref:link { 
     color: #b1efdb;
 }
-a:visited  {
+.a-ref:visited  {
 	color: #64db70;
 }
-a:hover {
+.a-ref:hover {
     color: #dba164;
 }
 
 
-
-
-ol, ul {
+.lista {
    list-style: none;
    height:10em;
    vertical-align: middle;
    margin-bottom: 2em;
    margin-top: 2em;
 }
-li {
+.lista-item {
     display: inline-block;
     padding: 20px 0 20px;
     vertical-align: middle;
 }
-a:hover, a:focus, a:active {
+.a-ref:hover, .a-ref:focus, .a-ref:active {
     color: #999;
     text-decoration: none;
 }
 
-a:link { 
+.a-ref:link { 
     color: #b1efdb;
 }
-a:visited  {
+.a-ref:visited  {
 	color: #64db70;
 }
-a:hover {
+.a-ref:hover {
     color: #dba164;
 }
 
 
-a {
+.a-ref {
     text-decoration: none;
-    transition: color 0.1s, background-color 0.1s;
-}
-a {
     position: relative;
     display: block;
     padding: 16px 0;
@@ -87,7 +82,7 @@ a {
     transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
     color: #000;
 }
-a::before {
+.a-ref::before {
     content: '';
     display: block;
     position: absolute;
@@ -100,15 +95,16 @@ a::before {
     transform: scale(0, 1);
     transition: color 0.1s,transform 0.2s ease-out;
 }
-a:active::before {
+.a-ref:active::before {
     background-color: #000;
 }
-a:hover::before, a:focus::before {
+.a-ref:hover::before, .a-ref:focus::before {
     transform-origin: left top;
     transform: scale(1, 1);
 }
 
 .icono{
 width: 50px;
-height: 50px;   
+height: 50px;
+vertical-align: middle;   
 }

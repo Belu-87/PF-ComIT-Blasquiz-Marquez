@@ -54,7 +54,7 @@
 			<button>Enviar</button>
 		</form>
 
-		<a href="#" class="scrollup"><img src="https://image.flaticon.com/icons/svg/25/25282.svg" style="width: 3em;height: 3em;"></img></a>
+		<a href="#" class="scrollup"><img class="scrollup" src="https://image.flaticon.com/icons/svg/25/25282.svg"></img></a>
 
 		</div>
 	</div>

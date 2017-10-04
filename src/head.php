@@ -17,4 +17,51 @@
 			</li>
 		</ul>
 	</nav>	
+
+
+
+
+	<div id="menu-responsive">
+	 	<div class="menu_bar">
+		        <a href="#" class="bt-menu">
+		          <span class="icon-list2"></span>
+				Menu</a>
+		</div>
+		<nav class="nav-responsive">
+	        <ul class="ul-responsive">
+	         	<li class="li-responsive">
+		            <a class="a-responsive" href="Home">
+		              <span class="icon-house"></span>
+						Inicio
+					</a>
+	          	</li>
+	          	<li class="li-responsive">
+		            <a class="a-responsive" href="Login">
+		              <span class="icon-suitcase"></span>
+						Registrate
+					</a>
+	          	</li>
+	          	<li class="li-responsive">
+					<a class="a-responsive" href="Comprar"><img class="icono" src="../Imagenes/carrito.svg"></img> </a> 
+	          	</li>
+	          	<li class="li-responsive">
+		            <a class="a-responsive" href="AcercaDe">
+		              <span class="icon-earth"></span>
+						Nosotros
+					</a>
+	          	</li>
+	        	<li class="li-responsive">
+		            <a class="a-responsive" href="Productos">
+		              <span class="icon-mail"></span>
+						Productos
+					</a>
+				</li>
+				<li class="li-responsive">
+					<a class="a-responsive" href="https://www.facebook.com/people/Belu-Blas/100011323612501" target="_blank"><img class="icono" src="../Imagenes/face.svg"></img> </a> 
+				</li>	
+	        </ul>
+		</nav>	
+	</div>
+
+
 </header>

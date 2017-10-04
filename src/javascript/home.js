@@ -1,5 +1,7 @@
 $(function(){
 
+    $("header").css({position:"absolute"});
+
 	$(".parrafo").each(function(){
 		$(this).hide();
 	});

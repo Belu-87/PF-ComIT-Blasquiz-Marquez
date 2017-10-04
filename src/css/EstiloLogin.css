@@ -20,7 +20,7 @@ input {
         vertical-align: bottom;
         position: relative;
         top: -1px;
-        *overflow: hidden;
+        overflow: hidden;
 
         background-color: transparent; 
         width:200px;
@@ -74,7 +74,7 @@ button.Ingresar.active {
   transition: 0.4s cubic-bezier(0.35, -0.77, 0.67, 1.88);
 }
 button.Ingresar .loader {
-  position: absolute;
+  position: relative;
   width: calc(0% - 4px);
   height: calc(100% - 4px);
   background-color: #fff;

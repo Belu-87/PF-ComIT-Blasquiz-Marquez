@@ -17,6 +17,4 @@
 			</li>
 		</ul>
 	</nav>	
-
-	<div class="separador"></div>
 </header>

@@ -6,7 +6,7 @@ $(function(){
 		$(this).hide();
 	});
 
-	$("div").mouseenter(function(){		
+	$("div").hover(function(){		
 		$(this).find(".parrafo").show();
 		$(this).find(".parrafo").animate({"margin-top":"30%"},1500);		
 		});
@@ -14,7 +14,7 @@ $(function(){
 
 
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
+        if ($(this).scrollTop() >100) {
             $('.scrollup').fadeIn();
         } else {
             $('.scrollup').fadeOut();

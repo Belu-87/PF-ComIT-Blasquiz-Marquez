@@ -5,7 +5,7 @@
     -o-background-size: cover;
     background-size: cover;
 	color: white !important;
-	font-family: "Forte Normal", "Comic Sans MS", Arial;
+	font-family: "Forte Normal", "Comic Sans MS", Arial;      
   }
   
   
@@ -23,6 +23,10 @@ img{
 p{
 	max-width:20em;
 	margin:0 auto !important;
+}
+
+.row{
+  margin: 0 !important;
 }
 
 

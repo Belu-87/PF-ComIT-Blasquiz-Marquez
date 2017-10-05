@@ -19,8 +19,8 @@
 		<label> Apellido: </label>
 		<input id="Apellido"></input>
 		<br><br>
-	<!-- fecha de nacimiento para promociones cumpleaños??
-	 -->
+		<!-- fecha de nacimiento para promociones cumpleaños??
+		 -->
 		<label> Email: </label>
 		<input id="mail"></input>
 		<br><br>
@@ -37,6 +37,7 @@
 		  <div class="done">SUCCESS</div>
 		</button>
 	</form>
+
 </body>
 
 

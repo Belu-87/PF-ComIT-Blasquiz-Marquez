@@ -113,3 +113,8 @@ button.Ingresar.finished {
   -webkit-transition: 0.4s cubic-bezier(0.35, -0.77, 0.67, 1.88);
   transition: 0.4s cubic-bezier(0.35, -0.77, 0.67, 1.88);
 }
+form{
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+}

@@ -2,6 +2,8 @@ $(function(){
 
     $("header").css({position:"absolute"});
 
+    $("#menuPrincipal").css({"grid-column":"10/10"});
+
 	$(".parrafo").each(function(){
 		$(this).hide();
 	});

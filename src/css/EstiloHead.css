@@ -276,20 +276,16 @@ vertical-align: middle;
 
 @media only screen and (min-width: 1200px)
 {
-    header{
+    /*header{
         margin-bottom: 3em;
         vertical-align: middle;  
         height: 10em;
         display: grid;
         position: relative;    
         width: 80%;
-    }
+    }*/
 
     .lista {
-       list-style: none;
-       vertical-align: middle;
-       margin-bottom: 5%;
-       margin-top: 5%;
        margin-left: 5%;
     }
 

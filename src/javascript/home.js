@@ -10,8 +10,15 @@ $(function(){
 
 	$("div").hover(function(){		
 		$(this).find(".parrafo").show();
-		$(this).find(".parrafo").animate({"margin-top":"30%"},1500);		
-		});
+
+        if(window.screen.width<600) {
+            $(this).find(".parrafo").animate({"margin-top":"80%"},1500);    
+        }
+        else
+        {
+            $(this).find(".parrafo").animate({"margin-top":"30%"},1500);                
+        }	
+    });
 
 
 

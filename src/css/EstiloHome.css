@@ -102,3 +102,31 @@ button{
 }
 
 
+
+@media only screen and (min-width: 200px)
+{
+  .parrafo{
+  font-size: 1em;
+  }
+
+}
+
+@media only screen and (min-width: 500px)
+{
+
+}
+
+@media only screen and (min-width: 800px)
+{
+  .parrafo{
+  font-size: 2em;
+  }
+
+
+}
+
+
+@media only screen and (min-width: 1000px)
+{
+
+}

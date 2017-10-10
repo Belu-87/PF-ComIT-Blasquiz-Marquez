@@ -276,25 +276,7 @@ vertical-align: middle;
 
 @media only screen and (min-width: 1200px)
 {
-    /*header{
-        margin-bottom: 3em;
-        vertical-align: middle;  
-        height: 10em;
-        display: grid;
-        position: relative;    
-        width: 80%;
-    }*/
-
-    .lista {
-       margin-left: 5%;
-    }
-
-    #menuPrincipal{
-        position: relative;
-        margin: 2em;        
-        grid-column: 7/7;
-        grid-row: 1;
-        margin-left: 25%;
-    }
-
+  #menuPrincipal{
+    margin-left: 55%;
+  }
 }

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dulzuras_artesanales
 -- ------------------------------------------------------
--- Server version	5.7.11
+-- Server version	5.7.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -126,6 +126,59 @@ INSERT INTO `forma_de_pago` VALUES (1,'Efectivo');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `item_detalle`
+--
+
+DROP TABLE IF EXISTS `item_detalle`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `item_detalle` (
+  `id` int(11) NOT NULL,
+  `item_pedido` int(11) DEFAULT NULL,
+  `producto_detalle` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_itemDetalle_ItemPedido_idx` (`item_pedido`),
+  KEY `FK_itemDetalle_ProductoDetalle_idx` (`producto_detalle`),
+  CONSTRAINT `FK_itemDetalle_ItemPedido` FOREIGN KEY (`item_pedido`) REFERENCES `item_pedido` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_itemDetalle_ProductoDetalle` FOREIGN KEY (`producto_detalle`) REFERENCES `producto_detalle` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `item_detalle`
+--
+
+LOCK TABLES `item_detalle` WRITE;
+/*!40000 ALTER TABLE `item_detalle` DISABLE KEYS */;
+/*!40000 ALTER TABLE `item_detalle` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `item_pedido`
+--
+
+DROP TABLE IF EXISTS `item_pedido`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `item_pedido` (
+  `id` int(11) NOT NULL,
+  `idPedidoProducto` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_PedidoProductoDetalle_PedidoProducto_idx` (`idPedidoProducto`),
+  CONSTRAINT `FK_PedidoProductoDetalle_Producto` FOREIGN KEY (`idPedidoProducto`) REFERENCES `producto` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `item_pedido`
+--
+
+LOCK TABLES `item_pedido` WRITE;
+/*!40000 ALTER TABLE `item_pedido` DISABLE KEYS */;
+/*!40000 ALTER TABLE `item_pedido` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pedido`
 --
 
@@ -169,15 +222,15 @@ DROP TABLE IF EXISTS `pedido_detalle`;
 CREATE TABLE `pedido_detalle` (
   `id` int(11) NOT NULL,
   `idPedido` int(11) DEFAULT NULL,
-  `idProductoPedido` int(11) DEFAULT NULL,
+  `idItemPedido` int(11) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
   `precioUnitario` decimal(8,2) DEFAULT NULL,
   `precioTotal` decimal(8,2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_PedidoDetalle_Pedido_idx` (`idPedido`),
-  KEY `FK_PedidoDetalle_ProductoPedido_idx` (`idProductoPedido`),
-  CONSTRAINT `FK_PedidoDetalle_Pedido` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_PedidoDetalle_ProductoPedido` FOREIGN KEY (`idProductoPedido`) REFERENCES `producto_pedido` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `FK_PedidoDetalle_ItemPedido_idx` (`idItemPedido`),
+  CONSTRAINT `FK_PedidoDetalle_ItemPedido` FOREIGN KEY (`idItemPedido`) REFERENCES `item_pedido` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_PedidoDetalle_Pedido` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -191,34 +244,6 @@ LOCK TABLES `pedido_detalle` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `pedido_producto_detalle`
---
-
-DROP TABLE IF EXISTS `pedido_producto_detalle`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pedido_producto_detalle` (
-  `id` int(11) NOT NULL,
-  `idPedidoProducto` int(11) DEFAULT NULL,
-  `idProductoDetalle` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_PedidoProductoDetalle_PedidoProducto_idx` (`idPedidoProducto`),
-  KEY `FK_PedidoProductoDetalle_ProductoDetalle_idx` (`idProductoDetalle`),
-  CONSTRAINT `FK_PedidoProductoDetalle_PedidoProducto` FOREIGN KEY (`idPedidoProducto`) REFERENCES `producto_pedido` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_PedidoProductoDetalle_ProductoDetalle` FOREIGN KEY (`idProductoDetalle`) REFERENCES `producto_detalle` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pedido_producto_detalle`
---
-
-LOCK TABLES `pedido_producto_detalle` WRITE;
-/*!40000 ALTER TABLE `pedido_producto_detalle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pedido_producto_detalle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `producto`
 --
 
@@ -229,6 +254,7 @@ CREATE TABLE `producto` (
   `id` int(11) NOT NULL,
   `descripcion` varchar(85) DEFAULT NULL,
   `imageLink` varchar(180) DEFAULT NULL,
+  `estado` bit(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='															';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -239,7 +265,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES (1,'Alfajores',NULL),(2,'Cubanitos',NULL),(3,'Muffins',NULL),(4,'Chocotorta',NULL),(5,'Tarta de coco',NULL);
+INSERT INTO `producto` VALUES (1,'Alfajores',NULL,NULL),(2,'Cubanitos',NULL,NULL),(3,'Muffins',NULL,NULL),(4,'Chocotorta',NULL,NULL),(5,'Tarta de coco',NULL,NULL);
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,6 +279,7 @@ DROP TABLE IF EXISTS `producto_detalle`;
 CREATE TABLE `producto_detalle` (
   `id` int(11) NOT NULL,
   `descripcion` varchar(85) DEFAULT NULL,
+  `estado` bit(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='		';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -263,33 +290,8 @@ CREATE TABLE `producto_detalle` (
 
 LOCK TABLES `producto_detalle` WRITE;
 /*!40000 ALTER TABLE `producto_detalle` DISABLE KEYS */;
-INSERT INTO `producto_detalle` VALUES (1,'Dulce de Leche'),(2,'Color Rojo'),(3,'Color Rosa'),(4,'Color Verde'),(5,'Nueces'),(6,'Almendras'),(7,'Coco'),(8,'Chips Chocolate Negro'),(9,'Chips Chocolate Blanco'),(10,'Marroc'),(11,'Nugget'),(12,'Baño Chocolate Negro'),(13,'Frutos Del Bosque'),(14,'Baño Chocolate Blanco');
+INSERT INTO `producto_detalle` VALUES (1,'Dulce de Leche',NULL),(2,'Color Rojo',NULL),(3,'Color Rosa',NULL),(4,'Color Verde',NULL),(5,'Nueces',NULL),(6,'Almendras',NULL),(7,'Coco',NULL),(8,'Chips Chocolate Negro',NULL),(9,'Chips Chocolate Blanco',NULL),(10,'Marroc',NULL),(11,'Nugget',NULL),(12,'Baño Chocolate Negro',NULL),(13,'Frutos Del Bosque',NULL),(14,'Baño Chocolate Blanco',NULL);
 /*!40000 ALTER TABLE `producto_detalle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `producto_pedido`
---
-
-DROP TABLE IF EXISTS `producto_pedido`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `producto_pedido` (
-  `id` int(11) NOT NULL,
-  `idProducto` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_ProductoPedido_Producto_idx` (`idProducto`),
-  CONSTRAINT `FK_ProductoPedido_Producto` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `producto_pedido`
---
-
-LOCK TABLES `producto_pedido` WRITE;
-/*!40000 ALTER TABLE `producto_pedido` DISABLE KEYS */;
-/*!40000 ALTER TABLE `producto_pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -362,4 +364,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-02 14:41:00
+-- Dump completed on 2017-10-12 20:33:35

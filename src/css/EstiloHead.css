@@ -235,7 +235,7 @@ vertical-align: middle;
 
     .lista
     {
-        margin-left: 2%;
+        margin-left: 25%;
     }
 
 
@@ -245,7 +245,7 @@ vertical-align: middle;
         position: absolute;
         z-index: 100;
         width: 100%;
-        margin-left: 25%;
+        margin-left: 2%;
     }
 
     #logo{
@@ -264,19 +264,19 @@ vertical-align: middle;
 {
     .lista
     {
-        margin-left: 5%;
+        margin-left: 25%;
+        float: right;
     }
 
     #menuPrincipal{
-        margin-left: 40%;
-        left: 0% !important;
+
+        margin-left: 20%;
     }
+
+  
 }
 
 
 @media only screen and (min-width: 1200px)
 {
-  #menuPrincipal{
-    margin-left: 55%;
-  }
 }

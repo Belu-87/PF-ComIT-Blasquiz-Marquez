@@ -159,7 +159,7 @@ vertical-align: middle;
         height:100%;
         left:-100%;
         margin:0;
-        position: fixed;
+        position: absolute;
     }
 
     .li-responsive {

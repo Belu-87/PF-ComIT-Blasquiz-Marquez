@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dulzuras_artesanales
 -- ------------------------------------------------------
--- Server version	5.7.14
+-- Server version	5.7.11
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -179,6 +179,34 @@ LOCK TABLES `item_pedido` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `participante`
+--
+
+DROP TABLE IF EXISTS `participante`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `participante` (
+  `id` int(11) NOT NULL,
+  `idUsuario` int(11) DEFAULT NULL,
+  `idSorteo` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_participante_usuario_idx` (`idUsuario`),
+  KEY `FK_participante_sorteo_idx` (`idSorteo`),
+  CONSTRAINT `FK_participante_sorteo` FOREIGN KEY (`idSorteo`) REFERENCES `sorteo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_participante_usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `participante`
+--
+
+LOCK TABLES `participante` WRITE;
+/*!40000 ALTER TABLE `participante` DISABLE KEYS */;
+/*!40000 ALTER TABLE `participante` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pedido`
 --
 
@@ -295,6 +323,60 @@ INSERT INTO `producto_detalle` VALUES (1,'Dulce de Leche',NULL),(2,'Color Rojo',
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sorteo`
+--
+
+DROP TABLE IF EXISTS `sorteo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sorteo` (
+  `id` int(11) NOT NULL,
+  `numero` int(11) DEFAULT NULL,
+  `idPedido` int(11) DEFAULT NULL,
+  `fechaInicio` datetime DEFAULT NULL,
+  `fechaFin` datetime DEFAULT NULL,
+  `fechaSorteo` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_sorteo_pedido_idx` (`idPedido`),
+  CONSTRAINT `FK_sorteo_pedido` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='	';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sorteo`
+--
+
+LOCK TABLES `sorteo` WRITE;
+/*!40000 ALTER TABLE `sorteo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sorteo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sorteo_ganador`
+--
+
+DROP TABLE IF EXISTS `sorteo_ganador`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sorteo_ganador` (
+  `id` int(11) NOT NULL,
+  `idParticipante` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_ganador_participante_idx` (`idParticipante`),
+  CONSTRAINT `FK_ganador_participante` FOREIGN KEY (`idParticipante`) REFERENCES `participante` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sorteo_ganador`
+--
+
+LOCK TABLES `sorteo_ganador` WRITE;
+/*!40000 ALTER TABLE `sorteo_ganador` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sorteo_ganador` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tracking_pedido`
 --
 
@@ -364,4 +446,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-12 20:33:35
+-- Dump completed on 2017-10-13 10:57:35

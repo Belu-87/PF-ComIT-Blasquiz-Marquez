@@ -7,7 +7,7 @@
 		<ul class="lista">
 			<li class="lista-item"><a class="a-ref" href="Home">Inicio</a> 
 			</li>
-			<li class="lista-item"><a class="a-ref" href="Login">Registrate</a></li>
+			<li class="lista-item"><a class="a-ref" href="LoginIngresar">Registrate/Ingresar</a></li>
 			<li class="lista-item"><a class="a-ref" href="Comprar"><img class="icono" src="../Imagenes/carrito.svg"></img></a>
 			</li>
 			<li class="lista-item"><a class="a-ref" href="AcercaDe">Nosotros</a> </li>
@@ -36,9 +36,9 @@
 					</a>
 	          	</li>
 	          	<li class="li-responsive lista-item">
-		            <a class="a-responsive a-ref" href="Login">
+		            <a class="a-responsive a-ref" href="LoginIngresar">
 		              <span class="icon-suitcase"></span>
-						Registrate
+						Registrate/Ingresar
 					</a>
 	          	</li>
 	          	<li class="li-responsive lista-item">

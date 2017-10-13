@@ -1,5 +1,5 @@
 
-html { 
+body { 
     background: url("../../Imagenes/fondo.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -10,11 +10,6 @@ html {
     margin: 0 auto;
 }
 
-body{
-  margin: 0 auto;
-  color: white;
-  font-family: "Forte Normal", "Comic Sans MS", Arial;
-}
 
 
 

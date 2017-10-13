@@ -46,8 +46,13 @@ body{
 	font-size: 2em;
 	text-align: center;
 	color:#F22562;
-  display: none;	
+  display: none;	 
   margin-top: 100%;  
+}
+
+h1{
+  font-size: 3em;
+  text-align: center;
 }
 
 @keyframes parrafo {

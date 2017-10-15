@@ -11,7 +11,7 @@
 			<li class="lista-item"><a class="a-ref" href="Comprar"><img class="icono" src="../Imagenes/carrito.svg"></img></a>
 			</li>
 			<li class="lista-item"><a class="a-ref" href="AcercaDe">Nosotros</a> </li>
-			<li class="lista-item"><a class="a-ref" href="Productos">Productos</a> 
+			<li class="lista-item"><a class="a-ref" href="catalogo">Productos</a> 
 			</li>
 			<li class="lista-item"><a class="a-ref" href="https://www.facebook.com/people/Belu-Blas/100011323612501" target="_blank"><img class="icono" src="../Imagenes/face.svg"></img> </a> 
 			</li>
@@ -51,7 +51,7 @@
 					</a>
 	          	</li>
 	        	<li class="li-responsive lista-item">
-		            <a class="a-responsive a-ref" href="Productos">
+		            <a class="a-responsive a-ref" href="catalogo">
 		              <span class="icon-mail"></span>
 						Productos
 					</a>

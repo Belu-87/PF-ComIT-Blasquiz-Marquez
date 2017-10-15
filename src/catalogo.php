@@ -11,7 +11,7 @@
 
 </head>
 <body>
-
+   <?php include("head.php");?>
 
 <div id="canvas">
 	<div id="book-zoom">

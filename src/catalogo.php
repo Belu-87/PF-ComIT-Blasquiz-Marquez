@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="turnjs4/extras/modernizr.2.5.3.min.js"></script>
 	<script type="text/javascript" src="turnjs4/lib/hash.js"></script>
 
-	<title>prueba</title>
+	<title>Productos</title>
 
 </head>
 <body>

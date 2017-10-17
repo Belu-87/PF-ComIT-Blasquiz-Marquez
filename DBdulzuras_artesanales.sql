@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dulzuras_artesanales
 -- ------------------------------------------------------
--- Server version	5.7.11
+-- Server version	5.7.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -361,6 +361,7 @@ DROP TABLE IF EXISTS `sorteo_ganador`;
 CREATE TABLE `sorteo_ganador` (
   `id` int(11) NOT NULL,
   `idParticipante` int(11) DEFAULT NULL,
+  `puesto` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_ganador_participante_idx` (`idParticipante`),
   CONSTRAINT `FK_ganador_participante` FOREIGN KEY (`idParticipante`) REFERENCES `participante` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -446,4 +447,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-13 10:57:35
+-- Dump completed on 2017-10-17 18:40:20

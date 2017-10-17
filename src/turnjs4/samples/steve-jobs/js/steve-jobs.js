@@ -142,6 +142,7 @@ function zoomThis(pic) {
 		
 			$('#book-zoom').transform(
 				'translate('+translate.left+'px, '+translate.top+'px)' +
+				//'scale('+zoomFactor+', '+zoomFactor+')');
 				'scale('+zoomFactor+', '+zoomFactor+')');
 
 			if (transitionEnd)

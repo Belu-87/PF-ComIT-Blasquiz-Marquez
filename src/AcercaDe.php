@@ -23,31 +23,15 @@
 
 	<div  id="Nosotros">
 		<div id="texto">
-			<p> Somos una empresa familiar en constante crecimiento. Todos los productos son realizados de forma artesanal con ingredientes frescos previamente seleccionados.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>									
+			<p class="aparece">Somos una empresa familiar en constante crecimiento. Todos los productos son realizados de forma artesanal con ingredientes frescos previamente seleccionados.</p>
+			<p class="aparece">Es un proyecto en el que buscamos poder acercar nuestras delicias a tu mesa, luego de haber sido bien recibidas en el entorno familiar.
+			</p>
+			<p class="aparece">Día a día seguimos sumando productos y ajustando nuestras recetas para que tengas la posibilidad de darte un gustito. Por eso queremos tenerte cerca, siempre escuchando tu opinión. 
+			</p>
+			<p class="aparece">Para que todos tengan la posbilidad de conocernos sin compromiso de compra, es que hacemos sorteos con frecuencia y de esa manera, sumen dulzura a sus mesas.
+			</p>			
+			<p class="aparece">¡¡¡Gracias por elegirnos!!!
+			</p>									
 		</div>
 
 	<!-- 	<div id="memoria">

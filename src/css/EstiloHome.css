@@ -30,7 +30,7 @@ body{
 }
 
 #container3{
-    background-image: url("../../Imagenes/containerMuffins.jpg");
+    background-image: url("../../Imagenes/containerTartaDeCoco.jpg");
 }
 
 #container4{
@@ -47,7 +47,8 @@ body{
 	text-align: center;
 	color:#F22562;
   display: none;	 
-  margin-top: 100%;  
+  margin-top: 30%;  
+  opacity: 0;
 }
 
 h1{
@@ -56,8 +57,14 @@ h1{
 }
 
 @keyframes parrafo {
-    from {margin-top: 100%}
-    to {margin-top: 30%}
+    from 
+    {
+      margin-top: 30%;      
+    }
+    to 
+    {
+      margin-top: 33%;      
+    }
 }
 
 input{

@@ -19,16 +19,18 @@ $(function(){
 	$("div").hover(function(){		
 		$(this).find(".parrafo").show();
 
-        if(window.screen.width<600) {      
+        if(window.screen.width<600)
+        {      
             if(contador!=0)
             {
-            $(this).find(".parrafo").animate({"margin-top":"80%"},1500);                        
+               $(this).find(".parrafo").fadeIn(1500);
+               $(this).find(".parrafo").animate({"margin-top":"80%"},1500);                        
             }          
-            
         }
         else
         {
-            $(this).find(".parrafo").animate({"margin-top":"30%"},1500);                
+            $(this).find(".parrafo").fadeIn(1500);
+            $(this).find(".parrafo").animate({"margin-top":"33%","opacity":"1"},1500);                
         }	
     });
 

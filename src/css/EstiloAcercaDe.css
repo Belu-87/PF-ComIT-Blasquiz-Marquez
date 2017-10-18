@@ -70,7 +70,8 @@
 @media only screen and (min-width: 200px)
 {
   #Nosotros {
-    margin:2em;   
+    margin:2em;  
+    margin-top: 4em; 
   }
 }
 

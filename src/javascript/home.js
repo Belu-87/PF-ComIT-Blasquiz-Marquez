@@ -24,7 +24,7 @@ $(function(){
             if(contador!=0)
             {
                $(this).find(".parrafo").fadeIn(1500);
-               $(this).find(".parrafo").animate({"margin-top":"80%"},1500);                        
+               $(this).find(".parrafo").animate({"margin-top":"80%","opacity":"1"},1500);                        
             }          
         }
         else

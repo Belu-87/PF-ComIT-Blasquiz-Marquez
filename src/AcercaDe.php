@@ -28,7 +28,7 @@
 			</p>
 			<p class="aparece">Día a día seguimos sumando productos y ajustando nuestras recetas para que tengas la posibilidad de darte un gustito. Por eso queremos tenerte cerca, siempre escuchando tu opinión. 
 			</p>
-			<p class="aparece">Para que todos tengan la posbilidad de conocernos sin compromiso de compra, es que hacemos sorteos con frecuencia y de esa manera, sumen dulzura a sus mesas.
+			<p class="aparece">Para que todos tengan la posibilidad de conocernos sin compromiso de compra, es que hacemos sorteos con frecuencia y de esa manera, sumar dulzura a tu mesa.
 			</p>			
 			<p class="aparece">¡¡¡Gracias por elegirnos!!!
 			</p>									

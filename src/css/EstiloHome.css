@@ -45,7 +45,7 @@ body{
 .parrafo{
 	font-size: 2em;
 	text-align: center;
-	color:#F22562;
+	color:white;
   display: none;	 
   margin-top: 30%;  
   opacity: 0;
@@ -70,7 +70,7 @@ h1{
 input{
 	border-radius: 1em;
 	background-color: transparent;
-	border-color: #F22562;
+	border-color: white;
 	text-align: center;
 	color: white;
   transition-property: background;
@@ -80,21 +80,24 @@ input{
   width: 40%;
 }
 
-input:focus ,input:hover{
+input:focus ,input:hover,button:hover{
   background: #f293c1;
   outline: none;
 }
 
 button{
 	border-radius: 1em;
-	background-color: #f293c1;
-	border-color: #F22562;
+	background-color: transparent;/*#f293c1;*/
+	border-color: white;/*#F22562;*/
 	text-align: center;
 	color: white;
   font-size: 1em;  	
   width: 5em;
   outline: none;
   cursor:pointer; cursor: hand;	
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
   }
 
 

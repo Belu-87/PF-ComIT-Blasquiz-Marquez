@@ -155,6 +155,8 @@ ul{
 	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
 	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
 	box-shadow:0 0 20px rgba(0,0,0,0.2);
+	/*background-image:url(../pics/gradient-page-left.jpg);*/
+	background-color: red;
 }
 
 .zoom-pic{

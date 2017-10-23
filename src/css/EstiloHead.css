@@ -38,14 +38,12 @@ vertical-align: middle;
 
 
 .a-ref:link { 
-    color: #b1efdb;
+    color: #d43240;
 }
 .a-ref:visited  {
 	color: #64db70;
 }
-.a-ref:hover {
-    color: #dba164;
-}
+
 
 
 .lista {
@@ -61,19 +59,11 @@ vertical-align: middle;
     vertical-align: middle;
 }
 .a-ref:hover, .a-ref:focus, .a-ref:active {
-    color: #999;
+    color: #e2515e;
     text-decoration: none;
+    outline: none;
 }
 
-.a-ref:link { 
-    color: #b1efdb;
-}
-.a-ref:visited  {
-	color: #64db70;
-}
-.a-ref:hover {
-    color: #dba164;
-}
 
  
 .a-ref {

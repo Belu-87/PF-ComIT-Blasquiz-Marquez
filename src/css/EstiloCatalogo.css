@@ -1,0 +1,13 @@
+  body{  
+    background: url("../../Imagenes/fondo.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment:fixed;
+    color:white;
+    font-family: "Forte Normal", "Comic Sans MS", Arial;
+  }
+  
+  
+

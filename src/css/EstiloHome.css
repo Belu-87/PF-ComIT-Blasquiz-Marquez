@@ -1,13 +1,12 @@
-html,body{
+body{
 	margin: 0 auto;
-	color: white;
 	font-family: "Forte Normal", "Comic Sans MS", Arial;
+	background-color: #00ffff;
   width: 100%;
+  display: grid;
 }
 
-body{
-	display: grid;
-}
+
 
 
 

@@ -8,9 +8,9 @@ $('.nav-responsive').animate({left: '-100%'});
 
 $(function(){
 
-    $("header").css({position:"absolute"});
+    /*$("header").css({position:"absolute"});*/
 
-    $("#menuPrincipal").css({"grid-column":"10/10"});
+    /*$("#menuPrincipal").css({"grid-column":"10/10"});*/
 
 	$(".parrafo").each(function(){
 		$(this).hide();
@@ -54,7 +54,7 @@ $(function(){
 
 
     /*evento para el menu responsive*/
-    $('.menu_bar').click(function(){        
+    /*$('.menu_bar').click(function(){        
         if(contador == 1){
             $('.parrafo').fadeOut();
 
@@ -74,7 +74,7 @@ $(function(){
        
         }
 
-    });    
+    });*/    
 
 
 })

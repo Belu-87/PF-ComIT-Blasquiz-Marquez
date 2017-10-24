@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<?php include("libs.php");?>
+
 	<script type="text/javascript" src="turnjs4/extras/jquery.min.1.7.js"></script>
 	<script type="text/javascript" src="turnjs4/extras/jquery-ui-1.8.20.custom.min.js"></script>
 	<script type="text/javascript" src="turnjs4/extras/jquery.mousewheel.min.js"></script>
 	<script type="text/javascript" src="turnjs4/extras/modernizr.2.5.3.min.js"></script>
 	<script type="text/javascript" src="turnjs4/lib/hash.js"></script>
+	
+	<link  rel="stylesheet" type="text/css" href="css/EstiloCatalogo.css" />
+	
 
 	<title>Productos</title>
 

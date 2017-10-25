@@ -64,7 +64,7 @@
 										</div>
 								 </form>
 							</div>
-							<div class="bottom text-center">
+							<div class="col-md-12 bottom text-center">
 								¿Nuevo aqui? <a href="#"><b>Registrate</b></a>
 							</div>
 					 </div>

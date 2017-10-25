@@ -10,6 +10,11 @@ vertical-align: middle;
     overflow: initial !important;
 }
 
+.form-fondo{
+    background-image:none !important;
+    overflow-y: initial !important;
+}
+
 
 .nav-item{
 	margin:auto;

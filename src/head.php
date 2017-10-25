@@ -44,7 +44,7 @@
 									 <a href="#" class="btn btn-go"><i class="fa fa-gmail"></i> Google</a> -->
 								</div>
                                 o
-								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+								 <form class="form form-fondo" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputEmail2">Email</label>
 											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" required>

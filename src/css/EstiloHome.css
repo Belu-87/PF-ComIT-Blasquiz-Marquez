@@ -3,10 +3,7 @@ body{
 	font-family: "Forte Normal", "Comic Sans MS", Arial;
 	background-color: transparent !important;
   width: 100%;
-}
-
-#containerGeneral{
-    display: grid;
+  display: grid;
 }
 
 

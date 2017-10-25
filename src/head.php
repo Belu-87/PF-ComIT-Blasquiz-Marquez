@@ -1,27 +1,29 @@
-<!DOCTYPE HTML>
-<html>
+
     <head>
     <link rel="stylesheet" href="css/EstiloHead.css" />
     </head>    
 
+<header>
 
-  <body>
-    
+
      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
 			<button aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navbarColor01" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button> <a class="navbar-brand" href="Home"><img id="logo" src="../Imagenes/Logo.png"> </img></a>
 			<div class="collapse navbar-collapse" id="navbarColor01">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
 						<a class="nav-link" href="Home">Inicio <span class="sr-only">(current)</span></a>
+					</li>					
+					<li class="nav-item">
+						<a class="nav-link" href="AcercaDe">Nosotros</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="Catalogo">Productos</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="Comprar"><img class="icono" src="../Imagenes/carrito.svg"></img></a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="AcercaDe">Nosotros</a>
-					</li>
 					<li class="nav-item separar">
-						<a class="nav-link" href="Catalogo">Productos</a>
+						<a class="nav-link" href="https://www.facebook.com/people/Belu-Blas/100011323612501" target="_blank"><img class="icono" src="../Imagenes/face.svg"></img></a>
 					</li>
 
 					
@@ -86,7 +88,4 @@
 			</div>
 		</nav>
 		
-    
-  </body>
-  
-</html>
+</header>

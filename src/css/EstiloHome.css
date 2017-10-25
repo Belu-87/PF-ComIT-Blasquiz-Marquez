@@ -1,11 +1,13 @@
 body{
 	margin: 0 auto;
 	font-family: "Forte Normal", "Comic Sans MS", Arial;
-	background-color: #00ffff;
+	background-color: transparent !important;
   width: 100%;
-  display: grid;
 }
 
+#containerGeneral{
+    display: grid;
+}
 
 
 

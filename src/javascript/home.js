@@ -8,9 +8,11 @@ $('.nav-responsive').animate({left: '-100%'});
 
 $(function(){
 
-    /*$("header").css({position:"absolute"});*/
+    $(".navbar").css({top:"5em",height:"0px"});
 
-    /*$("#menuPrincipal").css({"grid-column":"10/10"});*/
+    $("header").css({height:"0px"});
+    
+    /*$(".navbar").css({"z-index":"100"});*/
 
 	$(".parrafo").each(function(){
 		$(this).hide();

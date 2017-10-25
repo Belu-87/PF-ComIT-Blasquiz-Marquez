@@ -11,28 +11,28 @@
 			<div class="collapse navbar-collapse" id="navbarColor01">
 				<ul class="navbar-nav ml-auto excedente">
 					<li class="nav-item active">
-						<a class="nav-link" href="Home">Inicio <span class="sr-only">(current)</span></a>
+						<a class="nav-link texto-color" href="Home">Inicio <span class="sr-only">(current)</span></a>
 					</li>					
 					<li class="nav-item">
-						<a class="nav-link" href="AcercaDe">Nosotros</a>
+						<a class="nav-link texto-color" href="AcercaDe">Nosotros</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="Catalogo">Productos</a>
+						<a class="nav-link texto-color" href="Catalogo">Productos</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="Comprar"><img class="icono" src="../Imagenes/carrito.svg"></img></a>
+						<a class="nav-link texto-color" href="Comprar"><img class="icono" src="../Imagenes/carrito.svg"></img></a>
 					</li>
 					<li class="nav-item separar">
-						<a class="nav-link" href="https://www.facebook.com/people/Belu-Blas/100011323612501" target="_blank"><img class="icono" src="../Imagenes/face.svg"></img></a>
+						<a class="nav-link texto-color" href="https://www.facebook.com/people/Belu-Blas/100011323612501" target="_blank"><img class="icono" src="../Imagenes/face.svg"></img></a>
 					</li>
 
 					
 					
 					
 
-        <li><p class="navbar-text">¿Ya tienes una cuenta?</p></li>
+        <li><p class="navbar-text texto-color">¿Ya tienes una cuenta?</p></li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><b>Iniciar Sesion</b> <span class="caret"></span></a>
+          <a href="#" class="nav-link dropdown-toggle texto-color" data-toggle="dropdown"><b>Iniciar Sesion</b> <span class="caret"></span></a>
 			<ul id="login-dp" class="dropdown-menu">
 				<li>
 					 <div class="row">

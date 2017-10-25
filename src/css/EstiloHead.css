@@ -15,6 +15,9 @@ vertical-align: middle;
     overflow-y: initial !important;
 }
 
+.texto-color{
+    color: rgb(127,2,2) !important;
+}
 
 .nav-item{
 	margin:auto;

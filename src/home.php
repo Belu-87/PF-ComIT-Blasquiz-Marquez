@@ -52,8 +52,8 @@
 			<label>Enterate nuestras novedades </label>
 			<br>
 			<label> E-mail: </label>
-			<input></input>
-			<button>Enviar</button>
+			<input class="inp"></input>
+			<button class="btn">Enviar</button>
 		</form>
 
 		<a href="#" class="scrollup"><img class="scrollup" src="https://image.flaticon.com/icons/svg/25/25282.svg"></img></a>

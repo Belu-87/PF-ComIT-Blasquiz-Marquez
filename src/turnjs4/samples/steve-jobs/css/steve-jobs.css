@@ -284,20 +284,32 @@ ul{
 
 .sj-book .even{
 	background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
-	background-image:-webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+	/*background-image:-webkit-linear-gradient(left, #fff 95%, #dadada 100%);
 	background-image:-moz-linear-gradient(left, #fff 95%, #dadada 100%);
 	background-image:-ms-linear-gradient(left, #fff 95%, #dadada 100%);
 	background-image:-o-linear-gradient(left, #fff 95%, #dadada 100%);
-	background-image:linear-gradient(left, #fff 95%, #dadada 100%);
+	background-image:linear-gradient(left, #fff 95%, #dadada 100%);*/
+
+	background-image:-webkit-linear-gradient(left, #FFC4FF 95%, #dadada 100%);
+	background-image:-moz-linear-gradient(left, #FFC4FF 95%, #dadada 100%);
+	background-image:-ms-linear-gradient(left, #FFC4FF 95%, #dadada 100%);
+	background-image:-o-linear-gradient(left, #FFC4FF 95%, #dadada 100%);
+	background-image:linear-gradient(left, #FFC4FF 95%, #dadada 100%);
 }
 
 .sj-book .odd{
 	background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #fff), color-stop(1, #cacaca));
-	background-image:-webkit-linear-gradient(right, #fff 95%, #cacaca 100%);
+	/*background-image:-webkit-linear-gradient(right, #fff 95%, #cacaca 100%);
 	background-image:-moz-linear-gradient(right, #fff 95%, #cacaca 100%);
 	background-image:-ms-linear-gradient(right, #fff 95%, #cacaca 100%);
 	background-image:-o-linear-gradient(right, #fff 95%, #cacaca 100%);
-	background-image:linear-gradient(right, #fff 95%, #cacaca 100%);
+	background-image:linear-gradient(right, #fff 95%, #cacaca 100%);*/
+
+	background-image:-webkit-linear-gradient(right, #FFC4FF 95%, #cacaca 100%);
+	background-image:-moz-linear-gradient(right, #FFC4FF 95%, #cacaca 100%);
+	background-image:-ms-linear-gradient(right, #FFC4FF 95%, #cacaca 100%);
+	background-image:-o-linear-gradient(right, #FFC4FF 95%, #cacaca 100%);
+	background-image:linear-gradient(right, #FFC4FF 95%, #cacaca 100%);
 }
 
 .sj-book .loader{
@@ -310,7 +322,7 @@ ul{
 }
 
 .sj-book .page-number{
-	color:#999;
+	color:#D84C93;
 	width:100%;
 	bottom:25px;
 	position:absolute;
@@ -346,7 +358,7 @@ ul{
 }
 
 .sj-book .table-contents a:hover{
-	background:#CAD1EE;
+	background:#FF80C0;/*#CAD1EE;*/
 	float:left;
 	width:100%;
 	clear:both;

@@ -16,7 +16,13 @@ vertical-align: middle;
 }
 
 .texto-color{
-    color: rgb(127,2,2) !important;
+    color: #B43325 !important;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.texto-color:hover{
+    color: #FF80C0 !important;
 }
 
 .nav-item{

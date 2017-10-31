@@ -5,14 +5,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<script data-require="tether@*" data-semver="1.4.0" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
-    <link data-require="bootstrap@*" data-semver="4.0.5" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
-    <script data-require="bootstrap@*" data-semver="4.0.5" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
 	
-	<link  rel="stylesheet" type="text/css" href="css/EstiloLogin.css" />
-	<title>Ingresar</title>
+	<?php include("libs.php");?>
+	
+	<link  rel="stylesheet" type="text/css" href="css/EstiloRegistrar.css" />
+	
+	
+	<title>Registrar</title>
 </head>
 
 <body>
@@ -31,54 +30,53 @@
         </div>
         <div class="form-bottom">
             <form role="form" action="" method="post" class="registration-form">
-            	<div class="form-group">
-            		<label class="sr-only" for="form-first-name">Nombre</label>
-                	<input type="text" name="form-first-name" placeholder="Nombre..." class="form-first-name form-control" id="form-first-name">
-                </div>
-                <div class="form-group">
-                	<label class="sr-only" for="form-last-name">Apellido</label>
-                	<input type="text" name="form-last-name" placeholder="Apellido..." class="form-last-name form-control" id="form-last-name">
-                </div>
-
 				<div class="input-group">
 				  <span class="input-group-addon" id="sizing-addon2">@</span>
 				  <input type="text" class="form-control" placeholder="Nombre de usuario" aria-describedby="sizing-addon2">
 				</div>
 
                 <div class="form-group">
-                	<label class="sr-only" for="form-email">Email</label>
+                	<label class="sr-only">Email</label>
                 	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
                 </div>
-                <!-- sexo y fecha nacimiento
-                ver si ponemos domicilio  -->
-
-                <div class="form-group">
-	               <div class="form-check">
-		  				<label class="form-check-label">
-		    			<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-		    			Femenino
-		  				</label>
-					</div>
-					<div class="form-check">
-					  	<label class="form-check-label">
-					    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-					    Masculino
-					  	</label>
-					</div>
-					</div>
-
-
-
-                	
+				
+				<div class="form-group">
+                	<label class="sr-only">Contraseña</label>
+                	<input type="text" name="form-password" placeholder="Contraseña..." class="form-password form-control" id="form-password">
                 </div>
+				
+				<div class="form-group">
+                	<label class="sr-only">Confirmar Contraseña</label>
+                	<input type="text" name="form-confipassword" placeholder="Confirmar Contraseña..." class="form-confipassword form-control" id="form-confipassword">
+                </div>
+				
+				<div class="form-group">
+                	<label class="sr-only">Direccion</label>
+                	<input type="text" name="form-Direccion" placeholder="Direccion..." class="form-Direccion form-control" id="form-Direccion">
+                </div>
+			
 
+				<div class="form-group">
+					<input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                </div>			
+			
 
+				<label class="custom-control custom-radio">
+				  <input id="radio1" name="radio" type="radio" class="custom-control-input">
+				  <span class="custom-control-indicator"></span>
+				  <span class="custom-control-description">Femenino</span>
+				</label>
+				<label class="custom-control custom-radio">
+				  <input id="radio2" name="radio" type="radio" class="custom-control-input">
+				  <span class="custom-control-indicator"></span>
+				  <span class="custom-control-description">Masculino</span>
+				</label>
 
-<!--                 <div class="form-group">
-                	<label class="sr-only" for="form-about-yourself">About yourself</label>
-                	<textarea name="form-about-yourself" placeholder="About yourself..." class="form-about-yourself form-control" id="form-about-yourself"></textarea>
-                </div> -->
-                <button type="submit" class="btn">Registrar</button>
+			
+				<div class="form-group">
+					<button type="submit" class="btn">Registrar</button>
+				</div>		
+                
             </form>
         </div>
 	</div>
@@ -111,8 +109,7 @@
 		  <div class="loader"></div>
 		  <div class="done">SUCCESS</div>
 		</button>
-	</form> -->
-
+	</form> -->	
 </body>
 
 

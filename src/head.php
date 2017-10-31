@@ -65,7 +65,7 @@
 								 </form>
 							</div>
 							<div class="col-md-12 bottom text-center">
-								¿Nuevo aqui? <a href="#"><b>Registrate</b></a>
+								¿Nuevo aqui? <a href="LoginRegistrar"><b>Registrate</b></a>
 							</div>
 					 </div>
 				</li>

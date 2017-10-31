@@ -17,12 +17,14 @@ vertical-align: middle;
 
 .texto-color{
     color: #B43325 !important;
-    font-size: 1.2em;
+    font-size: 1.2em; 
     font-weight: bold;
+    transition:color 0.3s ease-in-out;
 }
 
 .texto-color:hover{
     color: #FF80C0 !important;
+    transition:color 0.3s ease-in-out;
 }
 
 .nav-item{

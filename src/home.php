@@ -53,7 +53,7 @@
 			<br>
 			<label> E-mail: </label>
 			<input class="inp"></input>
-			<button class="btn">Enviar</button>
+			<button class="boton">Enviar</button>
 		</form>
 
 		<a href="#" class="scrollup"><img class="scrollup" src="https://image.flaticon.com/icons/svg/25/25282.svg"></img></a>

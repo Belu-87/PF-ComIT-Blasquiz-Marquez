@@ -86,6 +86,14 @@ vertical-align: middle;
 }
 
 
+@media(max-width: 1000px)
+{
+    .separar{
+       margin-right: auto;
+    }
+}
+
+
 @media(max-width:768px){
     #login-dp{
         background-color: inherit;
@@ -94,5 +102,9 @@ vertical-align: middle;
     #login-dp .bottom{
         background-color: inherit;
         border-top:0 none;
+    }
+
+    .separar{
+        margin-right: auto;
     }
 }

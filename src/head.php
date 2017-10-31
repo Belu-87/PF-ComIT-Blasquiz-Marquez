@@ -30,7 +30,7 @@
 					
 					
 
-        <li><p class="navbar-text texto-color">¿Ya tienes una cuenta?</p></li>
+        <li class="nav-item"><p class="navbar-text texto-color">¿Ya tienes una cuenta?</p></li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle texto-color" data-toggle="dropdown"><b>Iniciar Sesion</b> <span class="caret"></span></a>
 			<ul id="login-dp" class="dropdown-menu">

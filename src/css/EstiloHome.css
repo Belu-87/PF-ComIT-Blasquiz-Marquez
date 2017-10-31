@@ -78,12 +78,12 @@ h1{
   width: 40%;
 }
 
-.inp:focus ,.inp:hover,.btn:hover,.btn:focus{
+.inp:focus ,.inp:hover,.boton:hover,.boton:focus{
   background: #f293c1;
   outline: none;
 }
 
-.btn{
+.boton{
 	border-radius: 1em;
 	background-color: transparent;/*#f293c1;*/
 	border-color: white;/*#F22562;*/

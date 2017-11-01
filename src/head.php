@@ -8,6 +8,7 @@
 session_start();
 // added in v4.0.0
 require_once 'LoginFacebook/autoload.php';
+require 'LoginFacebook/functions.php';
 /*require 'functions.php';*/
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
@@ -24,7 +25,10 @@ use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '186507458586591','b64cc0238beb03a0aeb6826773cadfda' );
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://demos.krizna.com/test.php' );
+    //$helper = new FacebookRedirectLoginHelper('http://demos.krizna.com/test.php' );
+
+    $helper = new FacebookRedirectLoginHelper('http://localhost/PaginaDulzurasArtesanales/src/Home' );
+
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
@@ -37,9 +41,9 @@ if ( isset( $session ) ) {
   // graph api request for user data
   
   /*comentado pq no andaba*/
-  //$request = new FacebookRequest( $session, 'GET', '/me?locale=en_US&fields=id,name,email' );
+  $request = new FacebookRequest( $session, 'GET', '/me?locale=en_US&fields=id,name,email' );
   
-  $request = new FacebookRequest( $session, 'GET', '/me' );
+  //$request = new FacebookRequest( $session, 'GET', '/me' );
 
   $response = $request->execute();
   // get response
@@ -53,8 +57,10 @@ if ( isset( $session ) ) {
       $_SESSION['USERNAME'] = $fbuname;           
       $_SESSION['FULLNAME'] = $fbfullname;
 	    $_SESSION['EMAIL'] =  $femail;
+	  echo '<pre>' . print_r( $graphObject->getPropertyNames() ) . '</pre>';
       echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
     /* ---- header location after session ----*/
+    checkuser($fbid,$fbuname,$femail);
   //header("Location: index.php");
 }
 

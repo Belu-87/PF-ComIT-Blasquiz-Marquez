@@ -31,36 +31,32 @@
         <div class="form-bottom">
             <form role="form" action="" method="post" class="registration-form">
 				<div class="input-group">
+				  <label class=""> Usuario </label>
 				  <span class="input-group-addon" id="sizing-addon2">@</span>
-				  <input type="text" class="form-control" placeholder="Nombre de usuario" aria-describedby="sizing-addon2">
+				  <input type="text" class="form-control" aria-describedby="sizing-addon2">
 				</div>
 
                 <div class="form-group">
-                	<label class="sr-only">Email</label>
-                	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+                	<label class="">Email</label>
+                	<input type="text" name="form-email" class="form-email form-control" id="form-email">
                 </div>
 				
 				<div class="form-group">
-                	<label class="sr-only">Contraseña</label>
-                	<input type="text" name="form-password" placeholder="Contraseña..." class="form-password form-control" id="form-password">
+                	<label class="">Contraseña</label>
+                	<input type="text" name="form-password" class="form-password form-control" id="form-password">
                 </div>
 				
 				<div class="form-group">
-                	<label class="sr-only">Confirmar Contraseña</label>
-                	<input type="text" name="form-confipassword" placeholder="Confirmar Contraseña..." class="form-confipassword form-control" id="form-confipassword">
+                	<label class="">Confirmar Contraseña</label>
+                	<input type="text" name="form-confipassword" class="form-confipassword form-control" id="form-confipassword">
                 </div>
 				
 				<div class="form-group">
-                	<label class="sr-only">Direccion</label>
-                	<input type="text" name="form-Direccion" placeholder="Direccion..." class="form-Direccion form-control" id="form-Direccion">
-                </div>
-			
-
-				<div class="form-group">
+					<label class="">Fecha de nacimiento</label>
 					<input class="form-control" type="date" value="2011-08-19" id="example-date-input">
                 </div>			
 			
-
+				<label class="">Sexo</label>
 				<label class="custom-control custom-radio">
 				  <input id="radio1" name="radio" type="radio" class="custom-control-input">
 				  <span class="custom-control-indicator"></span>

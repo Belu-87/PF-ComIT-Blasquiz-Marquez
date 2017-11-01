@@ -52,7 +52,7 @@
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
 											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Contraseña" required>
-                                             <div class="help-block text-right"><a href=""> ¿Olvidaste la contraseña?</a></div>
+                                             <div class="help-block text-right"><a href="RecuperarContrasenia"> ¿Olvidaste la contraseña?</a></div>
 										</div>
 										<div class="form-group">
 											 <button type="submit" class="btn btn-primary btn-block">Registrarse</button>

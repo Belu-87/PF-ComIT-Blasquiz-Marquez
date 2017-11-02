@@ -18,6 +18,8 @@ use Facebook\FacebookSDKException;
 use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
+use Facebook\GraphUser;
+use Facebook\GraphLocation;
 use Facebook\Entities\AccessToken;
 use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\HttpClients\FacebookHttpable;
@@ -27,7 +29,7 @@ FacebookSession::setDefaultApplication( '186507458586591','b64cc0238beb03a0aeb68
 // login helper with redirect_uri
     //$helper = new FacebookRedirectLoginHelper('http://demos.krizna.com/test.php' );
 
-    $helper = new FacebookRedirectLoginHelper('http://localhost/PaginaDulzurasArtesanales/src/Home' );
+    $helper = new FacebookRedirectLoginHelper('http://localhost:8081/PaginaDulzurasArtesanales/src/Home' );
 
 try {
   $session = $helper->getSessionFromRedirect();
@@ -48,19 +50,23 @@ if ( isset( $session ) ) {
   $response = $request->execute();
   // get response
   $graphObject = $response->getGraphObject();
-     	$fbid = $graphObject->getProperty('id');   
-      $fbuname = $graphObject->getProperty('username'); // To Get Facebook ID
- 	    $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
-	    $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
-	/* ---- Session Variables -----*/
-	    $_SESSION['FBID'] = $fbid;      
-      $_SESSION['USERNAME'] = $fbuname;           
-      $_SESSION['FULLNAME'] = $fbfullname;
-	    $_SESSION['EMAIL'] =  $femail;
-	  echo '<pre>' . print_r( $graphObject->getPropertyNames() ) . '</pre>';
-      echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
-    /* ---- header location after session ----*/
-    checkuser($fbid,$fbuname,$femail);
+  $user = $response->getGraphObject(GraphUser::className());
+  $loc = $response->getGraphObject(GraphLocation::className());
+
+  $fbid = $graphObject->getProperty('id');   
+  $fbuname = $graphObject->getProperty('name'); //username To Get Facebook ID
+  $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
+  $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
+/* ---- Session Variables -----*/
+  $_SESSION['FBID'] = $fbid;      
+  $_SESSION['USERNAME'] = $fbuname;           
+  $_SESSION['FULLNAME'] = $fbfullname;
+  $_SESSION['EMAIL'] =  $femail;
+
+  //echo '<pre>' . print_r( $user->getProperty('email'),1 ) . '</pre>';
+  //echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
+/* ---- header location after session ----*/
+   checkuser($fbid,$fbuname,$femail);
   //header("Location: index.php");
 }
 

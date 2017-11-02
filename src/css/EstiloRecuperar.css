@@ -1,0 +1,65 @@
+  body{  
+    background: url("../../Imagenes/fondo.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment:fixed;
+    color:white;
+    font-family: "Forte Normal", "Comic Sans MS", Arial;
+  }
+  
+  input {
+
+        width: 13px;
+        height: 13px;
+        padding: 0;
+        margin:0;
+        vertical-align: bottom;
+        position: relative;
+        top: -1px;
+        overflow: hidden;
+
+        background-color: transparent; 
+        width:200px;
+        height:30px;
+        font-size:50pt;
+        font-family:Helvetica;
+        font-weight:bold;
+        color:#931000;
+        border-width:thin;
+        border-style:solid;
+        border-color:black;
+
+
+}
+
+label {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+    /*width: 45px;*/
+
+}
+
+
+button {
+  outline: 0;
+}
+button.active {
+  outline: 0;
+}
+
+.form-box{
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+}
+
+@media(max-width:900px)
+{
+	.form-box{
+	  width: 80%;
+	}
+	
+}

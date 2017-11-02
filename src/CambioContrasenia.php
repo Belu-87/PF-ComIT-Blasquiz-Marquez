@@ -8,7 +8,7 @@
 	
 	<?php include("libs.php");?>
 	
-	<link  rel="stylesheet" type="text/css" href="css/EstiloRegistrar.css" />
+	<link  rel="stylesheet" type="text/css" href="css/EstiloContraseniaNueva.css" />
 	
 	
 	<title>Nueva Contraseña</title>
@@ -29,7 +29,12 @@
         <div class="form-bottom">
             <form role="form" action="" method="post" class="registration-form">
 				<div class="form-group">
-                	<label class="">Contraseña</label>
+                	<label class="">Codigo verificador</label>
+                	<input type="text" name="form-password" class="form-password form-control" id="form-password">
+                </div>
+			
+				<div class="form-group">
+                	<label class="">Contraseña nueva</label>
                 	<input type="text" name="form-password" class="form-password form-control" id="form-password">
                 </div>
 				
@@ -39,7 +44,7 @@
                 </div>	
 				
 				<div class="form-group">
-					<button type="submit" class="btn">Confirmar</button>
+					<button type="submit" class="btn btn-primary">Confirmar</button>
 				</div>		
                 
             </form>

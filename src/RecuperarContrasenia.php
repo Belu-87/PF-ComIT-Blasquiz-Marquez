@@ -8,7 +8,7 @@
 	
 	<?php include("libs.php");?>
 	
-	<link  rel="stylesheet" type="text/css" href="css/EstiloRegistrar.css" />
+	<link  rel="stylesheet" type="text/css" href="css/EstiloRecuperar.css" />
 	
 	
 	<title>Recuperar Contraseña</title>
@@ -34,7 +34,7 @@
                 	<input type="text" name="form-email" class="form-email form-control" id="form-email">
                 </div>
 					<div class="form-group">
-					<button type="submit" class="btn">Enviar</button>
+					<button type="submit" class="btn btn-primary">Enviar</button>
 				</div>		
                 
             </form>

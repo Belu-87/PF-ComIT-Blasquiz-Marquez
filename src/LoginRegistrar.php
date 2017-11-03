@@ -32,15 +32,15 @@
             <form role="form" action="javascript:Validacion();" method="POST" class="registration-form">
 				<div class= "form-group"
 					<label class=""> Usuario </label>
-					<div class="input-group">
-					  <span class="input-group-addon" id="sizing-addon2">@</span>
-					  <input id="usuario" type="text" class="form-control" aria-describedby="sizing-addon2">
-					</div>
+					<input id="usuario" type="text" class="form-control" aria-describedby="sizing-addon2">
 				</div>
 
                 <div class="form-group">
                 	<label class="">Email</label>
-                	<input id="mail" type="text" name="form-email" class="form-email form-control">
+                	<div class="input-group">
+	                	<span class="input-group-addon" id="sizing-addon2">@</span>
+	                	<input id="mail" type="text" name="form-email" class="form-email form-control">
+                	</div>
                 </div>
 				
 				<div class="form-group">

@@ -10,11 +10,16 @@ body {
     margin: 0 auto;
 }
 
-
+.error{
+  border-color: red;
+  border-width: 2px;
+  transition-property: border-color;
+  border-radius: .25rem;
+  transition-duration: 2s;
+}
 
 
 input {
-
         width: 13px;
         height: 13px;
         padding: 0;

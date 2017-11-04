@@ -6,6 +6,10 @@ background-size:100% 100%;
 vertical-align: middle;
 }
 
+#logo:hover{
+    outline: none;
+}
+
 .excedente{
     overflow: initial !important;
 }
@@ -30,6 +34,7 @@ vertical-align: middle;
 .nav-item{
 	margin:auto;
 }
+
 
 .navbar-text{
 	height:80%;

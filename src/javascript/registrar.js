@@ -64,13 +64,14 @@
 
  function EstaOK()
  {
- 	return ( !HayCamposVacios() && MailValido() && ContraseniasIguales() && FechaValida() );
+ 	return ( !HayCamposVacios() & MailValido() & ContraseniasIguales() & FechaValida() );
  }
 
  function MailValido()
  {
  	if($("#mail").val().match(/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/))
  	{
+  		$("#mail").removeClass("error");		
  		return true;
  	}
  	else
@@ -86,6 +87,7 @@
  	//yyyy-mm-dd
  	if($("#fechaNac").val().match(/^\d{4}-\d{2}-\d{2}$/))
  	{
+ 		$("#fechaNac").removeClass("error"); 		
  		return true;
  	}
  	else
@@ -98,8 +100,9 @@
 
 function ContraseniasIguales()
  {
- 	if($("#password").val()===$("#confipassword").val())
+ 	if($("#password").val()==$("#confipassword").val())
  	{
+ 		$("#password").removeClass("error");
  		return true;
  	}
  	else

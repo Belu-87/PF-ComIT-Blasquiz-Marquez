@@ -1,6 +1,7 @@
 
 <head>
 <link rel="stylesheet" href="css/EstiloHead.css" />
+<script type="text/javascript" src="javascript/login.js"> </script>
 </head>    
 
 
@@ -99,9 +100,29 @@ if ( isset( $session ) ) {
 					
 					
 
-        <li class="nav-item"><p class="navbar-text texto-color">¿Ya tienes una cuenta?</p></li>
+        <!-- <li class="nav-item"><p class="navbar-text texto-color">¿Ya tienes una cuenta?</p></li> -->
+        <li class="nav-item"><p class="navbar-text texto-color">
+	        <?php if(isset($_SESSION["usuario"]))
+	        	  {
+	        	  	echo "hola ".$_SESSION["usuario"];
+	        	  }
+	        	  else
+	        	  {echo "¿Ya tienes una cuenta?";
+	        	  } ?>	
+	        </p>
+        </li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle texto-color" data-toggle="dropdown"><b>Iniciar Sesion</b> <span class="caret"></span></a>
+
+        <?php if(isset($_SESSION["usuario"]))
+			  {
+			  	echo "<a href='#' class='nav-link texto-color' id='CerrarSesion'><b>Cerrar Sesion</b> <span class='caret'></span></a>";
+			  }
+			  else
+			  {echo "<a href='#' class='nav-link dropdown-toggle texto-color' data-toggle='dropdown'><b>Iniciar Sesion</b> <span class='caret'></span></a>";} 
+		?>	
+
+
+<!--           <a href="#" class="nav-link dropdown-toggle texto-color" data-toggle="dropdown"><b>Iniciar Sesion</b> <span class="caret"></span></a> -->
 			<ul id="login-dp" class="dropdown-menu">
 				<li>
 					 <div class="row">
@@ -115,24 +136,25 @@ if ( isset( $session ) ) {
 									 <a href="#" class="btn btn-go"><i class="fa fa-gmail"></i> Google</a> -->
 								</div>
                                 o
-								 <form class="form form-fondo" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+								 <form class="form form-fondo" role="form" method="post" action="includes/login.php" accept-charset="UTF-8" id="login">
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputEmail2">Email</label>
-											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" required>
+											 <input type="email" class="form-control" id="email" placeholder="Email" required>
 										</div>
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Contraseña" required>
+											 <input type="password" class="form-control" id="pass" placeholder="Contraseña" required>
                                              <div class="help-block text-right"><a href="RecuperarContrasenia"> ¿Olvidaste la contraseña?</a></div>
 										</div>
 										<div class="form-group">
-											 <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+											 <button id ="submit" type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
 										</div>
 										<div class="checkbox">
 											 <label>
 											 <input type="checkbox"> Mantener la sesión iniciada
 											 </label>
 										</div>
+										<label id="errorMessage"></label>
 								 </form>
 							</div>
 							<div class="col-md-12 bottom text-center">

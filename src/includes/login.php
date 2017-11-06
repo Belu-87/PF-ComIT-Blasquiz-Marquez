@@ -19,10 +19,10 @@ $_SESSION['usuario']=$row['alias'];
 
 echo $_SESSION['usuario'];
 //header("location: http://localhost/PaginaDulzurasArtesanales/src/Productos.php");
-//echo 'entraaaaaaaaaaaa';
+echo 'ok';
 }
 else{
-echo 'na-ha-ha, no estas invitado a esta fiesta';
+echo 'false';
 }
 
 

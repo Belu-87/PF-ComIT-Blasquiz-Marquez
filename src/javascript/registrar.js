@@ -39,6 +39,10 @@
  		}
 
  	}); 	
+
+	$(".form-box").hide();
+ 	$(".form-box").fadeIn(2000);
+
  
  });
  

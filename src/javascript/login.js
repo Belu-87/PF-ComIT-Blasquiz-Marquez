@@ -13,7 +13,7 @@
 $(document).ready(function (){
    $("#submit").click(function (){
         if($("#email").val()==""||$("#pass").val()=="")
-        	$("#errorMessage").html("por favor, ingrese credenciales");
+        	$("#errorMessage").html("por favor, complete el campo");
         else
             // $.post( $("#login").attr("action"), 
             //         { mail: $("#email").val(), pass: $("#pass").val() },
@@ -25,7 +25,14 @@ $(document).ready(function (){
             //     );
 
 		var jqxhr = $.post( $("#login").attr("action"), { mail: $("#email").val(), pass: $("#pass").val() } , function(data) {
-			window.location.replace("home.php");
+			if(data=="false")
+			{
+				$("#errorMessage").html("Verifique los datos ingresados.");
+			}	
+			else
+			{
+				window.location.replace("home.php");
+			}						
 		  //alert( data );
 		})
 		  .done(function() {

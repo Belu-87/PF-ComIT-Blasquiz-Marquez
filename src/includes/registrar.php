@@ -14,18 +14,24 @@ catch(mysqli_sql_exception $e)
 }
 
 function RegistrarUsuario(){
-	/*global $conn;
-	$query="select * from usuario where fUid='$fuid'";
+	global $conn;
+	
+	$user=$_POST["user"];
+	$pass=$_POST["pass"];	
+	$mail=$_POST["mail"];
+	$fecha=$_POST["fechaNac"];
+
+	$query="select * from usuario where email='$mail' and contrasenia=MD5('$pass')";
     $check = mysqli_query($conn,$query);
 	$check = mysqli_num_rows($check);
 	if (empty($check)) { // if new user . Insert a new record		
-	$query = "INSERT INTO usuario (fUid,fFname,fEmail) VALUES ('$fuid','$ffname','$femail')";
-	mysqli_query($conn,$query);	
-	} else {   // If Returned user . update the user record		
-	$query = "UPDATE usuario SET fFname='$ffname', fEmail='$femail' where fUid='$fuid'";
+	$query = "INSERT INTO usuario (alias,email,contrasenia,fechanac) VALUES ('$user','$mail',MD5('$pass'),'$fecha')";
 	mysqli_query($conn,$query);
-	}*/
-	return "hola";
+		echo "ok";	
+	} 
+	else {
+		echo "false";
+	}
 }
 
 

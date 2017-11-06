@@ -51,12 +51,18 @@
  		 $.ajax({
 			 url:'includes/registrar.php',
 			 type:"POST",
-			 data:{funcion:'RegistrarUsuario',user:$("#usuario").val(),mail:$("#mail").val(), pass:$("#password").val(), confipassword:$("#confipassword").val(), fechaNac:$("#fechaNac").val()},
+			 data:{funcion:'RegistrarUsuario',user:$("#usuario").val(),mail:$("#mail").val(), pass:$("#password").val(), fechaNac:$("#fechaNac").val()},
 			 datatype:"json",
 			 async:true,
 			 success:function(response)
 			 {
-				alert(response); 
+				if (response=="ok") 
+				{
+					$(".form-top").fadeOut(3000);
+					$(".form-bottom").fadeOut(3000);
+
+					$(".form-box").append('<h1>gracias por registrarte!</h1>').fadeIn(3000);	
+				} 
 			 }
 		})
 	 }
@@ -100,9 +106,10 @@
 
 function ContraseniasIguales()
  {
- 	if($("#password").val()==$("#confipassword").val())
+ 	if($("#password").val()==$("#confipassword").val() && ($("#password").val().trim()!="" && $("#confipassword").val().trim()!="")  )
  	{
  		$("#password").removeClass("error");
+ 		$("#confipassword").removeClass("error");
  		return true;
  	}
  	else

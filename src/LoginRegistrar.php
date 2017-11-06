@@ -29,11 +29,10 @@
     		</div>
         </div>
         <div class="form-bottom">
-            <form role="form" action="javascript:Validacion();" method="POST" class="registration-form">
+            <form role="form" action="javascript:Validacion();" method="POST" class="registration-form" id="formulario">
 				<div class= "form-group">
 					<label class=""> Usuario </label>
 					<input id="usuario" type="text" class="form-control" aria-describedby="sizing-addon2">
-					<div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
 				</div>
 
                 <div class="form-group">

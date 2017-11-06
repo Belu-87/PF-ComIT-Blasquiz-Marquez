@@ -1,4 +1,9 @@
 /* Steve jobs' book */
+ $(function () {
+	$(".sj-book").hide();
+ 	$(".sj-book").fadeIn(2000);
+ });
+
 
 function updateDepth(book, newPage) {
 

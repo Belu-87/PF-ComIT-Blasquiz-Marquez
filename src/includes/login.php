@@ -6,7 +6,7 @@ session_start();
 $email=$_POST["mail"];
 $pass=$_POST["pass"];
 
-$query = "SELECT * FROM usuario WHERE email='$email' AND contrasenia='$pass' ";
+$query = "SELECT * FROM usuario WHERE email='$email' AND contrasenia=MD5('$pass') ";
 
 $result = mysqli_query($conn,$query);
 $num_row = mysqli_num_rows($result);

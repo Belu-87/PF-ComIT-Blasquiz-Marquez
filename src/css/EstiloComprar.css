@@ -21,19 +21,26 @@
     overflow-y: hidden;
   }
 
-.fstElement{
+.fstElement .fstToggleBtn{
     font-size: 1rem !important;
 }
 
 .fstMultipleMode .fstControls{
-    padding: none !important;
-    /*width: 200px;*/
+    padding: none !important;    
     height: 38px;
     overflow-y: scroll;
 }
 
+.fstToggleBtn{
+    height: 38px;
+}
+
 .fstResults{
     position: relative !important;
+}
+
+.fstSingleMode .fstControls{
+    position: relative !important;   
 }
 
 

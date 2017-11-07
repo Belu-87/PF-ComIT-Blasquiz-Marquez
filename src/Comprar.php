@@ -41,11 +41,17 @@
 
 			    <tr class="aparece">
 					<td>
-						<select class="form-control">
+<!-- 						<select class="form-control">
 							<option value="1">Producto 1</option>
 							<option value="2">Producto 2</option>
 							<option value="3">Producto 3</option>
 							<option value="4">Producto 4</option>
+						</select> -->
+						<select class="fstElement fstSingleMode fstNoneSelected form-control" name="uno" placeholder="opcion">
+						    <option value="Bangladesh">Bangladesh</option>
+						    <option value="Barbados">Barbados</option>
+						    <option value="Belarus">Belarus</option>
+						    <option value="Belgium">Belgium</option>
 						</select>
 					</td>
 					<td>

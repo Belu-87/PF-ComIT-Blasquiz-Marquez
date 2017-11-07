@@ -32,30 +32,30 @@
             <form role="form" action="javascript:Validacion();" method="POST" class="registration-form" id="formulario">
 				<div class= "form-group">
 					<label class=""> Usuario </label>
-					<input id="usuario" type="text" class="form-control" aria-describedby="sizing-addon2">
+					<input id="usuario" type="text" class="form-control campo" aria-describedby="sizing-addon2">
 				</div>
 
                 <div class="form-group">
                 	<label class="">Email</label>
                 	<div class="input-group">
 	                	<span class="input-group-addon" id="sizing-addon2">@</span>
-	                	<input id="mail" type="text" name="form-email" class="form-email form-control">
+	                	<input id="mail" type="text" name="form-email" class="form-email form-control campo">
                 	</div>
                 </div>
 				
 				<div class="form-group">
                 	<label class="">Contraseña</label>
-                	<input id="password" type="password" name="form-password" class="form-password form-control">
+                	<input id="password" type="password" name="form-password" class="form-password form-control campo">
                 </div>
 				
 				<div class="form-group">
                 	<label class="">Confirmar Contraseña</label>
-                	<input id="confipassword" type="password" name="form-confipassword" class="form-confipassword form-control">
+                	<input id="confipassword" type="password" name="form-confipassword" class="form-confipassword form-control campo">
                 </div>
 				
 				<div class="form-group">
 					<label class="">Fecha de nacimiento</label>
-					<input id="fechaNac" class="form-control fecha" type="date" value="2011-08-19">
+					<input id="fechaNac" class="form-control fecha campo" type="date" value="2011-08-19">
                 </div>			
 			
 				<div class="form-group">

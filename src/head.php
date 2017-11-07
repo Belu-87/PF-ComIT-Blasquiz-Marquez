@@ -104,7 +104,7 @@ if ( isset( $session ) ) {
         <li class="nav-item"><p class="navbar-text texto-color">
 	        <?php if(isset($_SESSION["usuario"]))
 	        	  {
-	        	  	echo "hola ".$_SESSION["usuario"];
+	        	  	echo $_SESSION["usuario"];
 	        	  }
 	        	  else
 	        	  {echo "¿Ya tienes una cuenta?";

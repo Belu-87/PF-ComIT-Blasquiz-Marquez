@@ -21,7 +21,7 @@ function RegistrarUsuario(){
 	$mail=$_POST["mail"];
 	$fecha=$_POST["fechaNac"];
 
-	$query="select * from usuario where email='$mail' and contrasenia=MD5('$pass')";
+	$query="select * from usuario where email='$mail'";//and contrasenia=MD5('$pass')
     $check = mysqli_query($conn,$query);
 	$check = mysqli_num_rows($check);
 

@@ -8,6 +8,7 @@ body {
     color: white;
     font-family: "Forte Normal", "Comic Sans MS", Arial;
     margin: 0 auto;
+    overflow-y: scroll;
 }
 
 .error{
@@ -19,28 +20,12 @@ body {
 }
 
 
-input {
-        width: 13px;
-        height: 13px;
-        padding: 0;
-        margin:0;
-        vertical-align: bottom;
-        position: relative;
-        top: -1px;
-        overflow: hidden;
-
-        background-color: transparent; 
-        width:200px;
-        height:30px;
-        font-size:50pt;
+.campo {
         font-family:Helvetica;
+        height: 30px;
         font-weight:bold;
-        color:#931000;
         border-width:thin;
         border-style:solid;
-        border-color:black;
-
-
 }
 
 .custom-control-indicator{

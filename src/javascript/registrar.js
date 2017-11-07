@@ -65,7 +65,7 @@
 					$(".form-top").fadeOut(3000);
 					$(".form-bottom").fadeOut(3000);
 
-					$(".form-box").append('<h1>gracias por registrarte!</h1>');		
+					$(".form-box").append('<h1>¡Gracias por registrarte!</h1>');		
 				}
 				else
 				{
@@ -73,7 +73,6 @@
 					$(".form-bottom").fadeOut(3000);
 
 					$(".form-box").append('<h1>Ya existe el usuario. Por favor recupere su contraseña.</h1>');	
-
 				} 
 			 }
 		})

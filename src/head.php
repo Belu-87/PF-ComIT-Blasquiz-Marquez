@@ -63,7 +63,7 @@ if ( isset( $session ) ) {
   $_SESSION['USERNAME'] = $fbuname;           
   $_SESSION['FULLNAME'] = $fbfullname;
   $_SESSION['EMAIL'] =  $femail;
-
+  $_SESSION['usuario'] = $fbuname;   
   //echo '<pre>' . print_r( $user->getProperty('email'),1 ) . '</pre>';
   //echo '<pre>' . print_r( $graphObject, 1 ) . '</pre>';
 /* ---- header location after session ----*/

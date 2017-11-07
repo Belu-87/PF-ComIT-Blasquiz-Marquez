@@ -62,17 +62,18 @@
 			 {
 				if (response=="ok") 
 				{
-					$(".form-top").fadeOut(3000);
-					$(".form-bottom").fadeOut(3000);
-
-					$(".form-box").append('<h1>¡Gracias por registrarte!</h1>');		
+					$(".form-top").fadeOut(2000);
+					$(".form-bottom").fadeOut(2000);
+		
+					$("h1").html("¡Gracias por registrarte!");
+					$("h1").fadeIn(3000);
 				}
 				else
 				{
-					$(".form-top").fadeOut(3000);
-					$(".form-bottom").fadeOut(3000);
+					$(".form-top").fadeOut(2000);
+					$(".form-bottom").fadeOut(2000);
 
-					$(".form-box").append('<h1>Ya existe el usuario. Por favor recupere su contraseña.</h1>');	
+					$("h1").fadeIn(3000);	
 				} 
 			 }
 		})

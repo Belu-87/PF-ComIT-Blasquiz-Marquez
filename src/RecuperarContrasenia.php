@@ -8,7 +8,8 @@
 	
 	<?php include("libs.php");?>
 	
-	<link  rel="stylesheet" type="text/css" href="css/EstiloRecuperar.css" />
+	<link  rel="stylesheet" type="text/css" href="css/EstiloRecuperar.css" />	
+	<script type="text/javascript" src="javascript/validaremail.js"> </script>
 	
 	
 	<title>Recuperar Contraseña</title>
@@ -28,16 +29,18 @@
     		</div>
         </div>
         <div class="form-bottom">
-            <form role="form" action="" method="post" class="registration-form">
+            <form id="frmRestablecer" role="form" action="validaremail.php" method="post" class="registration-form">
 				<div class="form-group">
                 	<label class="">Email</label>
-                	<input type="text" name="form-email" class="form-email form-control" id="form-email">
+                	<input type="text" name="form-email" class="form-email form-control" id="email">
                 </div>
 					<div class="form-group">
-					<button type="submit" class="btn btn-primary">Enviar</button>
+					<button type="submit" class="btn btn-primary" value="Recuperar contraseña">Enviar</button>
 				</div>		
                 
             </form>
+
+            <div id="mensaje"></div>
         </div>
 	</div>
 

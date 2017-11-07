@@ -28,6 +28,7 @@ $(document).ready(function (){
 			if(data=="false")
 			{
 				$("#errorMessage").html("Verifique los datos ingresados.");
+				$("#errorMessage").css("color","red");
 			}	
 			else
 			{

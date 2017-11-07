@@ -8,7 +8,35 @@
     color:white;
     font-family: "Forte Normal", "Comic Sans MS", Arial;
   }
-  
+
+  table{
+    width: 100%;
+  }
+
+  th{
+    text-align: center;
+  }
+
+.table-responsive{
+    overflow-y: hidden;
+  }
+
+.fstElement{
+    font-size: 1rem !important;
+}
+
+.fstMultipleMode .fstControls{
+    padding: none !important;
+    /*width: 200px;*/
+    height: 38px;
+    overflow-y: scroll;
+}
+
+.fstResults{
+    position: relative !important;
+}
+
+
 
   .texto{
     font-weight: bold;
@@ -23,6 +51,19 @@
     vertical-align: middle;
     width: 40%;
     height: 40%;
+  }
+
+.moneda{
+    vertical-align: middle;
+    font-weight: bold;        
+}
+
+    .imagen-fila{
+    text-align: center; 
+    margin: 0 auto;
+    vertical-align: middle;
+    width: 38px;
+    height: 38px;
   }
 
 

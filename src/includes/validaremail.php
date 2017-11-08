@@ -1,7 +1,7 @@
 <?php 
 
 include 'conexion.php';
-require ($_SERVER["DOCUMENT_ROOT"].'/PaginaDulzurasArtesanales/src/PHPMailer-master/src/PHPMailer.php');
+require ($_SERVER["DOCUMENT_ROOT"].'/PaginaDulzurasArtesanales/src/phpmailer/class.phpmailer.php');
 
 $email = $_POST['emailRecup'];
  
@@ -68,17 +68,19 @@ function enviarEmail( $email, $link ){
 
 
    /////////////////////////////////////////////////
-$mailer = new PHPMailer;
+$mail = new PHPMailer;
 
 $mail->IsSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.mandrillapp.com';                 // Specify main and backup server
-$mail->Port = 587;                                    // Set the SMTP port
+
+$mail->Host = 'smtp.gmail.com';                 // Specify main and backup server
+$mail->Port = '465';                                    // Set the SMTP port
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'MANDRILL_USERNAME';                // SMTP username
-$mail->Password = 'MANDRILL_APIKEY';                  // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
+$mail->Username = 'dulzurasloboesta@gmail.com';                // SMTP username
+$mail->Password = 'belenyjony121213';                  // SMTP password
+$mail->SMTPSecure = 'ssl';                            // Enable encryption, 'ssl' also accepted
 
 $mail->From = 'dulzurasloboesta@gmail.com';
+$mail->Password = 'belenyjony121213';   
 $mail->FromName = 'Lobo Está - Dulzuras Artesanales';
 //$mail->AddAddress('josh@example.net', '');  // Add a recipient
 //$mail->AddAddress('ellen@example.com');

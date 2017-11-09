@@ -68,37 +68,57 @@ function enviarEmail( $email, $link ){
 
 
    /////////////////////////////////////////////////
-$mail = new PHPMailer;
+// $mail = new PHPMailer;
 
-$mail->IsSMTP();                                      // Set mailer to use SMTP
+// $mail->IsSMTP();                                      // Set mailer to use SMTP
 
-$mail->Host = 'smtp.gmail.com';                 // Specify main and backup server
-$mail->Port = '465';                                    // Set the SMTP port
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'dulzurasloboesta@gmail.com';                // SMTP username
-$mail->Password = 'belenyjony121213';                  // SMTP password
-$mail->SMTPSecure = 'ssl';                            // Enable encryption, 'ssl' also accepted
+// $mail->Host = 'smtp.gmail.com';                 // Specify main and backup server
+// $mail->Port = '587';                                    // Set the SMTP port
+// $mail->SMTPAuth = true;                               // Enable SMTP authentication
+// $mail->Username = 'dulzurasloboesta@gmail.com';                // SMTP username
+// $mail->Password = 'belenyjony121213';                  // SMTP password
+// $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
 
-$mail->From = 'dulzurasloboesta@gmail.com';
-$mail->Password = 'belenyjony121213';   
-$mail->FromName = 'Lobo Está - Dulzuras Artesanales';
-//$mail->AddAddress('josh@example.net', '');  // Add a recipient
-//$mail->AddAddress('ellen@example.com');
-$mail->AddAddress($email);               // Name is optional
+// $mail->From = 'dulzurasloboesta@gmail.com';
+// $mail->Password = 'belenyjony121213';   
+// $mail->FromName = 'Lobo Está - Dulzuras Artesanales';
+// //$mail->AddAddress('josh@example.net', '');  // Add a recipient
+// //$mail->AddAddress('ellen@example.com');
+// $mail->AddAddress($email);               // Name is optional
 
-$mail->IsHTML(true);                                  // Set email format to HTML
+// $mail->IsHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Cambio de contraseña';
-$mail->Body    = $mensaje;//'This is the HTML message body <strong>in bold!</strong>';
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+// $mail->Subject = 'Cambio de contraseña';
+// $mail->Body    = $mensaje;//'This is the HTML message body <strong>in bold!</strong>';
+// $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-if(!$mail->Send()) {
-   echo 'Message could not be sent.';
-   echo 'Mailer Error: ' . $mail->ErrorInfo;
-   exit;
+// if(!$mail->Send()) {
+//    echo 'Message could not be sent.';
+//    echo 'Mailer Error: ' . $mail->ErrorInfo;
+//    exit;
+// }
+
+
+
+////////////////////////////////////////////////////
+$para      = $email;
+$titulo    = 'El título';
+$mensaje   = 'Hola';
+$cabeceras = 'From: dulzurasloboesta@gmail.com' . '\r\n' .
+    'Reply-To: dulzurasloboesta@gmail.com' . '\r\n' .
+    'X-Mailer: PHP/' . phpversion();
+
+if(mail($para, $titulo, $mensaje, $cabeceras))
+{
+  echo "envio exitoso";
 }
+else
+{
+  echo "fallo el envio";
+}
+//////////////////////////////////////////////////   
 
-echo 'Message has been sent';
+//echo 'Message has been sent';
    /////////////////////////////////////////////////
 }
 

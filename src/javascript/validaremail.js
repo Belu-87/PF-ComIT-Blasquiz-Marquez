@@ -1,4 +1,6 @@
-  // $(document).ready(function(){
+  $(document).ready(function(){
+      $(".form-box").hide();
+      $(".form-box").fadeIn(2000);
   //   $("#frmRestablecer").submit(function(event){
   //     //event.preventDefault();
   //     $.ajax({
@@ -13,7 +15,7 @@
   //       //$("#email").val('');
   //     });
   //   });
-  // });
+   });
 
 
 

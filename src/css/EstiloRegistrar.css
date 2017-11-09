@@ -19,6 +19,10 @@ body {
   transition-duration: 2s;
 }
 
+  .aparece{
+    display: none;
+  }
+
 
 .campo {
         font-family:Helvetica;

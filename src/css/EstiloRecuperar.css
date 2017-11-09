@@ -7,8 +7,12 @@
     background-attachment:fixed;
     color:white;
     font-family: "Forte Normal", "Comic Sans MS", Arial;
+    overflow-y: scroll;
   }
   
+  .aparece{
+    display: none;
+  }
 
   input {
 

@@ -20,7 +20,7 @@
 
 	<h1 style="display: none; text-align: center;">Ya existe el usuario. Por favor recupere su contraseña.</h1>
 
-	<div class="form-box">
+	<div class="form-box aparece">
 		<div class="form-top">
     		<div class="text-center">
     			<h3>Registrate ahora</h3>

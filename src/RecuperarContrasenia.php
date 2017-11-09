@@ -19,7 +19,7 @@
 
 	<?php include("head.php");?>
 
-	<div class="form-box">
+	<div class="form-box aparece">
 		<div class="form-top">
     		<div class="text-center">
     			<h3>Ingrese su correo</h3>

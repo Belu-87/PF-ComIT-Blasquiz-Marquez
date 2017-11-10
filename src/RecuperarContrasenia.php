@@ -28,12 +28,12 @@
     		<div class="form-top-right">
     			<i class="fa fa-pencil"></i>
     		</div>
-        </div>
+        </div> 
         <div class="form-bottom">
             <form id="frmRestablecer" role="form" action="javascript:ValidarMail();" method="post" class="registration-form">
 				<div class="form-group">
                 	<label class="">Email</label>
-                	<input type="text" name="form-email" class="form-email form-control" id="emailRecup">
+                	<input type="text" name="form-email" class="form-email form-control campo" id="emailRecup">
                 </div>
 					<div class="form-group">
 					<button type="submit" class="btn btn-primary" value="Recuperar contraseña">Enviar</button>

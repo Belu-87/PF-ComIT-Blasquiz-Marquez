@@ -21,7 +21,7 @@ if( $email != "" ){
 }
 else
    $respuesta->mensaje= "Debes introducir el email de la cuenta";
- echo json_encode( $respuesta );
+ //echo json_encode( $respuesta );
 
       //$enlace = $_SERVER["SERVER_NAME"].'/pass/restablecer.php?idusuario='.sha1($idusuario).'&token='.$token;
       //return $enlace;
@@ -53,6 +53,7 @@ function enviarEmail( $email, $link ){
      <body>
        <p>Hemos recibido una peticion para restablecer la contraseña de tu cuenta.</p>
        <p>Si hiciste esta peticion, haz clic en el siguiente enlace, si no hiciste esta peticion puedes ignorar este correo.</p>
+       <p>Codigo Verificador:'.NumeroVerificador().'</p>       
        <p>
          <strong>Enlace para restablecer tu contraseña</strong><br>
          <a href="'.$link.'"> Restablecer contraseña </a>
@@ -60,20 +61,33 @@ function enviarEmail( $email, $link ){
      </body>
     </html>';
  
-   $cabeceras = 'MIME-Version: 1.0' . "\r\n";
-   $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-   $cabeceras .= 'From: Codedrinks <dulzurasloboesta@gmail.com>' . "\r\n";
+   $cabeceras = 'MIME-Version: 1.0' . '\r\n';
+   $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . '\r\n';
+   $cabeceras .= 'From: Codedrinks <dulzurasloboesta@gmail.com>' . '\r\n';
    // Se envia el correo al usuario
    //mail($email, "Recuperar contraseña", $mensaje, $cabeceras);
 
 
-   /////////////////////////////////////////////////
+//    /////////////////////////////////////////////////
 // $mail = new PHPMailer;
+
+// $mail->SMTPOptions = array(
+//     'ssl' => array(
+//         'verify_peer' => false,
+//         'verify_peer_name' => false,
+//         'allow_self_signed' => true
+//     )
+// );
 
 // $mail->IsSMTP();                                      // Set mailer to use SMTP
 
 // $mail->Host = 'smtp.gmail.com';                 // Specify main and backup server
-// $mail->Port = '587';                                    // Set the SMTP port
+// $mail->Port = 465;
+
+// $mail->SMTPDebug = 2;  
+
+// $mail->Debugoutput='html';  
+//                                   // 
 // $mail->SMTPAuth = true;                               // Enable SMTP authentication
 // $mail->Username = 'dulzurasloboesta@gmail.com';                // SMTP username
 // $mail->Password = 'belenyjony121213';                  // SMTP password
@@ -99,29 +113,48 @@ function enviarEmail( $email, $link ){
 // }
 
 
+$para = $email;
+$asunto = 'Prueba de SMTP local';
+//$mensaje = 'adsadsa';//$mensaje;
+//$cabeceras = 'From: dulzurasloboesta@gmail.com' . '\r\n' .
+//'Reply-To: $email' . '\r\n' .
+//'X-Mailer: PHP/' . phpversion();
 
-////////////////////////////////////////////////////
-$para      = $email;
-$titulo    = 'El título';
-$mensaje   = 'Hola';
-$cabeceras = 'From: dulzurasloboesta@gmail.com' . '\r\n' .
-    'Reply-To: dulzurasloboesta@gmail.com' . '\r\n' .
-    'X-Mailer: PHP/' . phpversion();
+if(mail($para, $asunto, $mensaje, $cabeceras)) {
+echo "ok";
+} else {
+echo 'error';
+}
 
-if(mail($para, $titulo, $mensaje, $cabeceras))
+
+
+}
+
+
+
+function NumeroVerificador()
 {
-  echo "envio exitoso";
+  $num = 1;
+  while ( ($num % 6 != 0) or ($num % 4 !=0) ) {
+    $num = rand(0,100000);
+  }
+  return (string)$num;
 }
-else
-{
-  echo "fallo el envio";
-}
-//////////////////////////////////////////////////   
 
-//echo 'Message has been sent';
-   /////////////////////////////////////////////////
+function EsCodigoValido($num){
+  if ( ($num % 6 ==0) and ($num % 4 ==0) ) {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }
+
+
+
 
  ?>
+
 
 

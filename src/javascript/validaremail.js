@@ -29,7 +29,22 @@
        async:true,
        success:function(response)
        {
-          alert(response); 
+        //if (response=="ok") 
+        //{
+          alert(response);
+          $(".form-top").fadeOut("fast");
+          $(".form-bottom").fadeOut("fast");
+    
+          $("h1").html("Un correo ha sido enviado. Por favor, revise su casilla.");
+          $("h1").hide();
+          $("h1").fadeIn(3000);          
+        //}
+        //else
+        //{
+          //alert(response);
+        //}
+
+
        }
     })
  }

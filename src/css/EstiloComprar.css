@@ -103,14 +103,7 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
 }
-
-.desaparece{
-    text-align: center;
-    animation: fadeOut 2s;
-    -moz-animation: fadeOut 2s; /* Firefox */
-    -webkit-animation: fadeOut 2s; /* Safari and Chrome */
-    -o-animation: fadeOut 2s; /* Opera */
-}
+ 
 
 @keyframes fadein {
     from {

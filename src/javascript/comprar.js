@@ -14,9 +14,35 @@
 
 	 function AddFila(){
 			var data='<tr id="fila'+i+'" class="aparece"><td><select id="producto'+i+'" class="fstElement fstSingleMode fstNoneSelected form-control" ';
-			data+='name="uno" placeholder="opcion"><option value="Bangladesh">Bangladesh</option> ';
-			data+='<option value="Barbados">Barbados</option><option value="Belarus">Belarus</option> ';
-			data+='<option value="Belgium">Belgium</option></select></td><td>  ';
+			// data+='name="uno" placeholder="opcion"><option value="Bangladesh">Bangladesh</option> ';
+			// data+='<option value="Barbados">Barbados</option><option value="Belarus">Belarus</option> ';
+			// data+='<option value="Belgium">Belgium</option></select></td><td>  ';
+
+
+					// <?php 
+					// 					require 'includes/conexion.php';
+					// 					$query="select id, descripcion from producto";
+					// 					$res=mysqli_query($conn,$query);
+															
+					// 					mysqli_close($conn);	
+					// 					foreach ($res as $r) {
+					// 						echo "<option value='".$r['id']."' >".$r['descripcion']."</option>";										
+					// 					}  
+					// 				?>
+
+
+			data+='name="uno" placeholder="opcion">';
+			data+='<?php';
+			data+=' 					require "includes/conexion.php";';
+			data+=' 					$query="select id, descripcion from producto";';
+			data+=' 					$res=mysqli_query($conn,$query);';
+			data+=' 					mysqli_close($conn);';
+			data+=' 					foreach ($res as $r) {';
+			data+=' 						echo "<option value=".$r['+"id"+']." >".$r['+"descripcion"+']."</option>";';
+			data+=' 					}';
+			data+=' 				?>'
+			data+='</select></td><td>  ';
+			
 			data+='<select class="fstElement fstSingleMode fstNoneSelected form-control" multiple name="language" placeholder="opciones" id="detalle'+i+'"> ';
 			data+='<option value="Afghanistan">Afghanistan</option> ';
 			data+='<option value="Albania">Albania</option> ';
@@ -96,4 +122,73 @@
 
 
 
+
+
  });
+
+
+function Validacion()
+ {
+	 /*validar campos antes de insertar*/
+	 if (EstaOK())
+	 {
+ 		 $.ajax({
+			 url:'includes/registrarpedido.php',
+			 type:"POST",
+			 data:{funcion:'RegistrarPedido'},
+			 datatype:"json",
+			 async:true,
+			 success:function(response)
+			 {
+			 	alert("ok");
+				// if (response=="ok") 
+				// {
+				// 	$(".form-top").fadeOut(2000);
+				// 	$(".form-bottom").fadeOut(2000);
+		
+				// 	$("h1").html("¡Gracias por registrarte!");
+				// 	$("h1").fadeIn(3000);
+				// }
+				// else
+				// {
+				// 	$(".form-top").fadeOut(2000);
+				// 	$(".form-bottom").fadeOut(2000);
+
+				// 	$("h1").fadeIn(3000);	
+				// } 
+			 }
+		})
+	 }
+ }
+
+ function EstaOK()
+ {
+
+ 	if ($("#calle").val() != "")
+ 	{
+  		$("#calle").removeClass("error");		
+ 		//return true;
+ 	}
+ 	else
+ 	{
+ 		$("#calle").addClass("error");
+ 		return false;
+ 	} 
+
+ 	if ($("#altura").val().match(/[0-9 -()+]+$/))
+ 	{
+  		$("#altura").removeClass("error");		
+ 		//return true;
+ 	}
+ 	else
+ 	{
+ 		$("#altura").addClass("error");
+ 		return false;
+ 	} 
+
+ 	return true; 
+ }
+
+
+
+

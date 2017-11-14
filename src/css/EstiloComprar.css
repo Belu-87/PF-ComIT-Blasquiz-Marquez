@@ -124,6 +124,14 @@ table{
 
 }
 
+
+.error{
+  border-color: red;
+  border-width: 2px;
+  transition-property: border-color;
+  border-radius: .25rem;
+  transition-duration: 2s;
+}
  
 
 @keyframes fadein {

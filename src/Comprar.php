@@ -46,18 +46,31 @@
 					    <tr id="fila1">
 							<td>
 								<select id="producto1" class="fstElement fstSingleMode fstNoneSelected form-control" name="uno" placeholder="opcion">
-								    <option value="Bangladesh">Bangladesh</option>
-								    <option value="Barbados">Barbados</option>
-								    <option value="Belarus">Belarus</option>
-								    <option value="Belgium">Belgium</option>
+									<?php 
+										require 'includes/conexion.php';
+										$query="select id, descripcion from producto";
+										$res=mysqli_query($conn,$query);
+															
+										mysqli_close($conn);	
+										foreach ($res as $r) {
+											echo "<option value='".$r['id']."' >".$r['descripcion']."</option>";										
+										}  
+									?>
 								</select>
 							</td>
 							<td>
 								<select id="detalle1" class="multipleSelect form-control" multiple name="language" placeholder="opciones">
-								    <option value="Bangladesh">Bangladesh</option>
-								    <option value="Barbados">Barbados</option>
-								    <option value="Belarus">Belarus</option>
-								    <option value="Belgium">Belgium</option>
+
+									<?php 
+										require 'includes/conexion.php';
+										$query="SELECT id, descripcion FROM producto_detalle;";
+										$res=mysqli_query($conn,$query);
+															
+										mysqli_close($conn);	
+										foreach ($res as $r) {
+											echo "<option value='".$r['id']."' >".$r['descripcion']."</option>";										
+										}  
+									?>
 								</select>
 							</td>					
 							<td>
@@ -132,7 +145,7 @@
 	                </div>         
 	                <div class="form-group">
 	                	<label class="">Telefono</label>
-	                	<input type="text" name="altura" class="form-control" id="altura">
+	                	<input type="text" name="telefono" class="form-control" id="telefono">
 	                </div>                
 				</form>
 			</div>
@@ -147,7 +160,7 @@
 
 				<input type="button" class="btn btn-outline-info float-right" value="Siguiente" id="next">
 
-				<input type="button" style="display: none;" class="btn btn-outline-info float-right" value="Confirmar Pedido" id="confirmar">
+				<input type="button" onclick="javascript:Validacion();" style="display: none;" class="btn btn-outline-info float-right" value="Confirmar Pedido" id="confirmar">
 			</div>		
 		</div>
 

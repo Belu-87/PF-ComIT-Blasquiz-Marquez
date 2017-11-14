@@ -10,6 +10,8 @@
 
 	<script src="javascript/home.js"></script>	
 	<link  rel="stylesheet" type="text/css" href="css/EstiloHome.css" />
+	<link  rel="stylesheet" type="text/css" href="css/EstiloGeneral.css" />
+	
 	<title>Dulzuras Artesanales</title>
 
 </head>

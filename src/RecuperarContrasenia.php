@@ -9,6 +9,7 @@
 	<?php include("libs.php");?>
 	
 	<link  rel="stylesheet" type="text/css" href="css/EstiloRecuperar.css" />	
+	<link  rel="stylesheet" type="text/css" href="css/EstiloGeneral.css" />
 	<script type="text/javascript" src="javascript/validaremail.js"> </script>
 	
 	

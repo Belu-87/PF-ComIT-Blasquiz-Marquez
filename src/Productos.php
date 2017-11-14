@@ -11,6 +11,7 @@
 
     
 	<link rel="stylesheet" type="text/css" href="css/EstiloProductos.css" />
+	<link  rel="stylesheet" type="text/css" href="css/EstiloGeneral.css" />
 	
 	<title>Productos</title>
 

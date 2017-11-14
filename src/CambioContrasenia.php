@@ -9,7 +9,7 @@
 	<?php include("libs.php");?>
 	
 	<link  rel="stylesheet" type="text/css" href="css/EstiloContraseniaNueva.css" />
-	
+	<link  rel="stylesheet" type="text/css" href="css/EstiloGeneral.css" />
 	
 	<title>Nueva Contraseña</title>
 </head>

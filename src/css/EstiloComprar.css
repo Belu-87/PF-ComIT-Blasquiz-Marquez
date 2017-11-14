@@ -21,10 +21,18 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
 }
 
+.fondo{
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
-  table{
+.btn{
+    cursor: pointer;
+}
+
+table{
     width: 100%;
   }
+
 
   th{
     text-align: center;
@@ -67,12 +75,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-  .texto{
+.texto{
     font-weight: bold;
     font-size: 1.5em;
-  }
+}
 
-  .imagen{
+.imagen{
     text-align: center; 
     margin: 0 auto;
     margin-left: 30%;
@@ -80,14 +88,14 @@ input[type=number]::-webkit-outer-spin-button {
     vertical-align: middle;
     width: 40%;
     height: 40%;
-  }
+}
 
 .moneda{
     vertical-align: middle;
     font-weight: bold;        
 }
 
-    .imagen-fila{
+.imagen-fila{
     text-align: center; 
     margin: 0 auto;
     vertical-align: middle;
@@ -103,6 +111,19 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
 }
+
+.panel1{
+    width: 20em;
+    height: 20em;
+
+}
+
+.panel2{
+    width: 20em;
+    height: 20em;
+
+}
+
  
 
 @keyframes fadein {

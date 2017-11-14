@@ -7,6 +7,7 @@
 	<?php include("libs.php");?>
 
 	<link  rel="stylesheet" type="text/css" href="css/EstiloAcercaDe.css" />
+	<link  rel="stylesheet" type="text/css" href="css/EstiloGeneral.css" />
 	
 
 	<title>Nosotros</title>

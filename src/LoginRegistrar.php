@@ -9,7 +9,7 @@
 	<?php include("libs.php");?>
 	
 	<link  rel="stylesheet" type="text/css" href="css/EstiloRegistrar.css" />
-	
+	<link  rel="stylesheet" type="text/css" href="css/EstiloGeneral.css" />
 	
 	<title>Registrar</title>
 </head>

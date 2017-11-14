@@ -12,6 +12,8 @@
     <script data-require="bootstrap@*" data-semver="4.0.5" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
 	
 	<link  rel="stylesheet" type="text/css" href="css/EstiloLogin.css" />
+	<link  rel="stylesheet" type="text/css" href="css/EstiloGeneral.css" />
+	
 	<title>Ingresar</title>
 </head>
 

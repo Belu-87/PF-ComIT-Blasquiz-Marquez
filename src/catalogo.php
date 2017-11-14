@@ -11,6 +11,7 @@
 	<script type="text/javascript" src="turnjs4/lib/hash.js"></script>
 	
 	<link  rel="stylesheet" type="text/css" href="css/EstiloCatalogo.css" />
+	<link  rel="stylesheet" type="text/css" href="css/EstiloGeneral.css" />
 	
 
 	<title>Productos</title>

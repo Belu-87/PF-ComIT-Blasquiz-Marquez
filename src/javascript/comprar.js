@@ -32,23 +32,23 @@
 
 
 			data+='name="uno" placeholder="opcion">';
-			data+='<?php';
-			data+=' 					require "includes/conexion.php";';
-			data+=' 					$query="select id, descripcion from producto";';
-			data+=' 					$res=mysqli_query($conn,$query);';
-			data+=' 					mysqli_close($conn);';
-			data+=' 					foreach ($res as $r) {';
-			data+=' 						echo "<option value=".$r['+"id"+']." >".$r['+"descripcion"+']."</option>";';
-			data+=' 					}';
-			data+=' 				?>'
+			//data+='<?php ';
+			// data+=' 					require "includes/conexion.php";';
+			// data+=' 					$query="select id, descripcion from producto";';
+			// data+=' 					$res=mysqli_query($conn,$query);';
+			// data+=' 					mysqli_close($conn);';
+			// data+=' 					foreach ($res as $r) {';
+			// data+=' 						echo "<option value='".$r['id']."' >".$r['descripcion']."</option>";';
+			// data+=' 					}';
+			//data+=' 				?>';
 			data+='</select></td><td>  ';
 			
 			data+='<select class="fstElement fstSingleMode fstNoneSelected form-control" multiple name="language" placeholder="opciones" id="detalle'+i+'"> ';
-			data+='<option value="Afghanistan">Afghanistan</option> ';
-			data+='<option value="Albania">Albania</option> ';
-			data+='<option value="Algeria">Algeria</option> ';
-			data+='<option value="Andorra">Andorra</option> ';
-			data+='<option value="Angola">Angola</option> ';
+			//data+='<option value="Afghanistan">Afghanistan</option> ';
+			//data+='<option value="Albania">Albania</option> ';
+			//data+='<option value="Algeria">Algeria</option> ';
+			//data+='<option value="Andorra">Andorra</option> ';
+			//data+='<option value="Angola">Angola</option> ';
 			data+='</select> ';		
 			data+='</td><td><input class="form-control" type="number" step="1" id="cantidad'+i+'"></td> ';
 			data+='<td><div class="input-group"><span class="input-group-addon">$</span> ';
@@ -73,6 +73,15 @@
 				$(this).closest('tr').fadeOut(2000);	
 				$(campo).fadeOut(1000,function(){$(this).closest('tr').remove();});
 			});
+
+
+			/*copio los items del select de producto*/
+			var $options = $("#producto1 > option").clone();
+			$('#producto'+i).append($options);	
+
+			/*copio los items del select de detalle*/
+		    $options = $("#detalle1 > option").clone();
+			$('#detalle'+i).append($options);	
 
 			i+=1;
 	 }

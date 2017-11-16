@@ -45,15 +45,15 @@
 				    <tbody>
 					    <tr id="fila1">
 							<td>
-								<select id="producto1" class="fstElement fstSingleMode fstNoneSelected form-control" name="uno" placeholder="opcion">
+								<select id="producto1" class="fstElement fstSingleMode fstNoneSelected form-control" name="uno" placeholder="opcion" searchPlaceholder="Buscar...">
 									<?php 
 										require 'includes/conexion.php';
-										$query="select id, descripcion from producto";
+										$query="select id, descripcion,precioUnitario from producto";
 										$res=mysqli_query($conn,$query);
 															
 										mysqli_close($conn);	
 										foreach ($res as $r) {
-											echo "<option value='".$r['id']."' >".$r['descripcion']."</option>";										
+											echo "<option value='".$r['id']."' >".$r['descripcion']."</option>";									
 										}  
 									?>
 								</select>

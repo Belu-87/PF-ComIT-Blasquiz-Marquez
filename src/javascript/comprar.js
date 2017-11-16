@@ -2,6 +2,7 @@
  $(function () 
  {
  	var i=2;
+ 	var jsonProducto;
 	
 	$('#producto1').fastselect();
 	$('#detalle1').fastselect();
@@ -14,41 +15,11 @@
 
 	 function AddFila(){
 			var data='<tr id="fila'+i+'" class="aparece"><td><select id="producto'+i+'" class="fstElement fstSingleMode fstNoneSelected form-control" ';
-			// data+='name="uno" placeholder="opcion"><option value="Bangladesh">Bangladesh</option> ';
-			// data+='<option value="Barbados">Barbados</option><option value="Belarus">Belarus</option> ';
-			// data+='<option value="Belgium">Belgium</option></select></td><td>  ';
-
-
-					// <?php 
-					// 					require 'includes/conexion.php';
-					// 					$query="select id, descripcion from producto";
-					// 					$res=mysqli_query($conn,$query);
-															
-					// 					mysqli_close($conn);	
-					// 					foreach ($res as $r) {
-					// 						echo "<option value='".$r['id']."' >".$r['descripcion']."</option>";										
-					// 					}  
-					// 				?>
-
 
 			data+='name="uno" placeholder="opcion">';
-			//data+='<?php ';
-			// data+=' 					require "includes/conexion.php";';
-			// data+=' 					$query="select id, descripcion from producto";';
-			// data+=' 					$res=mysqli_query($conn,$query);';
-			// data+=' 					mysqli_close($conn);';
-			// data+=' 					foreach ($res as $r) {';
-			// data+=' 						echo "<option value='".$r['id']."' >".$r['descripcion']."</option>";';
-			// data+=' 					}';
-			//data+=' 				?>';
 			data+='</select></td><td>  ';
 			
 			data+='<select class="fstElement fstSingleMode fstNoneSelected form-control" multiple name="language" placeholder="opciones" id="detalle'+i+'"> ';
-			//data+='<option value="Afghanistan">Afghanistan</option> ';
-			//data+='<option value="Albania">Albania</option> ';
-			//data+='<option value="Algeria">Algeria</option> ';
-			//data+='<option value="Andorra">Andorra</option> ';
-			//data+='<option value="Angola">Angola</option> ';
 			data+='</select> ';		
 			data+='</td><td><input class="form-control" type="number" step="1" id="cantidad'+i+'"></td> ';
 			data+='<td><div class="input-group"><span class="input-group-addon">$</span> ';
@@ -128,6 +99,9 @@
 	});	
 
 
+	$('#producto1').change(function(){
+		//CalcularPrecio();
+	});
 
 
 
@@ -199,5 +173,18 @@ function Validacion()
  }
 
 
-
+function CalcularPrecio()
+ {
+	 $.ajax({
+		 url:'includes/registrarpedido.php',
+		 type:"POST",
+		 data:{funcion:'CalcularPrecioUnit',productoId:$('.fstSingleMode.fstActive').value},
+		 datatype:"json",
+		 async:true,
+	 	success:function(response)
+	 	{
+	 		alert("ok"); 
+		}
+	})
+ }
 

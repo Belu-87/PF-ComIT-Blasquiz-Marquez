@@ -13,7 +13,7 @@
 	})
 
 
-	 function AddFila(){
+	 function AddFila(){ 
 			var data='<tr id="fila'+i+'" class="aparece"><td><select id="producto'+i+'" class="fstElement fstSingleMode fstNoneSelected form-control" ';
 
 			data+='name="uno" placeholder="opcion">';

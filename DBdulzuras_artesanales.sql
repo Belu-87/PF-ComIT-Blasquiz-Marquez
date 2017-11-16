@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dulzuras_artesanales
 -- ------------------------------------------------------
--- Server version	5.7.14
+-- Server version	5.7.11
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -283,6 +283,7 @@ CREATE TABLE `producto` (
   `descripcion` varchar(85) DEFAULT NULL,
   `imageLink` varchar(180) DEFAULT NULL,
   `estado` bit(1) DEFAULT NULL,
+  `precioUnitario` decimal(5,2) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='															';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -293,7 +294,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES (1,'Alfajores',NULL,NULL),(2,'Cubanitos',NULL,NULL),(3,'Muffins',NULL,NULL),(4,'Chocotorta',NULL,NULL),(5,'Tarta de coco',NULL,NULL);
+INSERT INTO `producto` VALUES (1,'Alfajores Chicos',NULL,NULL,4.00),(2,'Cubanitos',NULL,NULL,7.00),(3,'Muffins',NULL,NULL,5.00),(4,'Chocotorta',NULL,NULL,200.00),(5,'Tarta de coco',NULL,NULL,300.00),(6,'Alfajores Grandes',NULL,NULL,6.00);
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -308,6 +309,7 @@ CREATE TABLE `producto_detalle` (
   `id` int(11) NOT NULL,
   `descripcion` varchar(85) DEFAULT NULL,
   `estado` bit(1) DEFAULT NULL,
+  `suma` decimal(5,2) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='		';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -318,7 +320,7 @@ CREATE TABLE `producto_detalle` (
 
 LOCK TABLES `producto_detalle` WRITE;
 /*!40000 ALTER TABLE `producto_detalle` DISABLE KEYS */;
-INSERT INTO `producto_detalle` VALUES (1,'Dulce de Leche',NULL),(2,'Color Rojo',NULL),(3,'Color Rosa',NULL),(4,'Color Verde',NULL),(5,'Nueces',NULL),(6,'Almendras',NULL),(7,'Coco',NULL),(8,'Chips Chocolate Negro',NULL),(9,'Chips Chocolate Blanco',NULL),(10,'Marroc',NULL),(11,'Nugget',NULL),(12,'Baño Chocolate Negro',NULL),(13,'Frutos Del Bosque',NULL),(14,'Baño Chocolate Blanco',NULL);
+INSERT INTO `producto_detalle` VALUES (1,'Dulce de Leche',NULL,0.00),(2,'Color Rojo',NULL,0.00),(3,'Color Rosa',NULL,0.00),(4,'Color Verde',NULL,0.00),(5,'Nueces',NULL,1.00),(6,'Almendras',NULL,1.00),(7,'Coco',NULL,1.00),(8,'Chips Chocolate Negro',NULL,1.00),(9,'Chips Chocolate Blanco',NULL,1.00),(10,'Marroc',NULL,1.00),(11,'Nugget',NULL,1.00),(12,'Baño Chocolate Negro',NULL,3.00),(13,'Frutos Del Bosque',NULL,1.00),(14,'Baño Chocolate Blanco',NULL,3.00);
 /*!40000 ALTER TABLE `producto_detalle` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -430,7 +432,7 @@ CREATE TABLE `usuario` (
   `fEmail` varchar(60) DEFAULT NULL,
   `fechaNac` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -439,7 +441,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,NULL,NULL,NULL,NULL,NULL,'1708282002537912','Jonatan Marquez','',NULL);
+INSERT INTO `usuario` VALUES (1,NULL,NULL,NULL,NULL,NULL,'1708282002537912','Jonatan Marquez','',NULL),(2,'aa',NULL,'jonatanmarquez88@gmail.com',NULL,'4124bc0a9335c27f086f24ba207a4912',NULL,NULL,NULL,'2011-08-19'),(3,'dd',NULL,'dd@gmail.com',NULL,'1aabac6d068eef6a7bad3fdf50a05cc8',NULL,NULL,NULL,'2011-08-19'),(4,'ww',NULL,'ww@gmail.com',NULL,'ad57484016654da87125db86f4227ea3',NULL,NULL,NULL,'2011-08-19');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -452,4 +454,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-02 19:00:59
+-- Dump completed on 2017-11-16 13:46:36

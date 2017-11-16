@@ -4,6 +4,9 @@
  	var i=2;
  	var jsonProducto;
 	
+	ObtenerProductos(jsonProducto);
+	alert(jsonProducto);
+
 	$('#producto1').fastselect();
 	$('#detalle1').fastselect();
 
@@ -101,6 +104,7 @@
 
 	$('#producto1').change(function(){
 		//CalcularPrecio();
+
 	});
 
 
@@ -142,6 +146,23 @@ function Validacion()
 			 }
 		})
 	 }
+ }
+
+ function ObtenerProductos(jsonProducto)
+ {
+		 $.ajax({
+			 url:'includes/registrarpedido.php',
+			 type:"POST",
+			 data:{funcion:'ObtenerProductos'},
+			 datatype:"json",
+			 async:true,
+			 success:function(response)
+			 {
+			 	//console.log(response);
+			 	jsonProducto=response;
+			 	//alert(jsonProducto);
+			 }
+		});
  }
 
  function EstaOK()

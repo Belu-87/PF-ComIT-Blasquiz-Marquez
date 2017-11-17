@@ -3,9 +3,11 @@
  {
  	var i=2;
 
-	 var jsonProductos;
+	var jsonProductos;
+
 	jsonProductos= ObtenerProductos();
-alert(jsonProductos);
+	//alert(jsonProductos);
+
 	$('#producto1').fastselect();
 	$('#detalle1').fastselect();
 
@@ -139,7 +141,6 @@ alert(jsonProductos);
 
 
 
-
  });
 
 
@@ -184,15 +185,18 @@ function Validacion()
 			 url:'includes/registrarpedido.php',
 			 type:"POST",
 			 data:{funcion:'ObtenerProductos'},
-			 datatype:"json",			
+			 datatype:"json",	
+			 async:false,		
 			 success:function(response)
 			 {
 			 	//console.log(response);
-			 	jsonProductos=response;
-			 	alert(jsonProductos);
+			 	jsonP=response;			 	
+			 	//alert(jsonProductos);
 			 	//alert(jsonProducto);
 			 }
 		});
+		 jsonProductos=jsonP;
+
  }
 
  function EstaOK()
@@ -234,6 +238,49 @@ function CalcularPrecio(filaId)
 	campo="#detalle"+filaId;
 	//alert(  $(campo).val()  );
 
+	//var dd=new Array();	
+	//jsonProductos=$.getJSON("json/jsonProductos.json");	
+
+	var url="json/jsonProductos.json";
+	var precio=0;
+	$.getJSON(url, function (data) {		
+		//alert(data[0].precioUnitario); 
+
+		var i=0;
+		var encontre=false;
+		while(!encontre && i<data.lenght)
+		{
+			alert(data[i]);
+			if(data[i].id==1)
+			{
+				precio=data[0].precioUnitario;
+				encontre=true;
+				alert(precio);
+			}
+			i+=1;
+		}
+
+    });
+
+	//console.log(jsonProductos);
+	//console.log(dd);
+	//alert(getElementJSON(jsonProductos,1));
+
+	//console.log(jsonProductos);
+	//var obj = $.stringify("json/jsonProductos.json");
+	// var arr=[];
+	// for(var key in obj){
+	//   arr.push([key.toString(), obj [key]]);
+	// }
+		
+		//console.log(jsonProductos);
+		//alert(jsonProductos.responseText );
+	
+
+	//console.log(jsonProductos);
+	//alert(getElementJSON(jsonProductos,1) );
+
+
 
 	//  $.ajax({
 	// 	 url:'includes/registrarpedido.php',
@@ -248,3 +295,13 @@ function CalcularPrecio(filaId)
 	// })
  }
 
+
+function getElementJSON(jsonFile,id)
+{
+	var i=0;
+	while(id!=jsonFile[i].id && i<=js.lenght)
+	{
+		i+=1;
+	}
+	return jsonFile[i];
+}

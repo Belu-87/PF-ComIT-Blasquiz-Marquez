@@ -21,8 +21,8 @@
 
 function CalcularPrecioUnit()
 {
-	return 'hola';
-
+	//return '';
+	//return alert(  $('.fstSingleMode .fstSelected').val() );
 }
 
 

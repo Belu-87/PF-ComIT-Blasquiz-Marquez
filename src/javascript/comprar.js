@@ -1,12 +1,11 @@
- 
+
  $(function () 
  {
  	var i=2;
- 	var jsonProducto;
-	
-	ObtenerProductos(jsonProducto);
-	alert(jsonProducto);
 
+	 var jsonProductos;
+	jsonProductos= ObtenerProductos();
+alert(jsonProductos);
 	$('#producto1').fastselect();
 	$('#detalle1').fastselect();
 
@@ -17,7 +16,7 @@
 
 
 	 function AddFila(){ 
-			var data='<tr id="fila'+i+'" class="aparece"><td><select id="producto'+i+'" class="fstElement fstSingleMode fstNoneSelected form-control" ';
+			var data='<tr id="'+i+'" class="aparece"><td><select id="producto'+i+'" class="fstElement fstSingleMode fstNoneSelected form-control" ';
 
 			data+='name="uno" placeholder="opcion">';
 			data+='</select></td><td>  ';
@@ -42,12 +41,32 @@
 			campo="#detalle"+i;
 			$(campo).fastselect();
 
+			/*agrego evento eliminar*/
 			campo="#eliminar"+i;
 			$(campo).on('click',function(){		
 				$(this).closest('tr').fadeOut(2000);	
 				$(campo).fadeOut(1000,function(){$(this).closest('tr').remove();});
 			});
 
+			/*agrego eventos de precio para los campos editables*/
+			campo="#producto"+i;
+			$(campo).on('change',function(){	
+			var filaId=$(this).closest('tr').attr('id');
+				CalcularPrecio(filaId);
+			});
+
+			campo="#detalle"+i;
+			$(campo).on('change',function(){	
+			var filaId=$(this).closest('tr').attr('id');
+				CalcularPrecio(filaId);
+			});			
+
+			campo="#cantidad"+i;
+			$(campo).on('change',function(){	
+			var filaId=$(this).closest('tr').attr('id');
+				CalcularPrecio(filaId);
+			});
+			/********************************************/
 
 			/*copio los items del select de producto*/
 			var $options = $("#producto1 > option").clone();
@@ -102,11 +121,21 @@
 	});	
 
 
+	/*agrego eventos a la primer fila que no se puede eliminar*/
 	$('#producto1').change(function(){
-		//CalcularPrecio();
-
+		var filaId=$(this).closest('tr').attr('id');
+		CalcularPrecio(filaId);
 	});
 
+	$('#detalle1').change(function(){
+		var filaId=$(this).closest('tr').attr('id');
+		CalcularPrecio(filaId);
+	});	
+
+	$('#cantidad1').change(function(){
+		var filaId=$(this).closest('tr').attr('id');
+		CalcularPrecio(filaId);
+	});	
 
 
 
@@ -148,18 +177,19 @@ function Validacion()
 	 }
  }
 
- function ObtenerProductos(jsonProducto)
+ function ObtenerProductos()
  {
+ 	var jsonP;
 		 $.ajax({
 			 url:'includes/registrarpedido.php',
 			 type:"POST",
 			 data:{funcion:'ObtenerProductos'},
-			 datatype:"json",
-			 async:true,
+			 datatype:"json",			
 			 success:function(response)
 			 {
 			 	//console.log(response);
-			 	jsonProducto=response;
+			 	jsonProductos=response;
+			 	alert(jsonProductos);
 			 	//alert(jsonProducto);
 			 }
 		});
@@ -194,18 +224,27 @@ function Validacion()
  }
 
 
-function CalcularPrecio()
+function CalcularPrecio(filaId)
  {
-	 $.ajax({
-		 url:'includes/registrarpedido.php',
-		 type:"POST",
-		 data:{funcion:'CalcularPrecioUnit',productoId:$('.fstSingleMode.fstActive').value},
-		 datatype:"json",
-		 async:true,
-	 	success:function(response)
-	 	{
-	 		alert("ok"); 
-		}
-	})
+	/*obtengo el id del producto seleccionado*/
+	var campo="#producto"+filaId;
+	//alert(  $(campo).val()  );
+
+	/*obtengo los ids del detalle seleccionado*/
+	campo="#detalle"+filaId;
+	//alert(  $(campo).val()  );
+
+
+	//  $.ajax({
+	// 	 url:'includes/registrarpedido.php',
+	// 	 type:"POST",
+	// 	 data:{funcion:'CalcularPrecioUnit',productoId:$('.fstSingleMode.fstActive').value},
+	// 	 datatype:"json",
+	// 	 async:true,
+	//  	success:function(response)
+	//  	{
+	//  		alert(response); 
+	// 	}
+	// })
  }
 

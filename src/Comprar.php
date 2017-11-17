@@ -43,7 +43,7 @@
 						<th></th>
 				    </thead>
 				    <tbody>
-					    <tr id="fila1">
+					    <tr id="1">
 							<td>
 								<select id="producto1" class="fstElement fstSingleMode fstNoneSelected form-control" name="uno" placeholder="opcion" searchPlaceholder="Buscar...">
 									<?php 

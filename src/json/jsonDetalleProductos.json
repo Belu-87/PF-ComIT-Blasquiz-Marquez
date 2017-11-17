@@ -1,0 +1,16 @@
+[
+	{"id":"1","descripcion":"Dulce de Leche","suma":"0.00"},
+	{"id":"2","descripcion":"Color Rojo","suma":"0.00"},
+	{"id":"3","descripcion":"Color Rosa","suma":"0.00"},
+	{"id":"4","descripcion":"Color Verde","suma":"0.00"},
+	{"id":"5","descripcion":"Nueces","suma":"1.00"},
+	{"id":"6","descripcion":"Almendras","suma":"1.00"},
+	{"id":"7","descripcion":"Coco","suma":"0.00"},
+	{"id":"8","descripcion":"Chips Chocolate Negro","suma":"1.00"},
+	{"id":"9","descripcion":"Chips Chocolate Blanco","suma":"1.00"},
+	{"id":"10","descripcion":"Marroc","suma":"1.00"},
+	{"id":"11","descripcion":"Nugget","suma":"1.00"},
+	{"id":"12","descripcion":"Baño Chocolate Negro","suma":"3.00"},
+	{"id":"13","descripcion":"Frutos Del Bosque","suma":"1.00"},
+	{"id":"14","descripcion":"Baño Chocolate Blanco","suma":"3.00"}
+]

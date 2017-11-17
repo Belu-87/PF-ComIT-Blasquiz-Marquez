@@ -5,7 +5,7 @@
 
 	var jsonProductos;
 
-	jsonProductos= ObtenerProductos();
+	// ObtenerProductos();
 	//alert(jsonProductos);
 
 	$('#producto1').fastselect();
@@ -180,22 +180,21 @@ function Validacion()
 
  function ObtenerProductos()
  {
- 	var jsonP;
 		 $.ajax({
 			 url:'includes/registrarpedido.php',
 			 type:"POST",
-			 data:{funcion:'ObtenerProductos'},
+			 data:{funcion:'ObtenerDetalleProductos'},
 			 datatype:"json",	
-			 async:false,		
+			 async:true,		
 			 success:function(response)
 			 {
-			 	//console.log(response);
-			 	jsonP=response;			 	
+			 	alert(response);
+			 	 console.log(response);
+			 	//jsonP=response;			 	
 			 	//alert(jsonProductos);
 			 	//alert(jsonProducto);
 			 }
 		});
-		 jsonProductos=jsonP;
 
  }
 
@@ -231,16 +230,24 @@ function Validacion()
 function CalcularPrecio(filaId)
  {
 	/*obtengo el id del producto seleccionado*/
-	var campo="#producto"+filaId;
+	var inputProducto="#producto"+filaId;
 	//alert(  $(campo).val()  );
 
 	/*obtengo los ids del detalle seleccionado*/
-	campo="#detalle"+filaId;
+	var inputDetalle="#detalle"+filaId;
 	//alert(  $(campo).val()  );
 
 	//var dd=new Array();	
 	//jsonProductos=$.getJSON("json/jsonProductos.json");	
 
+	getPrecioUnitarioProducto(filaId);
+	getPrecioUnitarioDetalleProducto(filaId);
+
+ }
+
+
+function getPrecioUnitarioProducto(filaId)
+{
 	var url="json/jsonProductos.json";
 	var precio=0;
 	$.getJSON(url, function (data) {		
@@ -248,60 +255,52 @@ function CalcularPrecio(filaId)
 
 		var i=0;
 		var encontre=false;
-		while(!encontre && i<data.lenght)
-		{
-			alert(data[i]);
-			if(data[i].id==1)
+		var inputPrecioUnit="#precioUnit"+filaId;
+		var inputProd="#producto"+filaId;
+		while(!encontre && i<data.length)
+		{	
+			if(data[i].id==$(inputProd).val())
 			{
-				precio=data[0].precioUnitario;
+				precio=data[i].precioUnitario;
 				encontre=true;
-				alert(precio);
+				$(inputPrecioUnit).val(precio);
+				return;
 			}
 			i+=1;
 		}
-
     });
-
-	//console.log(jsonProductos);
-	//console.log(dd);
-	//alert(getElementJSON(jsonProductos,1));
-
-	//console.log(jsonProductos);
-	//var obj = $.stringify("json/jsonProductos.json");
-	// var arr=[];
-	// for(var key in obj){
-	//   arr.push([key.toString(), obj [key]]);
-	// }
-		
-		//console.log(jsonProductos);
-		//alert(jsonProductos.responseText );
-	
-
-	//console.log(jsonProductos);
-	//alert(getElementJSON(jsonProductos,1) );
+    return precio;
+}
 
 
-
-	//  $.ajax({
-	// 	 url:'includes/registrarpedido.php',
-	// 	 type:"POST",
-	// 	 data:{funcion:'CalcularPrecioUnit',productoId:$('.fstSingleMode.fstActive').value},
-	// 	 datatype:"json",
-	// 	 async:true,
-	//  	success:function(response)
-	//  	{
-	//  		alert(response); 
-	// 	}
-	// })
- }
-
-
-function getElementJSON(jsonFile,id)
+function getPrecioUnitarioDetalleProducto(filaId)
 {
-	var i=0;
-	while(id!=jsonFile[i].id && i<=js.lenght)
-	{
-		i+=1;
-	}
-	return jsonFile[i];
+	var url="json/jsonDetalleProductos.json";
+	var precio=0;
+	$.getJSON(url, function (data) {		
+		//alert(data[0].precioUnitario); 
+
+		var i=0;
+		var encontre=false;
+		var inputPrecioUnit="#precioUnit"+filaId;
+		var inputDetProd="#detalle"+filaId;
+		var ids=$(inputDetProd).val();
+		//var ArrayDetalle = ids.split(',');
+
+
+
+
+		while(!encontre && i<data.length)
+		{	
+			if(data[i].id==$(inputProd).val())
+			{
+				precio=data[i].precioUnitario;
+				encontre=true;
+				$(inputPrecioUnit).val(precio);
+				return;
+			}
+			i+=1;
+		}
+    });
+    return precio;
 }

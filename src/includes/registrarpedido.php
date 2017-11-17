@@ -13,8 +13,8 @@
 		echo ObtenerProductos($conn);
 	}
 	else if($funcion==='ObtenerDetalleProductos')
-	{
-		echo ObtenerDetalleProductos();
+	{	
+		echo ObtenerDetalleProductos($conn);
 	}
 
 
@@ -40,9 +40,19 @@ function ObtenerProductos($conn)
 	return json_encode($rows);
 }
 
-function ObtenerDetalleProductos()
+function ObtenerDetalleProductos($conn)
 {
-	return 'hola';
+	$query2="select id, descripcion,suma from producto_detalle";
+
+	$res2=mysqli_query($conn,$query2);
+
+	mysqli_close($conn);	
+
+	$rows2 = array();
+	while($r2 = mysqli_fetch_assoc($res2)) {
+	    $rows2[] = $r2;
+	}
+	return json_encode($rows2);
 }
 
 ?>

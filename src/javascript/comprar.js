@@ -261,9 +261,9 @@ function getPrecioUnitarioProducto(filaId)
 		{	
 			if(data[i].id==$(inputProd).val())
 			{
-				precio=data[i].precioUnitario;
+				precio=parseFloat(data[i].precioUnitario);
 				encontre=true;
-				$(inputPrecioUnit).val(precio);
+				$(inputPrecioUnit).val( precio.toFixed(2) );
 				return;
 			}
 			i+=1;
@@ -284,23 +284,26 @@ function getPrecioUnitarioDetalleProducto(filaId)
 		var encontre=false;
 		var inputPrecioUnit="#precioUnit"+filaId;
 		var inputDetProd="#detalle"+filaId;
-		var ids=$(inputDetProd).val();
-		//var ArrayDetalle = ids.split(',');
+		var ids=$(inputDetProd).val().toString();
+		var ArrayDetalle = ids.split(',');
 
-
-
-
-		while(!encontre && i<data.length)
-		{	
-			if(data[i].id==$(inputProd).val())
-			{
-				precio=data[i].precioUnitario;
-				encontre=true;
-				$(inputPrecioUnit).val(precio);
-				return;
+		for (var aux = 0; aux < ArrayDetalle.length; aux++) 
+		{
+			i=0;
+			while(i<data.length)
+			{	
+				if(data[i].id==ArrayDetalle[aux])
+				{
+					precio=parseFloat(data[i].suma);
+					precio+=parseFloat( $(inputPrecioUnit).val() );
+					$(inputPrecioUnit).val( precio.toFixed(2) );					
+				}
+				i+=1;
 			}
-			i+=1;
+
 		}
+
+
     });
     return precio;
 }

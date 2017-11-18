@@ -72,7 +72,7 @@
 
 			/*copio los items del select de producto*/
 			var $options = $("#producto1 > option").clone();
-			$('#producto'+i).append($options);	
+			$('#producto'+i).append($options);		
 
 			/*copio los items del select de detalle*/
 		    $options = $("#detalle1 > option").clone();

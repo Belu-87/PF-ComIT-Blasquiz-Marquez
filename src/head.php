@@ -105,6 +105,9 @@ if ( isset( $session ) ) {
 	        <?php if(isset($_SESSION["usuario"]))
 	        	  {
 	        	  	echo $_SESSION["usuario"];
+	        	  	
+	        	  	// echo 
+	        	  	// "<a href='#' class='nav-link dropdown-toggle texto-color' data-toggle='dropdown'> <span class='caret'></span></a>";
 	        	  }
 	        	  else
 	        	  {echo "¿Ya tienes una cuenta?";
@@ -115,7 +118,7 @@ if ( isset( $session ) ) {
 
         <?php if(isset($_SESSION["usuario"]))
 			  {
-			  	echo "<a href='#' class='nav-link texto-color' id='CerrarSesion'><b>Cerrar Sesion</b> <span class='caret'></span></a>";
+			  echo "<a href='#' class='nav-link texto-color' id='CerrarSesion'><b>Cerrar Sesion</b> <span class='caret'></span></a>";
 			  }
 			  else
 			  {echo "<a href='#' class='nav-link dropdown-toggle texto-color' data-toggle='dropdown'><b>Iniciar Sesion</b> <span class='caret'></span></a>";} 

@@ -290,11 +290,11 @@ ul{
 	background-image:-o-linear-gradient(left, #fff 95%, #dadada 100%);
 	background-image:linear-gradient(left, #fff 95%, #dadada 100%);*/
 
-	background-image:-webkit-linear-gradient(left, #FFC4FF 95%, #dadada 100%);
-	background-image:-moz-linear-gradient(left, #FFC4FF 95%, #dadada 100%);
-	background-image:-ms-linear-gradient(left, #FFC4FF 95%, #dadada 100%);
-	background-image:-o-linear-gradient(left, #FFC4FF 95%, #dadada 100%);
-	background-image:linear-gradient(left, #FFC4FF 95%, #dadada 100%);
+	background-image:-webkit-linear-gradient(left, #efceef 95%, #dadada 100%);
+	background-image:-moz-linear-gradient(left, #efceef 95%, #dadada 100%);
+	background-image:-ms-linear-gradient(left, #efceef 95%, #dadada 100%);
+	background-image:-o-linear-gradient(left, #efceef 95%, #dadada 100%);
+	background-image:linear-gradient(left, #efceef 95%, #dadada 100%);
 }
 
 .sj-book .odd{
@@ -305,11 +305,11 @@ ul{
 	background-image:-o-linear-gradient(right, #fff 95%, #cacaca 100%);
 	background-image:linear-gradient(right, #fff 95%, #cacaca 100%);*/
 
-	background-image:-webkit-linear-gradient(right, #FFC4FF 95%, #cacaca 100%);
-	background-image:-moz-linear-gradient(right, #FFC4FF 95%, #cacaca 100%);
-	background-image:-ms-linear-gradient(right, #FFC4FF 95%, #cacaca 100%);
-	background-image:-o-linear-gradient(right, #FFC4FF 95%, #cacaca 100%);
-	background-image:linear-gradient(right, #FFC4FF 95%, #cacaca 100%);
+	background-image:-webkit-linear-gradient(right, #efceef 95%, #cacaca 100%);
+	background-image:-moz-linear-gradient(right, #efceef 95%, #cacaca 100%);
+	background-image:-ms-linear-gradient(right, #efceef 95%, #cacaca 100%);
+	background-image:-o-linear-gradient(right, #efceef 95%, #cacaca 100%);
+	background-image:linear-gradient(right, #efceef 95%, #cacaca 100%);
 }
 
 .sj-book .loader{

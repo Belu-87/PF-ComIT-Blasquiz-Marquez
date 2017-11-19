@@ -5,7 +5,7 @@
     -o-background-size: cover;
     background-size: cover;
     background-attachment:fixed;
-    color:black;
+    color: black;
     font-family: "Forte Normal", "Comic Sans MS", Arial;
     overflow-y: scroll;
   }

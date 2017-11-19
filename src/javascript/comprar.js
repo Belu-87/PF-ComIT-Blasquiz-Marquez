@@ -18,7 +18,7 @@
 
 
 	 function AddFila(){ 
-			var data='<tr id="'+i+'" class="aparece"><td><select id="producto'+i+'" class="fstElement fstSingleMode fstNoneSelected form-control" ';
+			var data='<tr id="'+i+'" class="fila aparece"><td><select id="producto'+i+'" class="fstElement fstSingleMode fstNoneSelected form-control" ';
 
 			data+='name="uno" placeholder="opcion">';
 			data+='</select></td><td>  ';
@@ -29,7 +29,7 @@
 			data+='<td><div class="input-group"><span class="input-group-addon">$</span> ';
 			data+='<input disabled="disabled" id="precioUnit'+i+'" class="form-control" type="number" ';
 			data+='step="0.01"></div></td><td><div class="input-group"><span class="input-group-addon">$</span> ';
-			data+='<input disabled="disabled" id="precioTotal'+i+'" class="form-control" type="number" step="0.01"></div> ';
+			data+='<input disabled="disabled" id="precioTotal'+i+'" class="form-control total" type="number" step="0.01"></div> ';
 			data+='</td><td><img id="eliminar'+i+'" class="imagen-fila eliminar aparece" src="../Imagenes/delete.png"></td> ';
 			data+='<!-- <td><input type="button" class="add" value="Add Row"></td> --> ';
 			data+='<td><img style="display: none;" id="agregar'+i+'" class="imagen-fila aparece" src="../Imagenes/add.png"></td></tr> ';
@@ -139,6 +139,14 @@
 		CalcularPrecio(filaId);
 	});	
 
+	// $('#precioUnit1').change(function(){
+	// 	var filaId=$(this).closest('tr').attr('id');
+	// 	alert();
+	// 	getPrecioTotal(filaId);
+	// });	
+
+
+
 
 
  });
@@ -242,6 +250,10 @@ function CalcularPrecio(filaId)
 
 	getPrecioUnitarioProducto(filaId);
 	getPrecioUnitarioDetalleProducto(filaId);
+	setInterval(function(){
+		getPrecioTotal(filaId);
+	},500);
+	getSumaTotales();
 
  }
 
@@ -278,21 +290,19 @@ function getPrecioUnitarioDetalleProducto(filaId)
 	var url="json/jsonDetalleProductos.json";
 	var precio=0;
 	$.getJSON(url, function (data) {		
-		//alert(data[0].precioUnitario); 
-
 		var i=0;
 		var encontre=false;
 		var inputPrecioUnit="#precioUnit"+filaId;
 		var inputDetProd="#detalle"+filaId;
 		var ids=$(inputDetProd).val().toString();
-		var ArrayDetalle = ids.split(',');
+		var detalle = ids.split(',');
 
-		for (var aux = 0; aux < ArrayDetalle.length; aux++) 
+		for (var aux = 0; aux < detalle.length; aux++) 
 		{
 			i=0;
 			while(i<data.length)
 			{	
-				if(data[i].id==ArrayDetalle[aux])
+				if(data[i].id==detalle[aux])
 				{
 					precio=parseFloat(data[i].suma);
 					precio+=parseFloat( $(inputPrecioUnit).val() );
@@ -302,8 +312,123 @@ function getPrecioUnitarioDetalleProducto(filaId)
 			}
 
 		}
-
-
     });
     return precio;
+}
+
+
+
+function getPrecioTotal(filaId)
+{
+	try
+	{	
+		var precioUnit=parseFloat($('#precioUnit'+filaId).val());
+		var cantidad=parseFloat($('#cantidad'+filaId).val());
+		//alert(precioUnit);
+		//alert(cantidad);
+		$("#precioTotal"+filaId).val( (precioUnit*cantidad).toFixed(2) );
+	}
+	catch(err)
+	{
+
+	}
+
+}
+
+function getSumaTotales()
+{
+	try
+	{	
+		var total=0;
+		setInterval(function(){
+			total=0;
+			$(".total").each(function(){
+				total+=parseFloat($(this).val());
+				$("#totalPedido").val(total.toFixed(2));
+			});
+		},500);		
+	}
+	catch(err)
+	{
+
+	}
+
+}
+
+
+function getResumenPedido()
+{
+	try
+	{	
+		$(".fila").each(function(){
+			//alert($(this).attr("id"));
+			var prod=getDetalleProducto($(this).attr("id"));
+			alert(prod);
+			alert( getDescripcionDetalleProducto($(this).attr("id")) );			
+		});
+	}
+	catch(err)
+	{
+
+	}
+
+}
+
+
+
+function getDetalleProducto(filaId)
+{
+	var url="json/jsonProductos.json";
+	var descripcion="";
+	$.getJSON(url, function (data) {		
+		//alert(data[0].precioUnitario); 
+
+		var i=0;
+		var encontre=false;
+		var inputProd="#producto"+filaId;
+		while(!encontre && i<data.length)
+		{	
+			if(data[i].id==$(inputProd).val())
+			{
+				descripcion=data[i].descripcion;
+				encontre=true;
+				return descripcion;
+			}
+			i+=1;
+		}
+    });
+    return descripcion;
+}
+
+
+function getDescripcionDetalleProducto(filaId)
+{
+	var url="json/jsonDetalleProductos.json";
+	var descripcion="";
+	$.getJSON(url, function (data) {		
+		var i=0;
+		//var encontre=false;
+		//var inputPrecioUnit="#precioUnit"+filaId;
+		var inputDetProd="#detalle"+filaId;
+		var ids=$(inputDetProd).val().toString();
+		var detalle = ids.split(',');
+
+		for (var aux = 0; aux < detalle.length; aux++) 
+		{
+			i=0;
+			while(i<data.length)
+			{	
+				if(data[i].id==detalle[aux])
+				{
+					descripcion+="-"+data[i].descripcion+"-";
+					//precio+=parseFloat( $(inputPrecioUnit).val() );
+					//$(inputPrecioUnit).val( precio.toFixed(2) );
+					return descripcion;					
+				}
+				i+=1;
+			}
+
+		}
+    });
+    return descripcion;
 }

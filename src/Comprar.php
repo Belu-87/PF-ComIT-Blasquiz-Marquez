@@ -43,7 +43,7 @@
 						<th></th>
 				    </thead>
 				    <tbody>
-					    <tr id="1">
+					    <tr id="1" class="fila">
 							<td>
 								<select id="producto1" class="fstElement fstSingleMode fstNoneSelected form-control" name="uno" placeholder="opcion" searchPlaceholder="Buscar...">
 									<?php 
@@ -85,7 +85,7 @@
 							<td>
 								<div class="input-group">						
 									<span class="input-group-addon">$</span>
-									<input disabled="disabled" id="precioTotal1" class="form-control" type="number" step="0.01">
+									<input disabled="disabled" id="precioTotal1" class="form-control total" type="number" step="0.01">
 								</div>
 							</td>	
 							<td>
@@ -158,7 +158,7 @@
 			<div class="col-12">
 				<input type="button" style="display: none;" class="btn btn-outline-info float-left" value="Atras" id="back">
 
-				<input type="button" class="btn btn-outline-info float-right" value="Siguiente" id="next">
+				<input type="button" class="btn btn-outline-info float-right" onclick="javascript:getResumenPedido();" value="Siguiente" id="next">
 
 				<input type="button" onclick="javascript:Validacion();" style="display: none;" class="btn btn-outline-info float-right" value="Confirmar Pedido" id="confirmar">
 			</div>		

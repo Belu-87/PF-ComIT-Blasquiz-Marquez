@@ -101,7 +101,7 @@ if ( isset( $session ) ) {
 					
 
         <!-- <li class="nav-item"><p class="navbar-text texto-color">¿Ya tienes una cuenta?</p></li> -->
-        <li class="nav-item"><p class="navbar-text texto-color">
+        <li class="nav-item"><p class="navbar-text texto-color nombreUsuario">
 	        <?php if(isset($_SESSION["usuario"]))
 	        	  {
 	        	  	echo $_SESSION["usuario"];
@@ -114,14 +114,14 @@ if ( isset( $session ) ) {
 	        	  } ?>	
 	        </p>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown salir">
 
         <?php if(isset($_SESSION["usuario"]))
 			  {
 			  echo "<a href='#' class='nav-link texto-color' id='CerrarSesion'><b>Cerrar Sesion</b> <span class='caret'></span></a>";
 			  }
 			  else
-			  {echo "<a href='#' class='nav-link dropdown-toggle texto-color' data-toggle='dropdown'><b>Iniciar Sesion</b> <span class='caret'></span></a>";} 
+			  {echo "<a href='#' class='nav-link dropdown-toggle texto-color iniciar' data-toggle='dropdown'><b>Iniciar Sesion</b> <span class='caret'></span></a>";} 
 		?>	
 
 
@@ -136,10 +136,11 @@ if ( isset( $session ) ) {
 										echo '<a class="btn btn-fb" href="' . $helper->getLoginUrl() . '">Facebook</a>';
 									?>
 									<!-- <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-									 <a href="#" class="btn btn-go"><i class="fa fa-gmail"></i> Google</a> -->
+									 <a href="#" class="btn btn-go"><i class="fa fa-gmail"></i> Google</a> 
+									method="post" action="javascript:LoginAjax();"-->
 								</div>
                                 o
-								 <form class="form form-fondo" role="form" method="post" action="includes/login.php" accept-charset="UTF-8" id="login">
+								 <form class="form form-fondo" role="form"  accept-charset="UTF-8" id="login">
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputEmail2">Email</label>
 											 <input type="email" class="form-control" id="email" placeholder="Email" required>
@@ -150,7 +151,7 @@ if ( isset( $session ) ) {
                                              <div class="help-block text-right"><a href="RecuperarContrasenia"> ¿Olvidaste la contraseña?</a></div>
 										</div>
 										<div class="form-group">
-											 <button id ="submit" type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+											 <button id ="submit" type="submit" onclick="javascript:LoginAjax();" class="btn btn-primary btn-block">Iniciar sesión</button>
 										</div>
 										<div class="checkbox">
 											 <label>

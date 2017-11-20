@@ -1,5 +1,6 @@
 <?php
 	require 'conexion.php';
+	session_start();
 
 	global $conn;
 
@@ -16,6 +17,18 @@
 	{	
 		echo ObtenerDetalleProductos($conn);
 	}
+	else if($funcion==='RegistrarPedido')
+	{
+		if( !isset($_SESSION["usuario"]) )
+		{
+			echo "registrarse";	
+		}	
+		else
+		{
+			echo RegistrarPedido($conn);			
+		}
+
+	}	
 
 
 

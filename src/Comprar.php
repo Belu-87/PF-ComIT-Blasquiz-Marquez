@@ -126,10 +126,12 @@
 			<div class="container float-left panel1 fondo">
 				<label class="texto">Resumen Pedido:</label>
 				<br>
-				<label>Cubanitos X 2u.---------------  $16<br>
-					   Alfajores X 15u.--------------  $60<br>
-				</label>
-				<label class="texto">Total:----------  $76</label>
+				<div class="resumen">
+					<label>Cubanitos X 2u.---------------  $16<br>
+						   Alfajores X 15u.--------------  $60<br>
+					</label>
+				</div>
+				<label class="texto resumenTotal">Total:----------  $76</label>
 			</div>
 
 			<div class="container float-right panel2 fondo">
@@ -158,7 +160,7 @@
 			<div class="col-12">
 				<input type="button" style="display: none;" class="btn btn-outline-info float-left" value="Atras" id="back">
 
-				<input type="button" class="btn btn-outline-info float-right" onclick="javascript:getResumenPedido();" value="Siguiente" id="next">
+				<input type="button" class="btn btn-outline-info float-right"  value="Siguiente" id="next">
 
 				<input type="button" onclick="javascript:Validacion();" style="display: none;" class="btn btn-outline-info float-right" value="Confirmar Pedido" id="confirmar">
 			</div>		

@@ -139,6 +139,9 @@
 		CalcularPrecio(filaId);
 	});	
 
+	$('#next').click(function(){
+		getResumenPedido();
+	});	
 	// $('#precioUnit1').change(function(){
 	// 	var filaId=$(this).closest('tr').attr('id');
 	// 	alert();
@@ -165,7 +168,7 @@ function Validacion()
 			 async:true,
 			 success:function(response)
 			 {
-			 	alert("ok");
+			 	alert(response);
 				// if (response=="ok") 
 				// {
 				// 	$(".form-top").fadeOut(2000);
@@ -250,7 +253,7 @@ function CalcularPrecio(filaId)
 
 	getPrecioUnitarioProducto(filaId);
 	getPrecioUnitarioDetalleProducto(filaId);
-	setInterval(function(){
+	setTimeout(function(){
 		getPrecioTotal(filaId);
 	},500);
 	getSumaTotales();
@@ -340,7 +343,7 @@ function getSumaTotales()
 	try
 	{	
 		var total=0;
-		setInterval(function(){
+		setTimeout(function(){
 			total=0;
 			$(".total").each(function(){
 				total+=parseFloat($(this).val());
@@ -360,12 +363,15 @@ function getResumenPedido()
 {
 	try
 	{	
+		$(".resumen").html("");
 		$(".fila").each(function(){
-			//alert($(this).attr("id"));
-			var prod=getDetalleProducto($(this).attr("id"));
-			alert(prod);
-			alert( getDescripcionDetalleProducto($(this).attr("id")) );			
+			var filaId=$(this).attr("id");
+			getDescripcionProducto(filaId);//setTimeout(function(){getDetalleProducto(filaId);},500);
+			getDescripcionDetalleProducto(filaId);
+			getResumenTotal();
 		});
+
+
 	}
 	catch(err)
 	{
@@ -374,15 +380,19 @@ function getResumenPedido()
 
 }
 
+function getResumenTotal()
+{
+	$(".resumenTotal").html("");
+	$(".resumenTotal").append("<label class='texto'>Total---$"+$("#totalPedido").val()+"</label>");
+}
 
 
-function getDetalleProducto(filaId)
+
+function getDescripcionProducto(filaId)
 {
 	var url="json/jsonProductos.json";
 	var descripcion="";
 	$.getJSON(url, function (data) {		
-		//alert(data[0].precioUnitario); 
-
 		var i=0;
 		var encontre=false;
 		var inputProd="#producto"+filaId;
@@ -392,6 +402,8 @@ function getDetalleProducto(filaId)
 			{
 				descripcion=data[i].descripcion;
 				encontre=true;
+				$(".resumen").append("<br><label><b>"+descripcion+" </b></label>");
+				$(".resumen").append("<label>X "+$("#cantidad"+filaId).val()+" u. ----$"+$("#precioTotal"+filaId).val()+"</label>");
 				return descripcion;
 			}
 			i+=1;
@@ -407,8 +419,6 @@ function getDescripcionDetalleProducto(filaId)
 	var descripcion="";
 	$.getJSON(url, function (data) {		
 		var i=0;
-		//var encontre=false;
-		//var inputPrecioUnit="#precioUnit"+filaId;
 		var inputDetProd="#detalle"+filaId;
 		var ids=$(inputDetProd).val().toString();
 		var detalle = ids.split(',');
@@ -420,15 +430,12 @@ function getDescripcionDetalleProducto(filaId)
 			{	
 				if(data[i].id==detalle[aux])
 				{
-					descripcion+="-"+data[i].descripcion+"-";
-					//precio+=parseFloat( $(inputPrecioUnit).val() );
-					//$(inputPrecioUnit).val( precio.toFixed(2) );
-					return descripcion;					
+					descripcion+="-"+data[i].descripcion;			
 				}
 				i+=1;
 			}
-
 		}
+		$(".resumen").append("<label>"+descripcion+"</label>");
     });
     return descripcion;
 }

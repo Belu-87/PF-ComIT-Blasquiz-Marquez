@@ -32,7 +32,7 @@ $(document).ready(function (){
 			}	
 			else
 			{
-				window.location.replace("home.php");
+				//window.location.replace("home.php");
 			}						
 		  //alert( data );
 		})
@@ -65,6 +65,49 @@ $(document).ready(function (){
    });
 
 
-
-
 });
+
+
+
+ function LoginAjax()
+ {
+ 	if($("#email").val()==""||$("#pass").val()=="")
+ 	{
+        $("#errorMessage").html("por favor, complete el campo");
+ 	}
+ 	else
+ 	{
+
+		 $.ajax({
+			 url:'includes/login.php',
+			 type:"POST",
+			 data:{mail:$("#email").val(),pass:$("#pass").val()},
+			 datatype:"json",	
+			 async:true,		
+			 success:function(response)
+			 {
+			 	if (response!="false")
+			 	{
+				 	$(".nombreUsuario").html("");
+				 	$(".nombreUsuario").html(response);
+
+				 	$(".salir").html();
+				 	$("#login-dp").hide();
+				 	$(".iniciar").hide();
+				 	$(".salir").append( "<a href='#' class='nav-link texto-color' id='CerrarSesion'><b>Cerrar Sesion</b> <span class='caret'></span></a>" );
+				 	$("#CerrarSesion").on("click",function(){
+							var jqxhr = $.post( "logout.php", function(data) {
+									window.location.replace("home.php");
+								});			 		
+				 	});			 		
+			 	}
+			 	else
+			 	{
+			 		$("#errorMessage").html("Verifique los datos ingresados.");
+					$("#errorMessage").css("color","red");
+			 	}
+
+			 }
+		});
+	}
+ }

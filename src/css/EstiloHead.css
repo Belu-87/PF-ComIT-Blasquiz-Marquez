@@ -92,6 +92,15 @@ vertical-align: middle;
     background-color:#496ebc 
 }
 
+a svg:hover #facebook 
+{ 
+  fill: #FF80C0;
+}
+
+a svg:hover #Comprar
+{
+  fill: #FF80C0;
+}
 
 @media(max-width: 1000px)
 {

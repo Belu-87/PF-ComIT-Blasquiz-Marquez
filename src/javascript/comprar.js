@@ -168,7 +168,16 @@ function Validacion()
 			 async:true,
 			 success:function(response)
 			 {
-			 	alert(response);
+			 	if(response=="registrarse")
+			 	{
+			 		$("header").append("<div id='myModal' class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'>Por favor, inicie sesion para continuar</div></div></div>");
+			 		$('#myModal').modal('show');
+			 	}
+			 	else
+			 	{
+			 		alert(response);			 		
+			 	}
+
 				// if (response=="ok") 
 				// {
 				// 	$(".form-top").fadeOut(2000);

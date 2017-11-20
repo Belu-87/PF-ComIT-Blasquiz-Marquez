@@ -68,4 +68,11 @@ function ObtenerDetalleProductos($conn)
 	return json_encode($rows2);
 }
 
+
+function RegistrarPedido($conn)
+{
+	echo "string";
+}
+
+
 ?>

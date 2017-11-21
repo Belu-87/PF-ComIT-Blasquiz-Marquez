@@ -49,19 +49,20 @@ var dataString=[];//new Array();
 
 			/*agrego eventos de precio para los campos editables*/
 			campo="#producto"+i;
-			$(campo).on('change',function(){	
+			$(campo).on('change keyup',function(){	
 			var filaId=$(this).closest('tr').attr('id');
 				CalcularPrecio(filaId);
 			});
 
+
 			campo="#detalle"+i;
-			$(campo).on('change',function(){	
+			$(campo).on('change keyup',function(){	
 			var filaId=$(this).closest('tr').attr('id');
 				CalcularPrecio(filaId);
 			});			
 
 			campo="#cantidad"+i;
-			$(campo).on('change',function(){	
+			$(campo).on('change keyup',function(){	
 			var filaId=$(this).closest('tr').attr('id');
 				CalcularPrecio(filaId);
 			});
@@ -135,6 +136,23 @@ var dataString=[];//new Array();
 		var filaId=$(this).closest('tr').attr('id');
 		CalcularPrecio(filaId);
 	});	
+
+	/*******keyUp*******/
+	$('#producto1').keyup(function(){
+		var filaId=$(this).closest('tr').attr('id');
+		CalcularPrecio(filaId);
+	});
+
+	$('#detalle1').keyup(function(){
+		var filaId=$(this).closest('tr').attr('id');
+		CalcularPrecio(filaId);
+	});	
+
+	$('#cantidad1').keyup(function(){
+		var filaId=$(this).closest('tr').attr('id');
+		CalcularPrecio(filaId);
+	});	
+	/*******************/
 
 	$('#next').click(function(){
 		getResumenPedido();

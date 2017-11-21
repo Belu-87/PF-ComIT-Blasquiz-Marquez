@@ -139,12 +139,12 @@
 				<form>
 					<div class="form-group">
 	                	<label class="">Calle(*)</label>
-	                	<input type="text" name="calle" class="form-control" id="calle">
+	                	<input type="text" class="form-control" id="calle">
 	                </div>
 					<div class="form-group">
 	                	<label class="">Altura(*)</label>
-	                	<input type="text" name="altura" class="form-control" id="altura">
-	                </div>         
+	                	<input type="text" class="form-control" id="altura">
+	                </div>
 	                <div class="form-group">
 	                	<label class="">Telefono</label>
 	                	<input type="text" name="telefono" class="form-control" id="telefono">

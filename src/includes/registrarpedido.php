@@ -71,8 +71,123 @@ function ObtenerDetalleProductos($conn)
 
 function RegistrarPedido($conn)
 {
-	echo "string";
+	try
+	{
+		$prueba="";
+		$conn->begin_transaction();
+		/* Desactivar la autoconsigna */
+		$conn->autocommit(FALSE);
+
+		$datos=$_POST['datos'];
+		$total=$_POST['total'];
+		$calle=$_POST['calle'];
+		$altura=$_POST['altura'];
+		$telefono=$_POST['telefono'];
+
+		$obj=json_decode($datos);
+
+		/****registro direccion nueva****/
+		$idDire=getMaxIdFromTable($conn,"direccion")+1;
+		$idUser=$_SESSION['id'];
+		$queryDire="insert into direccion(id,calle,numero,idUsuario)values($idDire,'$calle','$altura',$idUser);";
+		$conn->query($queryDire);
+		$prueba.=$queryDire;
+		//	echo "$queryDire";
+		/*******************************/
+
+
+		/****registro envio****/
+		$idEnvio=getMaxIdFromTable($conn,"envio")+1;
+		$queryEnvio="insert into envio(id,detalle,idDireccion,importe,fecha,idFormaDePago)values($idEnvio,'',$idDire,0.0,null,1);";
+		$conn->query($queryEnvio);
+		$prueba.=$queryEnvio;
+		//	echo "$queryEnvio";
+		/*******************************/
+
+		/****registro pedido****/
+		$idPedido=getMaxIdFromTable($conn,"pedido")+1;
+		$queryPedido="insert into pedido(id,numero,fecha,idUsuario,idEnvio,total,idFormaDePago)values($idPedido,$idPedido,CURDATE(),$idUser,$idEnvio,$total,1);";
+		$conn->query($queryPedido);
+		$prueba.=$queryPedido;
+		//echo "$queryPedido";
+		/*******************************/
+
+		/****registro tracking****/
+		$idTracking=getMaxIdFromTable($conn,"tracking_pedido")+1;
+		$queryTracking="insert into tracking_pedido(id,fecha,idPedido,idEstadoPedido)values($idTracking,CURDATE(),$idPedido,1);";
+		$conn->query($queryTracking);
+		$prueba.=$queryTracking;
+		//echo "$queryTracking";
+		/*******************************/	
+
+
+		/***ids a ciclar segun cant filas***/
+		$idItemPedido=getMaxIdFromTable($conn,"item_pedido")+1;
+		$idItemDetalle=getMaxIdFromTable($conn,"item_detalle")+1;
+		$idPedidoDetalle=getMaxIdFromTable($conn,"pedido_detalle")+1;
+		/***********************************/
+		foreach ($obj as $item) 
+		{
+			/****registro item pedido****/
+			$prodId=$item->id;
+			$queryItemPedido="insert into item_pedido(id,idPedidoProducto)values($idItemPedido,$prodId);";
+			$conn->query($queryItemPedido);
+			$prueba.=$queryItemPedido;
+			//echo "$queryItemPedido";
+			/*******************************/	
+
+			foreach ($item->detalle as $det) 
+			{
+				 //echo $det;	
+				/****registro item detalle****/
+				$prodId=$item->id;
+				$queryItemDetalle="insert into item_detalle(id,item_pedido,producto_detalle)values($idItemDetalle,$idItemPedido,$det);";
+				$conn->query($queryItemDetalle);
+				$prueba.=$queryItemDetalle;
+				$idItemDetalle+=1;			
+				//echo "$queryItemDetalle";
+				/*******************************/
+			}
+
+			/****registro pedido_detalle****/
+			$cant=$item->cantidad;
+			$pu=$item->precioUnitario;
+			$pt=$item->precioTotal;
+			$queryPedidoDetalle="insert into pedido_detalle(id,idPedido,idItemPedido,cantidad,precioUnitario,precioTotal)values($idPedidoDetalle,$idPedido,$idItemPedido,$cant,$pu,$pt);";
+			//echo "$queryPedidoDetalle";
+			$conn->query($queryPedidoDetalle);
+			$prueba.=$queryPedidoDetalle;
+			$idPedidoDetalle+=1;						
+			/******************************/		
+
+			/*seguir con tabla pedido_detalle*/
+
+			$idItemPedido+=1;
+		}
+
+		$conn->commit();
+		$conn->close();
+		echo "ok";		
+	}
+	catch(Exception $e)
+	{
+		mysqli_rollback();
+		echo "error";
+		echo $e->getMessage();
+	}
+
 }
 
 
+
+function getMaxIdFromTable($conn,$table)
+{
+	$query="select ifnull(max(id),0)as num from $table";
+
+	$res=mysqli_fetch_assoc( mysqli_query($conn,$query));
+	//$row = mysql_fetch_array($res);
+	//mysqli_close($conn);		
+
+	return (int)$res["num"];
+}
 ?>

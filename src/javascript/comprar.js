@@ -1,12 +1,9 @@
+var dataString=[];//new Array();
 
  $(function () 
  {
  	var i=2;
 
-	var jsonProductos;
-
-	// ObtenerProductos();
-	//alert(jsonProductos);
 
 	$('#producto1').fastselect();
 	$('#detalle1').fastselect();
@@ -157,13 +154,20 @@
 
 function Validacion()
  {
+ 	getDatosDeRegistro();
+ 	 var jsonString =JSON.stringify(dataString);
 	 /*validar campos antes de insertar*/
 	 if (EstaOK())
 	 {
  		 $.ajax({
 			 url:'includes/registrarpedido.php',
 			 type:"POST",
-			 data:{funcion:'RegistrarPedido'},
+			 data:{funcion:'RegistrarPedido',
+				 datos:jsonString,total:$("#totalPedido").val(),
+				 calle:$("#calle").val(),
+				 altura:$("#altura").val(),
+				 telefono:$("#telefono").val()
+				},
 			 datatype:"json",
 			 async:true,
 			 success:function(response)
@@ -175,7 +179,14 @@ function Validacion()
 			 	}
 			 	else
 			 	{
-			 		alert(response);			 		
+			 		//alert(response);
+			 		$("header").append("<div id='myModal' class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'><b>¡Gracias por su compra!</b><br>redireccionando a inicio...</div></div></div>");
+			 		$('.modal-content').css("color","#FF80C0");
+			 		$('#myModal').modal('show');	
+			 		setTimeout(function(){
+			 			window.location.replace("home.php");
+			 		},5000);		 		
+			 		console.log(response);			 		
 			 	}
 
 				// if (response=="ok") 
@@ -447,4 +458,37 @@ function getDescripcionDetalleProducto(filaId)
 		$(".resumen").append("<label>"+descripcion+"</label>");
     });
     return descripcion;
+}
+
+
+
+
+function getDatosDeRegistro()
+{
+	try
+	{	
+		dataString=[];//new Array();
+		$(".fila").each(function(){
+			var filaId=$(this).attr("id");
+			var prod=$("#producto"+filaId).val();
+			var detalle=$("#detalle"+filaId).val();
+			
+			var item={};
+			item["id"]=prod;
+			item["detalle"]=detalle;
+			item["cantidad"]=$("#cantidad"+filaId).val();
+			item["precioUnitario"]=$("#precioUnit"+filaId).val();			
+			item["precioTotal"]=$("#precioTotal"+filaId).val();
+
+			//var fila=new Array(prod,detalle,$("#cantidad"+filaId).val(),$("#precioUnit"+filaId).val(),$("#precioTotal"+filaId).val());
+			dataString.push(item);
+		});
+
+
+	}
+	catch(err)
+	{
+
+	}
+
 }

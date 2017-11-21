@@ -17,6 +17,8 @@ $row=mysqli_fetch_array($result);
 if( $num_row >=1 ) { 
 $_SESSION['usuario']=$row['alias'];
 
+$_SESSION['id']=$row['id'];
+
 echo $_SESSION['usuario'];
 //header("location: http://localhost/PaginaDulzurasArtesanales/src/Productos.php");
 //echo 'ok';

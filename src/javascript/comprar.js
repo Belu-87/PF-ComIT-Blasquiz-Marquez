@@ -164,6 +164,13 @@ var dataString=[];//new Array();
 	// });	
 
 
+	$("#calle").on('change keyup',function(){	
+		EstaOK();
+	});
+
+	$("#altura").on('change keyup',function(){	
+		EstaOK();
+	});	
 
 
 
@@ -239,9 +246,6 @@ function Validacion()
 			 {
 			 	alert(response);
 			 	 console.log(response);
-			 	//jsonP=response;			 	
-			 	//alert(jsonProductos);
-			 	//alert(jsonProducto);
 			 }
 		});
 
@@ -249,6 +253,7 @@ function Validacion()
 
  function EstaOK()
  {
+ 	var result=true;
 
  	if ($("#calle").val() != "")
  	{
@@ -258,7 +263,7 @@ function Validacion()
  	else
  	{
  		$("#calle").addClass("error");
- 		return false;
+ 		result=false;
  	} 
 
  	if ($("#altura").val().match(/[0-9 -()+]+$/))
@@ -269,10 +274,10 @@ function Validacion()
  	else
  	{
  		$("#altura").addClass("error");
- 		return false;
+ 		result=false;
  	} 
 
- 	return true; 
+ 	return result; 
  }
 
 

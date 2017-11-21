@@ -8,6 +8,7 @@ var dataString=[];//new Array();
 	$('#producto1').fastselect();
 	$('#detalle1').fastselect();
 
+	$('.fstQueryInput').attr("placeholder","Buscar...");
 	
 	$('#agregar').click(function(){
 		AddFila();		
@@ -15,7 +16,7 @@ var dataString=[];//new Array();
 
 
 	 function AddFila(){ 
-			var data='<tr id="'+i+'" class="fila aparece"><td><select id="producto'+i+'" class="fstElement fstSingleMode fstNoneSelected form-control" ';
+			var data='<tr id="'+i+'" class="fila aparece"><td><select id="producto'+i+'" class="fstElement fstSingleMode form-control" ';
 
 			data+='name="uno" placeholder="opcion">';
 			data+='</select></td><td>  ';
@@ -45,6 +46,11 @@ var dataString=[];//new Array();
 			$(campo).on('click',function(){		
 				$(this).closest('tr').fadeOut(2000);	
 				$(campo).fadeOut(1000,function(){$(this).closest('tr').remove();});
+
+				setTimeout(function(){
+					getSumaTotales();
+				},500);
+
 			});
 
 			/*agrego eventos de precio para los campos editables*/
@@ -75,6 +81,16 @@ var dataString=[];//new Array();
 			/*copio los items del select de detalle*/
 		    $options = $("#detalle1 > option").clone();
 			$('#detalle'+i).append($options);	
+
+			$('.fstQueryInput').attr("placeholder","Buscar...");
+
+			// var hijos1=$('#producto'+i+ ' .fstElement.fstSingleMode').children();
+			// var hijos2=$('#producto1 '+'.fstElement.fstSingleMode').children();
+			
+			
+			// //hijos=$('#producto'+i+'.fstToggleBtn');
+			// console.log( hijos1);
+			// console.log( hijos2);
 
 			i+=1;
 	 }
@@ -319,7 +335,7 @@ function getPrecioUnitarioProducto(filaId)
 		{	
 			if(data[i].id==$(inputProd).val())
 			{
-				precio=parseFloat(data[i].precioUnitario);
+				precio=isNaN( parseFloat( data[i].precioUnitario ) )?0: parseFloat(data[i].precioUnitario);
 				encontre=true;
 				$(inputPrecioUnit).val( precio.toFixed(2) );
 				return;
@@ -350,8 +366,8 @@ function getPrecioUnitarioDetalleProducto(filaId)
 			{	
 				if(data[i].id==detalle[aux])
 				{
-					precio=parseFloat(data[i].suma);
-					precio+=parseFloat( $(inputPrecioUnit).val() );
+					precio=isNaN( parseFloat( data[i].suma ) )?0: parseFloat(data[i].suma);
+					precio+=isNaN( parseFloat( $(inputPrecioUnit).val() ) )?0: parseFloat( $(inputPrecioUnit).val() );
 					$(inputPrecioUnit).val( precio.toFixed(2) );					
 				}
 				i+=1;
@@ -368,8 +384,8 @@ function getPrecioTotal(filaId)
 {
 	try
 	{	
-		var precioUnit=parseFloat($('#precioUnit'+filaId).val());
-		var cantidad=parseFloat($('#cantidad'+filaId).val());
+		var precioUnit=isNaN( parseFloat( $('#precioUnit'+filaId).val() ) )?0: parseFloat($('#precioUnit'+filaId).val());
+		var cantidad=isNaN( parseFloat( $('#cantidad'+filaId).val() ) )?0: parseFloat($('#cantidad'+filaId).val());
 		//alert(precioUnit);
 		//alert(cantidad);
 		$("#precioTotal"+filaId).val( (precioUnit*cantidad).toFixed(2) );
@@ -389,7 +405,7 @@ function getSumaTotales()
 		setTimeout(function(){
 			total=0;
 			$(".total").each(function(){
-				total+=parseFloat($(this).val());
+				total+=isNaN( parseFloat( $(this).val() ) )?0: parseFloat($(this).val());
 				$("#totalPedido").val(total.toFixed(2));
 			});
 		},500);		

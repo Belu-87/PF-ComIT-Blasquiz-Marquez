@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dulzuras_artesanales
 -- ------------------------------------------------------
--- Server version	5.7.11
+-- Server version	5.7.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -42,6 +42,7 @@ CREATE TABLE `direccion` (
 
 LOCK TABLES `direccion` WRITE;
 /*!40000 ALTER TABLE `direccion` DISABLE KEYS */;
+INSERT INTO `direccion` VALUES (1,'guemes',458,NULL,NULL,NULL,5),(2,'guemes',458,NULL,NULL,NULL,5);
 /*!40000 ALTER TABLE `direccion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,6 +74,7 @@ CREATE TABLE `envio` (
 
 LOCK TABLES `envio` WRITE;
 /*!40000 ALTER TABLE `envio` DISABLE KEYS */;
+INSERT INTO `envio` VALUES (1,'',1,0.00,NULL,1),(2,'',2,0.00,NULL,1);
 /*!40000 ALTER TABLE `envio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,6 +152,7 @@ CREATE TABLE `item_detalle` (
 
 LOCK TABLES `item_detalle` WRITE;
 /*!40000 ALTER TABLE `item_detalle` DISABLE KEYS */;
+INSERT INTO `item_detalle` VALUES (1,1,1),(2,1,2),(3,2,5),(4,5,1),(5,5,2),(6,6,5);
 /*!40000 ALTER TABLE `item_detalle` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,7 +178,32 @@ CREATE TABLE `item_pedido` (
 
 LOCK TABLES `item_pedido` WRITE;
 /*!40000 ALTER TABLE `item_pedido` DISABLE KEYS */;
+INSERT INTO `item_pedido` VALUES (1,1),(5,1),(2,2),(6,2),(4,3),(8,3),(3,4),(7,4);
 /*!40000 ALTER TABLE `item_pedido` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `novedades`
+--
+
+DROP TABLE IF EXISTS `novedades`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `novedades` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `novedades`
+--
+
+LOCK TABLES `novedades` WRITE;
+/*!40000 ALTER TABLE `novedades` DISABLE KEYS */;
+INSERT INTO `novedades` VALUES (1,'sds'),(2,'d'),(3,'ffff'),(4,'jjjjj'),(5,'belublas1987@gmail.com'),(6,'belublas@gmail.com'),(7,'belublas@gmail.com'),(8,'ffff'),(9,'uuuu'),(10,'jjjj'),(11,'sdds'),(12,'gajaja'),(13,'gajaja'),(14,'gajaja'),(15,'gajaja'),(16,'sesa'),(17,'b_e_l_87@hotmail.com'),(18,'hyji'),(19,'asws'),(20,'dddd'),(21,'wqqq'),(22,'ssss'),(23,'qqqq'),(24,'aaaa'),(25,'hhhh'),(26,'jjj'),(27,'aaaa'),(28,'jsjsjs@hotmail.com'),(29,'ghghgh@gmail.com'),(30,'hshshsh@hotmail.com'),(31,'hshshsh@hotmail.com'),(32,'hshshsh@hotmail.com'),(33,'jjdjdjd@gmail.com'),(34,'mamam@hotmail.com'),(35,'hsahsh@hotmial.com'),(36,'hhahah@ghdhhd.com'),(37,'hshsh@djdjdj.com'),(38,'hdhdh@hdhd.com'),(39,'hdhdhd@hotmial.com');
+/*!40000 ALTER TABLE `novedades` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -237,6 +265,7 @@ CREATE TABLE `pedido` (
 
 LOCK TABLES `pedido` WRITE;
 /*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
+INSERT INTO `pedido` VALUES (1,1,'2017-11-21 00:00:00',5,1,500.00,1),(2,2,'2017-11-21 00:00:00',5,2,500.00,1);
 /*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,6 +297,7 @@ CREATE TABLE `pedido_detalle` (
 
 LOCK TABLES `pedido_detalle` WRITE;
 /*!40000 ALTER TABLE `pedido_detalle` DISABLE KEYS */;
+INSERT INTO `pedido_detalle` VALUES (1,1,1,15,4.00,60.00),(2,1,2,20,8.00,160.00),(3,1,3,1,200.00,200.00),(4,1,4,16,5.00,80.00),(5,2,5,15,4.00,60.00),(6,2,6,20,8.00,160.00),(7,2,7,1,200.00,200.00),(8,2,8,16,5.00,80.00);
 /*!40000 ALTER TABLE `pedido_detalle` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -410,6 +440,7 @@ CREATE TABLE `tracking_pedido` (
 
 LOCK TABLES `tracking_pedido` WRITE;
 /*!40000 ALTER TABLE `tracking_pedido` DISABLE KEYS */;
+INSERT INTO `tracking_pedido` VALUES (1,'2017-11-21 00:00:00',1,1),(2,'2017-11-21 00:00:00',2,1);
 /*!40000 ALTER TABLE `tracking_pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -432,7 +463,7 @@ CREATE TABLE `usuario` (
   `fEmail` varchar(60) DEFAULT NULL,
   `fechaNac` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -441,7 +472,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,NULL,NULL,NULL,NULL,NULL,'1708282002537912','Jonatan Marquez','',NULL),(2,'aa',NULL,'jonatanmarquez88@gmail.com',NULL,'4124bc0a9335c27f086f24ba207a4912',NULL,NULL,NULL,'2011-08-19'),(3,'dd',NULL,'dd@gmail.com',NULL,'1aabac6d068eef6a7bad3fdf50a05cc8',NULL,NULL,NULL,'2011-08-19'),(4,'ww',NULL,'ww@gmail.com',NULL,'ad57484016654da87125db86f4227ea3',NULL,NULL,NULL,'2011-08-19');
+INSERT INTO `usuario` VALUES (1,NULL,NULL,NULL,NULL,NULL,'1708282002537912','Jonatan Marquez','',NULL),(2,'aa',NULL,'jonatanmarquez88@gmail.com',NULL,'4124bc0a9335c27f086f24ba207a4912',NULL,NULL,NULL,'2011-08-19'),(3,'dd',NULL,'dd@gmail.com',NULL,'1aabac6d068eef6a7bad3fdf50a05cc8',NULL,NULL,NULL,'2011-08-19'),(4,'ww',NULL,'ww@gmail.com',NULL,'ad57484016654da87125db86f4227ea3',NULL,NULL,NULL,'2011-08-19'),(5,'Bel',NULL,'belublas1987@gmail.com',NULL,'ff76c6f1985ba00dee5c79ad8ec347b6',NULL,NULL,NULL,'1987-07-31');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -454,4 +485,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-16 13:46:36
+-- Dump completed on 2017-11-22 20:20:27

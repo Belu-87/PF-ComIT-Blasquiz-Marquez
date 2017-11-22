@@ -81,23 +81,17 @@ $(function(){
 //function novedades(){    
 $("#btn-novedades").click(function(){
 
-
-      // if($("#mail").val().match(/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/))
-      //   {
-      //   $("#mail").removeClass("error");  
-      //   }
-      //   else
-      //   {
-      //   $("#mail").addClass("error");
-      //   }
-        if ($("#emailNov").val() == "")
+        if (! ($("#emailNov").val().match(/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/)) )
         {
-        $("#emailNov").removeClass("error");       
-        //return true;
+            $("#emailNov").addClass("error");    
+            $("header").append("<div id='myModalError' class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'><b>Ingrese un email valido!</b></div>");
+            $('.modal-content').css("color","red");
+            $('#myModalError').modal('show');    
         }
 
         else
-        {       
+        {   
+            $("#emailNov").removeClass("error");    
             $.ajax({
                  url:'includes/homeNovedades.php',
                  type:"POST",
@@ -108,11 +102,15 @@ $("#btn-novedades").click(function(){
                  {
                     if(response =="ok")
                      {  
-                        $("header").append("<div id='myModal' class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'><b>¡Gracias por dejar su email!</b><br>redireccionando a inicio...</div></div></div>");
+                        $("header").append("<div id='myModalExito' class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'><b>¡Gracias por dejar su email!</b><br>redireccionando a inicio...</div></div></div>");
                         $('.modal-content').css("color","#FF80C0");
-                        $('#myModal').modal('show');    
+                        $('#myModalExito').modal('show'); 
+                        $("#emailNov").val("");   
                         setTimeout(function(){
-                            window.location.replace("home.php");
+                            $("html, body").animate({
+                            scrollTop: 0
+                            }, 1500);
+                            return false;
                         },2000);                
                         console.log(response);  
 

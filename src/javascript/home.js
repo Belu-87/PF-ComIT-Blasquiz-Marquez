@@ -78,5 +78,72 @@ $(function(){
 
     });*/    
 
+//function novedades(){    
+$("#btn-novedades").click(function(){
+
+
+      // if($("#mail").val().match(/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/))
+      //   {
+      //   $("#mail").removeClass("error");  
+      //   }
+      //   else
+      //   {
+      //   $("#mail").addClass("error");
+      //   }
+        if ($("#emailNov").val() == "")
+        {
+        $("#emailNov").removeClass("error");       
+        //return true;
+        }
+
+        else
+        {       
+            $.ajax({
+                 url:'includes/homeNovedades.php',
+                 type:"POST",
+                 data:{funcion:'novedadesMail', email:$("#emailNov").val()},
+                 datatype:"json",
+                 async:true,
+                 success:function(response)
+                 {
+                    if(response =="ok")
+                     {  
+                        $("header").append("<div id='myModal' class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'><b>¡Gracias por dejar su email!</b><br>redireccionando a inicio...</div></div></div>");
+                        $('.modal-content').css("color","#FF80C0");
+                        $('#myModal').modal('show');    
+                        setTimeout(function(){
+                            window.location.replace("home.php");
+                        },2000);                
+                        console.log(response);  
+
+                        // $("header").append("<div id='myModal' class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'>Por favor, complete el campo del email</div></div></div>");
+                        // $('#myModal').modal('show');
+                    }
+                    else
+                    {
+
+                        $("header").append("<div id='myModal' class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'>Por favor, complete el campo del email</div></div></div>");
+                        $('#myModal').modal('show');
+
+
+                        // $("header").append("<div id='myModal' class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'><b>¡Gracias por dejar su email!</b><br>redireccionando a inicio...</div></div></div>");
+                        // $('.modal-content').css("color","#FF80C0");
+                        // $('#myModal').modal('show');    
+                        // //setTimeout(function(){
+                        //     //window.location.replace("home.php");
+                        // //},5000);                
+                        // console.log(response);                  
+                    }
+
+                 }
+            });
+
+        }
+
+
+
+    })
+
+
 
 })

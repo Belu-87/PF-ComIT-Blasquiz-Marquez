@@ -54,8 +54,9 @@
 			<label>Enterate nuestras novedades </label>
 			<br>
 			<label> E-mail: </label>
-			<input class="inp"></input>
-			<button class="boton">Enviar</button>
+			<input id="emailNov" class="inp"></input>
+			<input type="button" name="novedades" onclick="javascript:novedades();" id="btn-novedades" value="Enviar">
+			<!--<button id="btn-novedades" class="boton">Enviar</button> -->
 		</form>
 
 		<a href="#" class="scrollup"><img class="scrollup" src="https://image.flaticon.com/icons/svg/25/25282.svg"></img></a>
@@ -63,6 +64,7 @@
 		</div>
 	</div>
 
+	
 </body>
 
 <footer>

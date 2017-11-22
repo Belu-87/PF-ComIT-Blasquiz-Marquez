@@ -97,6 +97,21 @@ h1{
   transition-timing-function: linear;
   }
 
+  #btn-novedades{
+  border-radius: 1em;
+  background-color: transparent;/*#f293c1;*/
+  border-color: white;/*#F22562;*/
+  text-align: center;
+  color: white;
+  font-size: 1em;   
+  width: 5em;
+  cursor:pointer; cursor: hand; 
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  }
+
+
 
 .scrollup {
     width: 50px;

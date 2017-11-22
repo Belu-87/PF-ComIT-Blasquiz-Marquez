@@ -42,6 +42,11 @@ label {
 
 }
 
+.aparece{
+    display: none;
+}
+
+
 
 button {
   outline: 0;

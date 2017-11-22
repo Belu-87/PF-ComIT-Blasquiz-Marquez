@@ -30,7 +30,7 @@ FacebookSession::setDefaultApplication( '186507458586591','b64cc0238beb03a0aeb68
 // login helper with redirect_uri
     //$helper = new FacebookRedirectLoginHelper('http://demos.krizna.com/test.php' );
 
-    $helper = new FacebookRedirectLoginHelper('http://localhost:8081/PaginaDulzurasArtesanales/src/Home' );
+    $helper = new FacebookRedirectLoginHelper('http://localhost/PaginaDulzurasArtesanales/src/Home' );
 
 try {
   $session = $helper->getSessionFromRedirect();

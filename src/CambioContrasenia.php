@@ -10,6 +10,7 @@
 	
 	<link  rel="stylesheet" type="text/css" href="css/EstiloContraseniaNueva.css" />
 	<link  rel="stylesheet" type="text/css" href="css/EstiloGeneral.css" />
+	<script type="text/javascript" src="javascript/contraseniaNueva.js"> </script>
 	
 	<title>Nueva Contraseña</title>
 </head>
@@ -18,7 +19,8 @@
 
 	<?php include("head.php");?>
 
-	<div class="form-box">
+	<div class="form-box aparece">
+		<h1></h1>
 		<div class="form-top">
     		<div class="text-center">
     		</div>
@@ -27,24 +29,24 @@
     		</div>
         </div>
         <div class="form-bottom">
-            <form role="form" action="" method="post" class="registration-form">
+            <form role="form" action="javascript:CambioContrasenia();" method="post" class="registration-form">
 				<div class="form-group">
                 	<label class="">Codigo verificador</label>
-                	<input type="text" name="form-password" class="form-password form-control" id="form-password">
+                	<input type="text" name="form-password" class="form-password form-control" id="codigo">
                 </div>
 			
 				<div class="form-group">
                 	<label class="">Contraseña nueva</label>
-                	<input type="text" name="form-password" class="form-password form-control" id="form-password">
+                	<input type="text" name="form-password" class="form-password form-control" id="newpass">
                 </div>
 				
 				<div class="form-group">
                 	<label class="">Confirmar Contraseña</label>
-                	<input type="text" name="form-confipassword" class="form-confipassword form-control" id="form-confipassword">
+                	<input type="text" name="form-confipassword" class="form-confipassword form-control" id="renewpass">
                 </div>	
 				
 				<div class="form-group">
-					<button type="submit" class="btn btn-primary">Confirmar</button>
+					<button type="submit" class="btn btn-primary" id="btnConfirmar">Confirmar</button>
 				</div>		
                 
             </form>

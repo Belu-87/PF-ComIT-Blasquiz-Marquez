@@ -113,18 +113,32 @@ function enviarEmail( $email, $link ){
 // }
 
 
-$para = $email;
-$asunto = 'Prueba de SMTP local';
-//$mensaje = 'adsadsa';//$mensaje;
-//$cabeceras = 'From: dulzurasloboesta@gmail.com' . '\r\n' .
-//'Reply-To: $email' . '\r\n' .
-//'X-Mailer: PHP/' . phpversion();
+// $para = $email;
+// $asunto = 'Prueba de SMTP local';
 
-if(mail($para, $asunto, $mensaje, $cabeceras)) {
-echo "ok";
-} else {
-echo 'error';
-}
+// if(mail($para, $asunto, $mensaje, $cabeceras)) {
+// echo "ok";
+// } else {
+// echo 'error';
+// }
+
+
+/****************************************/
+$to       = $para;
+$subject  = 'Recuperacion de contraseña';
+//$message  = 'OMG! Ive finally succeeding in sending email using sendmail on WAMP!';
+$message=$mensaje;
+$headers  = 'From: dulzurasloboesta@gmail.com' . 
+            'Reply-To: dulzurasloboesta@gmail.com' . 
+            'MIME-Version: 1.0' . 
+            'Content-type: text/html; charset=UTF-8' . 
+            'X-Mailer: PHP/' . phpversion();
+if(mail($to, $subject, $message, $headers))
+    echo "ok";
+else
+    echo "Email sending failed";
+
+/****************************************/
 
 
 

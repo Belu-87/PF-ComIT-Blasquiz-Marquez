@@ -129,7 +129,7 @@
 						   Alfajores X 15u.--------------  $60<br>
 					</label>
 				</div>
-				<label class="texto resumenTotal">Total:----------  $76</label>
+				<label class="textoTotal resumenTotal">Total:----------  $76</label>
 			</div>
 
 			<div class="container float-right panel2 fondo">
@@ -154,7 +154,7 @@
 		
 		<br><br>
 
-		<div class="container row">
+		<div class="container row pie">
 			<div class="col-12">
 				<input type="button" style="display: none;" class="btn btn-outline-info float-left" value="Atras" id="back">
 

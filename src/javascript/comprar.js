@@ -442,7 +442,7 @@ function getResumenPedido()
 function getResumenTotal()
 {
 	$(".resumenTotal").html("");
-	$(".resumenTotal").append("<label class='texto'>Total---$"+$("#totalPedido").val()+"</label>");
+	$(".resumenTotal").append("<label>Total---$"+$("#totalPedido").val()+"</label>");
 }
 
 

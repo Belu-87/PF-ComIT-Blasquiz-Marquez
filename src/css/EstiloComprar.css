@@ -26,6 +26,11 @@ input[type=number]::-webkit-outer-spin-button {
     max-width: 95%;
 }
 
+.pie{
+margin: 0 !important;
+padding: 0 !important;
+}
+
 .modal-content{
 color: red;
 font-size: 1.5em !important;
@@ -94,6 +99,11 @@ table{
     font-size: 1.5em;
 }
 
+.textoTotal{
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
 .imagen{
     text-align: center; 
     margin: 0 auto;
@@ -128,14 +138,10 @@ table{
 
 .panel1{
     width: 20em;
-    height: 20em;
-
 }
 
 .panel2{
     width: 20em;
-    height: 20em;
-
 }
 
 

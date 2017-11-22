@@ -25,10 +25,8 @@
 
 	<h1><p class="texto aparece"> Pedido</p></h1>
 
-	<div class="container">
-		
-
-		<div id="form1" class="container row">
+	<div class="container">		
+		<div id="form1" class="container">
 			<div class="row fondo">
 				<div class="table-responsive">
 				  <table id="tabla" class="table aparece">

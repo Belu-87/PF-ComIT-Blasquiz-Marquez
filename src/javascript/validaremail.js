@@ -1,20 +1,5 @@
   $(document).ready(function(){
-     // $(".form-box").hide();
       $(".form-box").fadeIn(2000);
-  //   $("#frmRestablecer").submit(function(event){
-  //     //event.preventDefault();
-  //     $.ajax({
-  //       url:'validaremail.php',
-  //       type:'POST',
-  //       dataType:'json',
-  //       async:true,
-  //       data:$("#frmRestablecer").serializeArray()
-  //     }).done(function(respuesta){
-  //       alert(respuesta);
-  //       //$("#mensaje").html(respuesta.mensaje);
-  //       //$("#email").val('');
-  //     });
-  //   });
    });
 
 
@@ -40,10 +25,12 @@
           }
         else
         {
+            $(".form-top").fadeOut("fast");
+            $(".form-bottom").fadeOut("fast");
+
             $("h1").html("Error al enviar mail.");
             $("h1").hide();
-            $("h1").fadeIn(3000);   
-          //alert(response);
+            $("h1").fadeIn(3000);           
         }
 
 

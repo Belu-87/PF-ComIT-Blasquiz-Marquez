@@ -7,7 +7,16 @@ body{
     background-attachment:fixed;
     color:white;
     font-family: "Forte Normal", "Comic Sans MS", Arial;
+    overflow-y: scroll;
   }
+
+.error{
+  border-color: red;
+  border-width: 2px;
+  transition-property: border-color;
+  border-radius: .25rem;
+  transition-duration: 2s;
+}
   
   input {
 

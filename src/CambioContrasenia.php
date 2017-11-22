@@ -37,12 +37,12 @@
 			
 				<div class="form-group">
                 	<label class="">Contraseña nueva</label>
-                	<input type="text" name="form-password" class="form-password form-control" id="newpass">
+                	<input type="password" name="form-password" class="form-password form-control" id="newpass">
                 </div>
 				
 				<div class="form-group">
                 	<label class="">Confirmar Contraseña</label>
-                	<input type="text" name="form-confipassword" class="form-confipassword form-control" id="renewpass">
+                	<input type="password" name="form-confipassword" class="form-confipassword form-control" id="renewpass">
                 </div>	
 				
 				<div class="form-group">

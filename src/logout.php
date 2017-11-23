@@ -5,7 +5,7 @@ session_unset();
     $_SESSION['FULLNAME'] = NULL;
     $_SESSION['EMAIL'] =  NULL;
     $_SESSION['usuario'] =  NULL; 
-
+	$_SESSION['id']=NULL;
     //ver este o destroy
 session_cache_expire();
     

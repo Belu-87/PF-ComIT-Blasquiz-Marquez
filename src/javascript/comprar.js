@@ -226,7 +226,7 @@ function Validacion()
 			 		$('#myModal').modal('show');	
 			 		setTimeout(function(){
 			 			window.location.replace("home.php");
-			 		},5000);		 		
+			 		},3000);		 		
 			 		console.log(response);			 		
 			 	}
 

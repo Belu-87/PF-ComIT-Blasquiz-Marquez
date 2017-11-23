@@ -88,7 +88,17 @@ function RegistrarPedido($conn)
 
 		/****registro direccion nueva****/
 		$idDire=getMaxIdFromTable($conn,"direccion")+1;
-		$idUser=$_SESSION['id'];
+
+		if( isset($_SESSION['id'])  )
+		{
+			$idUser=$_SESSION['id'];	
+		}
+		else
+		{
+			$idUser=getIdFromFbId($conn,$_SESSION['FBID']);
+			//$idUser=$_SESSION['FBID'];
+		}
+
 		$queryDire="insert into direccion(id,calle,numero,idUsuario)values($idDire,'$calle','$altura',$idUser);";
 		$conn->query($queryDire);
 		$prueba.=$queryDire;
@@ -167,7 +177,7 @@ function RegistrarPedido($conn)
 
 		$conn->commit();
 		$conn->close();
-		echo "ok";		
+		echo "$prueba";		
 	}
 	catch(Exception $e)
 	{
@@ -189,5 +199,17 @@ function getMaxIdFromTable($conn,$table)
 	//mysqli_close($conn);		
 
 	return (int)$res["num"];
+}
+
+
+function getIdFromFbId($conn,$fbID)
+{
+	$query="select id from usuario where fuid=$fbID";
+
+	$res=mysqli_fetch_assoc( mysqli_query($conn,$query));
+	//$row = mysql_fetch_array($res);
+	//mysqli_close($conn);		
+
+	return (int)$res["id"];
 }
 ?>

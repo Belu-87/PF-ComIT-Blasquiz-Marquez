@@ -42,14 +42,14 @@ var dataString=[];//new Array();
 			$(campo).fastselect();
 
 			/*agrego evento eliminar*/
-			campo="#eliminar"+i;
+			campo="#eliminar"+i; 
 			$(campo).on('click',function(){		
 				$(this).closest('tr').fadeOut(2000);	
 				$(campo).fadeOut(1000,function(){$(this).closest('tr').remove();});
 
 				setTimeout(function(){
 					getSumaTotales();
-				},500);
+				},600);
 
 			});
 

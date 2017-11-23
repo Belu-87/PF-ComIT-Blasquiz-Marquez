@@ -17,8 +17,16 @@ body{
   border-radius: .25rem;
   transition-duration: 2s;
 }
+
+.campo {
+        font-family:Helvetica;
+        height: 30px;
+        font-weight:bold;
+        border-width:thin;
+        border-style:solid;
+}
   
-  input {
+  /*input {
 
         width: 13px;
         height: 13px;
@@ -41,7 +49,7 @@ body{
         border-color:black;
 
 
-}
+}*/
 
 label {
     display: block;

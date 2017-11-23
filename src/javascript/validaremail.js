@@ -14,7 +14,8 @@
        async:true,
        success:function(response)
        {
-          if (response=="ok") 
+        console.log(response);
+          if (response!="failed") 
           {
             $(".form-top").fadeOut("fast");
             $(".form-bottom").fadeOut("fast");

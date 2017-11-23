@@ -76,7 +76,8 @@ h1{
   width: 40%;
 }
 
-.inp:focus ,.inp:hover,.boton:hover,.boton:focus{
+.inp:focus ,.inp:hover,.boton:hover,.boton:focus
+,#btn-novedades:hover,#btn-novedades:focus{
   background: #f293c1;
   outline: none;
 }
@@ -107,6 +108,7 @@ h1{
   transition-property: background;
   transition-duration: 1s;
   transition-timing-function: linear;
+  outline: none;
   }
 
 .scrollup {
@@ -127,7 +129,7 @@ h1{
 .error{
   border-color: red;
   border-width: 2px;
-  transition-property: border-color;
+  transition-property: border-color,background-color;
   /*border-radius: .25rem;*/
   transition-duration: 2s;
 }

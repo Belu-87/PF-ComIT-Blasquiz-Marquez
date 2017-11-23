@@ -136,7 +136,7 @@ $headers  = 'From: dulzurasloboesta@gmail.com' .
 if(mail($to, $subject, $message, $headers))
     echo "ok";
 else
-    echo "Email sending failed";
+    echo "failed";
 
 /****************************************/
 

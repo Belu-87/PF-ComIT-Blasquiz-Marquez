@@ -110,6 +110,7 @@ $("#btn-novedades").click(function(){
                             $("html, body").animate({
                             scrollTop: 0
                             }, 1500);
+                            $('#myModalExito').modal('hide'); 
                             return false;
                         },2000);                
                         console.log(response);  
